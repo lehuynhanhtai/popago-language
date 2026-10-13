@@ -6,10 +6,11 @@ Dự án này sử dụng kiến trúc Fullstack Monorepo được cấu hình t
 
 ## 1. Kiến trúc Monorepo (Turborepo)
 
-- **`apps/web`**: Ứng dụng Frontend Next.js (App Router, React 19, TypeScript, Tailwind CSS).
+- **`apps/web`**: Ứng dụng Frontend Next.js (App Router, React 19, TypeScript, Tailwind CSS). Xem chi tiết cây thư mục chuẩn tại [structure-fe.md](file:///docs/structure-fe.md).
 - **`apps/api`**: Ứng dụng Backend NestJS (TypeScript, Modular Architecture, DTOs, Guards, Services).
 - **`packages/shared`**: Shared TypeScript types, interfaces, utility functions dùng chung cho cả Frontend và Backend.
 - **`packages/config`**: Cấu hình chia sẻ chung (eslint, tsconfig, prettier).
+- **`packages/ui`**: Shared UI component library dùng chung.
 
 ---
 
