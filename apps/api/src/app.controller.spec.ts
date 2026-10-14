@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
+import { FirestoreService } from './providers/firebase/firestore.service.js';
 
 describe('AppController', () => {
   let appController: AppController;
@@ -8,7 +9,21 @@ describe('AppController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [
+        AppService,
+        {
+          provide: FirestoreService,
+          useValue: {
+            collection: () => ({
+              doc: () => ({
+                set: () => Promise.resolve(),
+                get: () => Promise.resolve({ data: () => ({}) }),
+              }),
+            }),
+            serverTimestamp: () => new Date(),
+          },
+        },
+      ],
     }).compile();
 
     appController = app.get<AppController>(AppController);
