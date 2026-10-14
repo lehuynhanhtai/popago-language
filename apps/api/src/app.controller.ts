@@ -3,7 +3,10 @@ import { ApiOperation, ApiResponse as SwaggerApiResponse, ApiTags } from '@nestj
 import type { ApiResponse } from '@repo/shared';
 import { AppService } from './app.service.js';
 
+import { Public } from './common/decorators/public.decorator.js';
+
 @ApiTags('Health & General')
+@Public()
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
