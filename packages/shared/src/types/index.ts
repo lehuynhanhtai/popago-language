@@ -12,3 +12,5 @@ export interface UserProfile {
   avatarUrl?: string;
   targetLevel?: 'beginner' | 'intermediate' | 'advanced';
 }
+
+export * from './user.js';

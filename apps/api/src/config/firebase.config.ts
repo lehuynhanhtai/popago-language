@@ -5,6 +5,7 @@ export interface FirebaseConfig {
   clientEmail?: string;
   privateKey?: string;
   serviceAccountPath?: string;
+  apiKey?: string;
 }
 
 export const firebaseConfig = registerAs('firebase', (): FirebaseConfig => {
@@ -17,5 +18,6 @@ export const firebaseConfig = registerAs('firebase', (): FirebaseConfig => {
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
     privateKey,
     serviceAccountPath: process.env.FIREBASE_SERVICE_ACCOUNT_PATH,
+    apiKey: process.env.FIREBASE_API_KEY || process.env.FIREBASE_WEB_API_KEY,
   };
 });
