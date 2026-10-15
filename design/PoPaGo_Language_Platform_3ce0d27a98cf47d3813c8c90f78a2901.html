@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PoPaGo Language - Let's play with words!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#cedef2",
+              "on-primary-container": "#002053",
+              "error-dim": "#9f0519",
+              "on-primary-fixed-variant": "#002966",
+              "on-primary-fixed": "#000000",
+              "on-secondary-fixed-variant": "#655200",
+              "secondary-fixed": "#fdd433",
+              "inverse-primary": "#558dff",
+              "inverse-surface": "#050f19",
+              "tertiary-dim": "#8b3315",
+              "secondary": "#6e5a00",
+              "primary-container": "#739eff",
+              "secondary-container": "#fdd433",
+              "on-surface": "#25303b",
+              "primary-fixed": "#739eff",
+              "error-container": "#fb5151",
+              "inverse-on-surface": "#939eac",
+              "on-surface-variant": "#525d69",
+              "on-tertiary": "#ffefeb",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#5a4900",
+              "surface": "#f2f7ff",
+              "surface-container": "#dce9fb",
+              "surface-bright": "#f2f7ff",
+              "secondary-fixed-dim": "#eec622",
+              "tertiary-fixed-dim": "#f6835f",
+              "surface-container-low": "#e8f2ff",
+              "tertiary-container": "#ff9472",
+              "surface-tint": "#0055c4",
+              "on-primary": "#f0f2ff",
+              "on-background": "#25303b",
+              "on-tertiary-fixed-variant": "#6d1d01",
+              "on-error": "#ffefee",
+              "primary": "#0055c4",
+              "on-secondary-fixed": "#443700",
+              "primary-fixed-dim": "#5a90ff",
+              "primary-dim": "#004aad",
+              "outline-variant": "#a3aebc",
+              "secondary-dim": "#604e00",
+              "on-error-container": "#570008",
+              "outline": "#6d7885",
+              "surface-container-high": "#d5e4f7",
+              "surface-variant": "#cedef2",
+              "tertiary": "#9b3e20",
+              "on-tertiary-fixed": "#330900",
+              "on-tertiary-container": "#5e1700",
+              "background": "#f2f7ff",
+              "on-secondary": "#fff2d1",
+              "error": "#b31b25",
+              "tertiary-fixed": "#ff9472",
+              "surface-dim": "#c5d6eb"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .speech-bubble-tail {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 85%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none transition-colors duration-300">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-blue-700 dark:text-blue-400 tracking-tighter font-headline">
+                PoPaGo
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline font-bold text-sm tracking-tight text-blue-700 dark:text-blue-400 border-b-2 border-yellow-400 pb-1 hover:scale-105 transition-transform" href="#">Home</a>
+<a class="font-headline font-bold text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform" href="#">Topic</a>
+<a class="font-headline font-bold text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform" href="#">Blog</a><a class="font-headline font-bold text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-headline font-bold text-sm tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-600 px-4 py-2">Signin</button>
+<button class="bg-primary text-on-primary font-headline font-bold text-sm tracking-tight px-6 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-150 shadow-md">Register</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 overflow-hidden">
+<!-- Hero Section -->
+<section class="relative px-6 py-20 lg:py-32 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 text-left">
+<h1 class="font-headline text-5xl lg:text-7xl font-extrabold text-on-surface leading-tight tracking-tight mb-6">
+                        Language learning is your new <span class="text-primary">playground.</span>
+</h1>
+<p class="text-lg text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+                        Break the barriers of communication with PoPaGo. Move beyond static lessons into a tactile world of words, sounds, and global connections.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold px-8 py-4 rounded-full text-lg shadow-xl hover:scale-105 active:scale-95 transition-all">
+                            Start Learning for Free
+                        </button>
+<button class="flex items-center justify-center gap-2 font-headline font-bold text-primary px-8 py-4 rounded-full border-2 border-primary/10 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">play_circle</span>
+                            Watch how it works
+                        </button>
+</div>
+</div>
+<div class="relative lg:h-[500px] flex items-center justify-center">
+<!-- Decorative elements for the "Playground" feel -->
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-primary-container/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 w-full aspect-square max-w-lg rounded-xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+<img alt="Diverse group of people learning together" class="w-full h-full object-cover" data-alt="People of diverse cultures collaborating happily" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtDwep-Zqj2lzQ9jveFCQ6QfVdmSt3oxGuEjb70lOGJ8S07CMmo8yh0ld1dWUMhFtkAn3Bng8zWXYxYRIU3oMGCUey2S_6aHouAka4sGpei-pI8g3eZLRONYh57DzxDnsLQILO8WK3jdbbZvE6vylbP_8SOzjFOCE9MmcL9-KMaEMlrWEoK9itClbdkvjqdVZmHVBbS_2cgzMQGeUs82QCM5Ez-MY34IORJj-9jHvsKX9Wva69ottrrQOxaVeHSaZPV9-X11Pke4A"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 mix-blend-overlay"></div>
+</div>
+<!-- Floating Chips -->
+<div class="absolute top-1/4 -left-8 bg-surface-container-lowest p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">language</span>
+<span class="font-headline font-bold text-sm">30+ Languages</span>
+</div>
+<div class="absolute bottom-1/4 -right-4 bg-surface-container-lowest p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline font-bold text-sm">Gamified Fun</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Introduction / Features -->
+<section class="bg-surface-container-low py-24 rounded-xl">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20">
+<span class="text-primary font-headline font-extrabold tracking-widest text-xs uppercase">Why PoPaGo?</span>
+<h2 class="font-headline text-4xl lg:text-5xl font-bold mt-4">Learning that feels like a <span class="text-secondary">high-five</span>.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature Card 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:scale-105 transition-transform duration-300">
+<div class="w-16 h-16 bg-primary-container/20 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">touch_app</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Interactive Lessons</h3>
+<p class="text-on-surface-variant leading-relaxed">Touch, drag, and drop your way through vocabulary. We believe in tactile memory that sticks.</p>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:scale-105 transition-transform duration-300">
+<div class="w-16 h-16 bg-secondary-container/20 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl">sports_esports</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Gamified Progress</h3>
+<p class="text-on-surface-variant leading-relaxed">Earn badges, unlock new levels, and compete in friendly leagues with learners worldwide.</p>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl hover:scale-105 transition-transform duration-300">
+<div class="w-16 h-16 bg-tertiary-container/20 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-tertiary text-3xl">groups</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Community Focused</h3>
+<p class="text-on-surface-variant leading-relaxed">Join language circles, practice with native speakers, and share your cultural journey.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Language Showcase (Bento Grid Style) -->
+<section class="py-24 max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl font-bold mb-4">Choose Your Adventure</h2>
+<p class="text-on-surface-variant">Explore our most popular courses. From the romantic streets of Paris to the neon lights of Tokyo.</p>
+</div>
+<a class="text-primary font-headline font-bold flex items-center gap-2 hover:underline" href="#">
+                    View All 30+ Languages <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- Spanish -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-highest rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Spanish scenery" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Spanish architecture and vibrant streets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGityWdKf61CAxdSMetJBDlGcU0NiGMKSjlHuBrwHhXOF8iq-Z6jeEjauPjkcL2-tKY9HYDu_W6owwZ-cAi_s25wMDQGz8mFYrzDG0dcDngPRkwlvfgKIZeg9MH9klrLj2La0_C2iHOjwiIxLRJJfYGK69g51-vrfk8VzwOvdBmyekrDuSoRCl2iEW0-yfqjPjkxM2CpYUq0rcPnHwgPX10-WvuMDzs7Ey8PvTjkqSKuVWs6nww_68qOa5JOPvEhAY6zASGlpQ7us"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8 text-on-primary">
+<h3 class="text-3xl font-headline font-bold">Spanish</h3>
+<p class="text-sm opacity-90">The language of passion and 20+ countries.</p>
+</div>
+</div>
+<!-- Japanese -->
+<div class="md:col-span-1 md:row-span-2 bg-secondary-container rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Japanese temple" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Traditional Japanese temple and cherry blossoms" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr_aawWvqHl5xYYzw__OSHfumQGLlx2AxoYWKz2omuH0Pq6m2INyYIZSRom4-kFfprThSCal-h4kKS_zO91tiyT675nFtPJg1i-v-ozihcgaHPP-ZeqjRjztBCsCaBZecBLSz68ihe_WY43IiZjJu2g_CpkYHny0DTK3_WAx2VGV-JmMLpX4dBIBNalXuVkLtGBg9zq6GjpOjLsohi9jeC5DB20U7zX7Zs6aDQwA7JYJRjE533R4fl3pB4Sv4gRuOBZKVY5Fa-RBI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent flex flex-col justify-end p-8 text-on-secondary">
+<h3 class="text-3xl font-headline font-bold">Japanese</h3>
+<p class="text-sm opacity-90">Master the art of Kanji and Hiragana.</p>
+</div>
+</div>
+<!-- French -->
+<div class="md:col-span-1 md:row-span-1 bg-surface-container rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Paris Eiffel Tower" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="The Eiffel Tower at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXpFkJsQ348fmrOiIquXCBqS0JBFKN9k7zJphBBEAeckcljWU2B35nu7MEddB6NWHWvTxxYEp-awG-lt4HDTQLpIU5Z_LAxHyuUYItQQKC0QPVgB1q8LqWz4S-avOz9GHELsofnFFDZ-_zkXYZtxgICFai-311RHW1kT8BazXDpzXqPFiQPAhqbqJ_UMlY8JKnYji6ijSWYNz7vU7hJOmGNLcbgk7TNMd_g7Ug5QZqtFO92EW7NpIpDTvYYVQxCbCgqtuuJPNTe9E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface-variant/80 to-transparent flex flex-col justify-end p-8 text-white">
+<h3 class="text-3xl font-headline font-bold">French</h3>
+<p class="text-sm opacity-90">The global language of diplomacy.</p>
+</div>
+</div>
+<!-- Italian -->
+<div class="md:col-span-2 md:row-span-1 bg-tertiary-container rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Venice Italy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Venice canal with gondolas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiPisIvaL2rBJRHnMfONszDwUlsKiYEW1OOtr6sJ9-dqq8gZ5mu0D8TzAY-sl0lVqeSIHMFs4--K5-PxsA9qcDzPQy5nfp_p03ZD7ACvHePCO7okWz1uASC2MDtEt-AaWt5pblm_mvSCPlHY9ankplZXMvNvfP7FVcs1nGJKC6R922CQjHMsVKsMsLdNaB2XuiHX1F6lLM1H4110lujULP4jvQEXJtFazJQYBnSgGUWBIPdjDVMu32wOz1BqqxNFFJ41q3Oobhx-Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/80 to-transparent flex flex-col justify-end p-8 text-on-tertiary">
+<h3 class="text-3xl font-headline font-bold">Italian</h3>
+<p class="text-sm opacity-90">Explore the world of art and cuisine.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface-bright relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl font-bold">What Our Citizens Say</h2>
+<p class="text-on-surface-variant mt-2">Join over 1 million happy language explorers.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-8 rounded-lg rounded-bl-none shadow-sm relative">
+<p class="italic text-on-surface leading-relaxed">"PoPaGo turned my commute into a language quest. I actually look forward to my Spanish lessons every single morning!"</p>
+<div class="absolute -bottom-4 left-0 w-8 h-8 bg-surface-container-lowest rotate-45 transform origin-top-left -z-10"></div>
+</div>
+<div class="flex items-center gap-4 px-2">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold">SM</div>
+<div>
+<h4 class="font-bold text-sm">Sarah Miller</h4>
+<p class="text-xs text-on-surface-variant">Learning Spanish</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="flex flex-col gap-4 mt-8 md:mt-0">
+<div class="bg-secondary-container p-8 rounded-lg rounded-bl-none shadow-sm text-on-secondary-container relative">
+<p class="italic leading-relaxed font-medium">"The visual learning style is exactly what I needed. I'm finally understanding Japanese grammar without getting a headache!"</p>
+</div>
+<div class="flex items-center gap-4 px-2">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-on-secondary font-bold">KT</div>
+<div>
+<h4 class="font-bold text-sm">Ken Tanaka</h4>
+<p class="text-xs text-on-surface-variant">Learning Japanese</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="flex flex-col gap-4 mt-8 md:mt-0">
+<div class="bg-surface-container-lowest p-8 rounded-lg rounded-bl-none shadow-sm relative">
+<p class="italic text-on-surface leading-relaxed">"The community circles are amazing. I made a pen-pal from Lyon in my first week. It's more than just an app."</p>
+</div>
+<div class="flex items-center gap-4 px-2">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary font-bold">AD</div>
+<div>
+<h4 class="font-bold text-sm">Alex Dupont</h4>
+<p class="text-xs text-on-surface-variant">Learning French</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+<div class="bg-primary text-on-primary p-12 lg:p-24 rounded-xl text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
+<h2 class="font-headline text-4xl lg:text-6xl font-extrabold mb-8 relative z-10">Ready to play with words?</h2>
+<p class="text-xl mb-12 opacity-90 max-w-2xl mx-auto relative z-10">Start your journey today and join the world's most tactile language learning experience.</p>
+<button class="bg-white text-primary font-headline font-bold px-12 py-5 rounded-full text-xl shadow-xl hover:scale-105 active:scale-95 transition-all relative z-10">
+                    Get Started Now
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-blue-50 dark:bg-slate-800 w-full rounded-t-[3rem] mt-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-10 py-16 max-w-7xl mx-auto font-['Be_Vietnam_Pro'] text-sm text-blue-900 dark:text-blue-100">
+<div class="flex flex-col gap-4">
+<div class="text-xl font-bold text-blue-800 dark:text-blue-200">PoPaGo</div>
+<p class="text-slate-500 dark:text-slate-400">Making language learning fun, social, and accessible for everyone, everywhere.</p>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-yellow-600 transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-yellow-600 transition-colors">translate</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-yellow-600 transition-colors">hub</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 md:col-span-2">
+<div>
+<h4 class="font-bold text-blue-700 mb-6 uppercase tracking-wider text-xs">Platform</h4>
+<ul class="flex flex-col gap-3 text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Topic</a></li>
+<li><a class="hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-700 mb-6 uppercase tracking-wider text-xs">Support</h4>
+<ul class="flex flex-col gap-3 text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Contact</a></li>
+<li><a class="hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Help Center</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="text-center pb-12 text-slate-400 dark:text-slate-500 text-xs">
+            © 2024 PoPaGo Language. Let's play with words!
+        </div>
+</footer>
+</body></html>
