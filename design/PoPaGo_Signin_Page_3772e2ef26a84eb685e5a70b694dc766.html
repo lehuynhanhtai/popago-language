@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Signin - PoPaGo Language</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#558dff",
+              "inverse-on-surface": "#939eac",
+              "primary-fixed-dim": "#5a90ff",
+              "tertiary-dim": "#8b3315",
+              "surface-container-lowest": "#ffffff",
+              "surface-bright": "#f2f7ff",
+              "on-background": "#25303b",
+              "tertiary-fixed-dim": "#f6835f",
+              "outline-variant": "#a3aebc",
+              "on-tertiary-fixed-variant": "#6d1d01",
+              "surface": "#f2f7ff",
+              "inverse-surface": "#050f19",
+              "surface-container-highest": "#cedef2",
+              "error-dim": "#9f0519",
+              "error": "#b31b25",
+              "outline": "#6d7885",
+              "on-tertiary-container": "#5e1700",
+              "primary-container": "#739eff",
+              "on-secondary-container": "#5a4900",
+              "secondary-dim": "#604e00",
+              "secondary-fixed": "#fdd433",
+              "surface-container-low": "#e8f2ff",
+              "on-primary": "#f0f2ff",
+              "on-error": "#ffefee",
+              "on-secondary-fixed-variant": "#655200",
+              "secondary-container": "#fdd433",
+              "on-tertiary-fixed": "#330900",
+              "primary": "#0055c4",
+              "on-secondary": "#fff2d1",
+              "on-error-container": "#570008",
+              "tertiary-container": "#ff9472",
+              "surface-container-high": "#d5e4f7",
+              "surface-dim": "#c5d6eb",
+              "surface-variant": "#cedef2",
+              "tertiary": "#9b3e20",
+              "on-surface-variant": "#525d69",
+              "on-primary-container": "#002053",
+              "on-primary-fixed-variant": "#002966",
+              "on-surface": "#25303b",
+              "surface-container": "#dce9fb",
+              "on-tertiary": "#ffefeb",
+              "primary-fixed": "#739eff",
+              "error-container": "#fb5151",
+              "on-secondary-fixed": "#443700",
+              "surface-tint": "#0055c4",
+              "secondary-fixed-dim": "#eec622",
+              "on-primary-fixed": "#000000",
+              "primary-dim": "#004aad",
+              "secondary": "#6e5a00",
+              "background": "#f2f7ff",
+              "tertiary-fixed": "#ff9472"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<main class="flex-grow flex items-center justify-center px-4 py-12">
+<div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+<div class="hidden lg:block relative pr-12">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 right-0 w-48 h-48 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="relative z-10 space-y-8">
+<div class="inline-flex items-center px-4 py-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-primary mr-2" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-primary font-bold text-sm tracking-wide">THE TACTILE PLAYGROUND</span>
+</div>
+<h1 class="text-6xl font-black text-on-surface tracking-tight leading-[1.1]">
+                        Master words <br/>
+<span class="text-primary italic">while you play.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-md leading-relaxed">
+                        Join thousands of polyglots turning language learning into a daily moment of joy.
+                    </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary text-4xl mb-2" data-icon="language">language</span>
+<div class="font-bold text-lg">30+ Languages</div>
+<div class="text-sm text-on-surface-variant">From Spanish to Swahili.</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 mt-6">
+<span class="material-symbols-outlined text-primary text-4xl mb-2" data-icon="military_tech">military_tech</span>
+<div class="font-bold text-lg">Daily Goals</div>
+<div class="text-sm text-on-surface-variant">Build your streak today.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-2xl relative z-10 overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/40 rounded-bl-[5rem] -mr-8 -mt-8"></div>
+<div class="mb-10 relative">
+<div class="text-primary font-black text-3xl italic mb-2">PoPaGo Language</div>
+<h2 class="text-2xl font-extrabold text-on-surface">Welcome back!</h2>
+<p class="text-on-surface-variant mt-1">Please enter your details.</p>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant ml-1">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="mail">mail</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-on-surface" placeholder="hello@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center ml-1">
+<label class="text-sm font-bold text-on-surface-variant">Password</label>
+<a class="text-sm font-bold text-primary hover:underline" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="lock">lock</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none text-on-surface" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-full shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-200 text-lg flex justify-center items-center gap-2" type="submit">
+                            Sign In
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-surface-container-highest"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-4 bg-surface-container-lowest text-on-surface-variant font-medium">Or continue with</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 px-4 border border-surface-container-highest rounded-xl hover:bg-surface-container-low transition-colors group">
+<img alt="" class="w-5 h-5" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCylmWTnYJKJSwdb9BOQ37NqHV-K51kritWw8y9HeI8KiIUOfwsTeYtU3u59MY9mt_dZGchljst55VOdSkF7e_4dnv9YQwe14rBs8T1CmM2ePFqHMbVg8jAktj5T7DeYiTv1zUgRlXAhvW9_5CHzLsmS6Hsl360GR4HjJukHBuPe6ey4wSSu0tetia7bhT8OBr3d4b5cxsK7teIN_PvOQjIK53Lc5OSlnz3UXZNVA80kZjAxHFQeSj7ALBqDVZHwBnXbasIDndzEjg"/>
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 px-4 border border-surface-container-highest rounded-xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-[#1877F2]" data-icon="facebook" style="font-variation-settings: 'FILL' 1;">social_leaderboard</span>
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">Facebook</span>
+</button>
+</div>
+<div class="mt-10 text-center">
+<p class="text-on-surface-variant">
+                            Don't have an account? 
+                            <a class="text-primary font-extrabold hover:underline ml-1" href="#">Register</a>
+</p>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-24 h-24 bg-tertiary-container rounded-full flex items-center justify-center rotate-12 shadow-xl z-20 hidden md:flex">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" data-icon="celebration">celebration</span>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-blue-50 dark:bg-slate-800/50 rounded-t-[3rem] mt-12 font-['Be_Vietnam_Pro'] text-sm">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-['Plus_Jakarta_Sans'] font-extrabold text-blue-700 text-xl">PoPaGo Language</span>
+<p class="text-slate-500 dark:text-slate-400">© 2024 PoPaGo Language. Let's play with words!</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline" href="#">Support</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline" href="#">Contact Us</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PoPaGo Language - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#dce9fb",
+                        "on-secondary-fixed-variant": "#655200",
+                        "tertiary-fixed-dim": "#f6835f",
+                        "outline": "#6d7885",
+                        "on-tertiary": "#ffefeb",
+                        "tertiary-dim": "#8b3315",
+                        "on-tertiary-container": "#5e1700",
+                        "on-primary-fixed": "#000000",
+                        "secondary-container": "#fdd433",
+                        "outline-variant": "#a3aebc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#002053",
+                        "on-secondary-container": "#5a4900",
+                        "primary-container": "#739eff",
+                        "tertiary-fixed": "#ff9472",
+                        "primary": "#0055c4",
+                        "secondary-dim": "#604e00",
+                        "on-background": "#25303b",
+                        "surface": "#f2f7ff",
+                        "on-error-container": "#570008",
+                        "on-tertiary-fixed": "#330900",
+                        "on-surface-variant": "#525d69",
+                        "inverse-primary": "#558dff",
+                        "on-primary-fixed-variant": "#002966",
+                        "tertiary": "#9b3e20",
+                        "on-error": "#ffefee",
+                        "secondary-fixed-dim": "#eec622",
+                        "on-primary": "#f0f2ff",
+                        "background": "#f2f7ff",
+                        "primary-fixed-dim": "#5a90ff",
+                        "surface-dim": "#c5d6eb",
+                        "surface-tint": "#0055c4",
+                        "primary-dim": "#004aad",
+                        "surface-container-highest": "#cedef2",
+                        "on-surface": "#25303b",
+                        "error": "#b31b25",
+                        "secondary": "#6e5a00",
+                        "inverse-surface": "#050f19",
+                        "surface-bright": "#f2f7ff",
+                        "on-tertiary-fixed-variant": "#6d1d01",
+                        "inverse-on-surface": "#939eac",
+                        "tertiary-container": "#ff9472",
+                        "primary-fixed": "#739eff",
+                        "surface-variant": "#cedef2",
+                        "error-container": "#fb5151",
+                        "error-dim": "#9f0519",
+                        "on-secondary-fixed": "#443700",
+                        "surface-container-low": "#e8f2ff",
+                        "secondary-fixed": "#fdd433",
+                        "surface-container-high": "#d5e4f7",
+                        "on-secondary": "#fff2d1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex antialiased">
+<!-- SideNavBar Component -->
+<nav class="h-screen w-72 rounded-none border-r border-surface-variant hidden md:flex flex-col bg-surface-container-lowest dark:bg-slate-950 fixed left-0 top-0 py-4 gap-2 z-50 shadow-sm">
+<div class="flex items-center gap-3 mb-8 px-8 py-2 mt-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="language" style="font-variation-settings: 'FILL' 1;">language</span>
+</div>
+<div>
+<h1 class="text-2xl font-black text-primary font-headline tracking-tighter">PoPaGo</h1>
+<p class="text-xs text-on-surface-variant font-body">Language Learning</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-2 px-4 font-['Be_Vietnam_Pro'] text-sm font-medium">
+<a class="flex items-center gap-3 px-4 py-3 bg-surface text-primary rounded-[2rem] shadow-sm font-bold scale-[1.02] transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+                Learning Path
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-[2rem] duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                75 Topics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-[2rem] duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                3,000 Words
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-[2rem] duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+                181 Phrasal Verbs
+            </a>
+</div>
+<div class="mt-auto px-4 flex flex-col gap-2 font-['Be_Vietnam_Pro'] text-sm font-medium">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-[2rem] duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                Support
+            </a>
+</div>
+<div class="mt-4 px-6 mb-2">
+<div class="bg-surface-container-low rounded-[2rem] p-3 flex items-center gap-3 shadow-sm border border-surface-variant/50 cursor-pointer hover:bg-surface-container transition-colors duration-200">
+<img alt="Learner Avatar" class="w-10 h-10 rounded-full shadow-sm bg-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhEb7OucrRDNUzmZOoCqXFL56fPkGCXuiSUxpq4ilMQ9uMvOJwGPVM9SboR9a2Sm-4Ycc1QITcSXk74tHShQKnJz_zMI9FCmNzBaSm-C-k97GIIu0RRt70iK6rsyPs9BN9CgrBq5t-70-zrILIja4C23d1PYn_hsobf9E_JGL39DCH59nOTpTudlrv8noqjfx93AJREYpgzUqlLKwIroZgiSDf90pGuv4wkptOzEWAFJ2LtGGzkqEF9g_7UGSiDXAMGLp_37t1b_w"/>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-on-background font-headline truncate">Learner</h4>
+<p class="text-xs text-on-surface-variant font-body truncate">learner@popago.com</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-72 min-h-screen bg-surface flex flex-col">
+<!-- Mobile Top Nav (Simplified for demonstration) -->
+<header class="md:hidden sticky top-0 w-full z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-6 py-3 shadow-[0_12px_40px_rgba(37,48,59,0.06)]">
+<div class="text-2xl font-extrabold text-blue-700 dark:text-blue-400 tracking-tighter font-['Plus_Jakarta_Sans']">PoPaGo</div>
+<div class="flex gap-4">
+<button class="text-blue-600 dark:text-blue-400 scale-95 active:transition-all hover:scale-105 transition-transform duration-200"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="text-blue-600 dark:text-blue-400 scale-95 active:transition-all hover:scale-105 transition-transform duration-200"><span class="material-symbols-outlined" data-icon="settings">settings</span></button>
+</div>
+</header>
+<div class="p-8 md:p-12 max-w-6xl mx-auto w-full flex-1 flex flex-col gap-12">
+<!-- Welcome Hero Section -->
+<section class="relative bg-gradient-to-br from-surface-container-low to-surface rounded-xl p-8 md:p-12 overflow-hidden shadow-[0_12px_40px_rgba(37,48,59,0.06)] flex flex-col md:flex-row items-center justify-between gap-8 border-none">
+<div class="z-10 max-w-xl">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-background tracking-tight leading-tight mb-4 -ml-1">
+                        Welcome back, Learner!
+                    </h2>
+<p class="text-lg text-on-surface-variant font-body mb-8">
+                        Ready for today's challenge? Your next milestone is waiting in the playground. Let's make some words pop!
+                    </p>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold font-headline rounded-full px-8 py-4 flex items-center gap-2 hover:scale-105 transition-transform duration-300 shadow-lg">
+<span class="material-symbols-outlined" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                        Quick Start Lesson
+                    </button>
+</div>
+<!-- Playful Illustration Concept (using placeholder) -->
+<div class="relative w-full md:w-1/2 h-64 md:h-80 z-10 hidden md:block">
+<img alt="Playful 3D illustration of colorful floating letters and a cute mascot holding a pencil, bright cheerful lighting" class="w-full h-full object-cover rounded-xl shadow-md mix-blend-multiply opacity-80" data-alt="Playful 3D illustration of colorful floating letters and a cute mascot holding a pencil, bright cheerful lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVJnGOLw355TiwmsdTrcR2Qz4HzViAWtd3-_6YSkDUdXGxwV4zhr1QQtkikEYaijospXKEMHIUjw_OVdRxbkqVz5JViFyaZ648QhziL-o7BEBrMNoIpHjLtR2_xPelN2dEna8BA2hgPFpmf7uNdc81pFF-80Ge0QbuX9VE12_Ablz9aR3n6MqoAs0eKrB40A0Em0F70qNXLJ2ftrJiUnVDkBjjGBl3b70RyuLdAAKxtTZsulKmCH-8V7JPxX3w9cAmwt7TDMNGdl0"/>
+<!-- Floating decorative elements -->
+<div class="absolute -top-4 -right-4 w-16 h-16 bg-secondary-container rounded-full mix-blend-multiply opacity-60 animate-pulse"></div>
+<div class="absolute -bottom-8 -left-8 w-24 h-24 bg-primary-container rounded-full mix-blend-multiply opacity-40"></div>
+</div>
+</section>
+<!-- Dashboard Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Streak Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_40px_rgba(37,48,59,0.06)] flex flex-col gap-4 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 border-none">
+<div class="absolute -right-6 -top-6 w-32 h-32 bg-secondary-container/20 rounded-full blur-2xl group-hover:bg-secondary-container/40 transition-colors duration-500"></div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<h3 class="font-headline font-bold text-xl text-on-background">Current Streak</h3>
+</div>
+<div class="mt-auto">
+<div class="text-4xl font-headline font-extrabold text-secondary mb-1">5 Days</div>
+<p class="text-sm text-on-surface-variant font-body">Keep the flame alive!</p>
+</div>
+</div>
+<!-- Daily Goal Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_40px_rgba(37,48,59,0.06)] flex flex-col gap-4 relative overflow-hidden md:col-span-2 hover:scale-[1.02] transition-transform duration-300 border-none">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="flag" style="font-variation-settings: 'FILL' 1;">flag</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl text-on-background">Daily Goal</h3>
+<p class="text-sm text-on-surface-variant font-body">30 mins / day</p>
+</div>
+</div>
+<span class="text-2xl font-headline font-bold text-primary">60%</span>
+</div>
+<div class="mt-auto pt-4">
+<div class="w-full bg-surface-container h-4 rounded-full overflow-hidden shadow-inner">
+<div class="bg-gradient-to-r from-primary-fixed to-primary h-full rounded-full w-[60%] relative">
+<!-- Sparkle effect on progress bar -->
+<div class="absolute right-0 top-0 bottom-0 w-8 bg-white/30 skew-x-12 animate-[shimmer_2s_infinite]"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant font-body mt-3 text-right">12 mins remaining</p>
+</div>
+</div>
+</section>
+<!-- Recommended Topics -->
+<section class="flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-background tracking-tight">Jump Back In</h3>
+<p class="text-on-surface-variant font-body text-sm mt-1">Recommended from '75 Popular Topics'</p>
+</div>
+<button class="text-primary font-bold font-headline text-sm hover:underline hover:text-primary-dim transition-colors flex items-center gap-1">
+                        View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex overflow-x-auto pb-6 -mx-8 px-8 md:mx-0 md:px-0 gap-6 snap-x">
+<!-- Topic Card 1 -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_40px_rgba(37,48,59,0.06)] flex flex-col gap-4 snap-start hover:scale-[1.02] hover:bg-secondary-container/10 transition-all duration-300 cursor-pointer border-none group">
+<div class="w-16 h-16 rounded-[2rem] bg-surface flex items-center justify-center text-tertiary mb-2 shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="flight_takeoff">flight_takeoff</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg text-on-background mb-1">Travel Essentials</h4>
+<p class="text-sm text-on-surface-variant font-body">24 words • 3 phrases</p>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full mt-auto">
+<div class="bg-tertiary-fixed h-full rounded-full w-[80%]"></div>
+</div>
+</div>
+<!-- Topic Card 2 -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_40px_rgba(37,48,59,0.06)] flex flex-col gap-4 snap-start hover:scale-[1.02] hover:bg-secondary-container/10 transition-all duration-300 cursor-pointer border-none group">
+<div class="w-16 h-16 rounded-[2rem] bg-surface flex items-center justify-center text-primary mb-2 shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="local_cafe">local_cafe</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg text-on-background mb-1">At the Cafe</h4>
+<p class="text-sm text-on-surface-variant font-body">18 words • 5 phrases</p>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full mt-auto">
+<div class="bg-primary h-full rounded-full w-[30%]"></div>
+</div>
+</div>
+<!-- Topic Card 3 -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_40px_rgba(37,48,59,0.06)] flex flex-col gap-4 snap-start hover:scale-[1.02] hover:bg-secondary-container/10 transition-all duration-300 cursor-pointer border-none group opacity-80">
+<div class="w-16 h-16 rounded-[2rem] bg-surface flex items-center justify-center text-outline mb-2 shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg text-on-background mb-1">Shopping Basics</h4>
+<p class="text-sm text-on-surface-variant font-body">Not started</p>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full mt-auto"></div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

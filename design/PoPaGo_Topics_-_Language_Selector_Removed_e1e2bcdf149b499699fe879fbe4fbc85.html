@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topics - PoPaGo Language Learning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#000000",
+              "on-primary": "#f0f2ff",
+              "error-dim": "#9f0519",
+              "on-tertiary-container": "#5e1700",
+              "surface-variant": "#cedef2",
+              "surface-tint": "#0055c4",
+              "tertiary-fixed-dim": "#f6835f",
+              "tertiary-fixed": "#ff9472",
+              "surface": "#f2f7ff",
+              "surface-container-low": "#e8f2ff",
+              "on-secondary-fixed-variant": "#655200",
+              "error": "#b31b25",
+              "primary-fixed": "#739eff",
+              "background": "#f2f7ff",
+              "surface-container-lowest": "#ffffff",
+              "primary-dim": "#004aad",
+              "surface-dim": "#c5d6eb",
+              "primary-fixed-dim": "#5a90ff",
+              "outline": "#6d7885",
+              "on-secondary": "#fff2d1",
+              "surface-container-high": "#d5e4f7",
+              "on-secondary-fixed": "#443700",
+              "on-secondary-container": "#5a4900",
+              "on-primary-fixed-variant": "#002966",
+              "tertiary": "#9b3e20",
+              "primary": "#0055c4",
+              "on-error-container": "#570008",
+              "surface-container-highest": "#cedef2",
+              "surface-container": "#dce9fb",
+              "secondary": "#6e5a00",
+              "secondary-dim": "#604e00",
+              "on-primary-container": "#002053",
+              "error-container": "#fb5151",
+              "on-tertiary-fixed-variant": "#6d1d01",
+              "on-surface-variant": "#525d69",
+              "on-tertiary": "#ffefeb",
+              "inverse-surface": "#050f19",
+              "on-tertiary-fixed": "#330900",
+              "on-surface": "#25303b",
+              "on-error": "#ffefee",
+              "secondary-container": "#fdd433",
+              "inverse-primary": "#558dff",
+              "tertiary-container": "#ff9472",
+              "outline-variant": "#a3aebc",
+              "secondary-fixed-dim": "#eec622",
+              "inverse-on-surface": "#939eac",
+              "surface-bright": "#f2f7ff",
+              "secondary-fixed": "#fdd433",
+              "primary-container": "#739eff",
+              "on-background": "#25303b",
+              "tertiary-dim": "#8b3315"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-topics-mesh {
+            background-color: #f2f7ff;
+            background-image: radial-gradient(at 0% 0%, hsla(217,100%,97%,1) 0, transparent 50%), 
+                              radial-gradient(at 50% 0%, hsla(210,100%,94%,1) 0, transparent 50%), 
+                              radial-gradient(at 100% 0%, hsla(217,100%,97%,1) 0, transparent 50%);
+        }
+        .card-shadow {
+            box-shadow: 0 12px 40px rgba(37, 48, 59, 0.06);
+        }
+        .language-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-topics-mesh font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none transition-colors duration-300">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-blue-700 dark:text-blue-400 tracking-tighter font-headline">
+                PoPaGo
+            </div>
+<div class="hidden md:flex items-center gap-8 font-headline font-bold text-sm tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform" href="#">Home</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-yellow-400 pb-1 hover:scale-105 transition-transform" href="#">Topic</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform" href="#">Blog</a><a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group language-dropdown">
+<div class="dropdown-menu hidden absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-lg card-shadow overflow-hidden z-50 border border-outline-variant/20">
+<a class="block px-4 py-3 text-sm hover:bg-surface-container-low transition-colors" href="#">English</a>
+<a class="block px-4 py-3 text-sm hover:bg-surface-container-low transition-colors" href="#">Spanish</a>
+<a class="block px-4 py-3 text-sm hover:bg-surface-container-low transition-colors" href="#">French</a>
+<a class="block px-4 py-3 text-sm hover:bg-surface-container-low transition-colors" href="#">German</a>
+<a class="block px-4 py-3 text-sm hover:bg-surface-container-low transition-colors" href="#">Chinese</a>
+<a class="block px-4 py-3 text-sm hover:bg-surface-container-low transition-colors" href="#">Arabic</a>
+</div>
+</div>
+<button class="hidden sm:block text-slate-600 dark:text-slate-400 font-headline font-bold text-sm hover:text-blue-600 px-4">Signin</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-md">Register</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<header class="mb-16 md:flex items-end justify-between gap-12">
+<div class="max-w-2xl">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Learning Path</span>
+<h1 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface leading-[1.1] tracking-tight mb-6">
+                    Choose your <span class="text-primary italic">adventure</span>
+</h1>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed max-w-lg">
+                    Dive into 9 curated communication spheres designed to get you talking from day one. Which world will you explore today?
+                </p>
+</div>
+<div class="hidden lg:block relative -mb-8">
+<div class="w-48 h-48 bg-primary/10 rounded-full blur-3xl absolute -z-10 animate-pulse"></div>
+<span class="material-symbols-outlined text-8xl text-primary/20 rotate-12 select-none" data-icon="auto_stories">auto_stories</span>
+</div>
+</header>
+<!-- Topics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Travel - Mint Green -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#e0f5ed] text-[#2d6a4f] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="flight_takeoff">flight_takeoff</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#1b4332]">Travel</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Navigate airports, book stays, and discover hidden gems like a local pro.</p>
+<button class="w-full bg-[#2d6a4f] text-white py-4 rounded-full font-headline font-bold text-sm hover:bg-[#1b4332] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Food & Dining - Coral -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#fff0ed] text-[#e76f51] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="restaurant">restaurant</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#9b3e20]">Food &amp; Dining</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Master menus, order dishes, and share culinary secrets across cultures.</p>
+<button class="w-full bg-[#e76f51] text-white py-4 rounded-full font-headline font-bold text-sm hover:bg-[#9b3e20] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Daily Life - Lavender -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#f3f0ff] text-[#7209b7] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="calendar_today">calendar_today</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#3c096c]">Daily Life</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Morning routines to evening strolls. Speak naturally about your everyday world.</p>
+<button class="w-full bg-[#7209b7] text-white py-4 rounded-full font-headline font-bold text-sm hover:bg-[#3c096c] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Work - Sky Blue -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#e0f2ff] text-[#0077b6] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="business_center">business_center</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#023e8a]">Work</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Conquer meetings, polish emails, and network with global confidence.</p>
+<button class="w-full bg-[#0077b6] text-white py-4 rounded-full font-headline font-bold text-sm hover:bg-[#023e8a] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Hobbies - Sunshine Yellow -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#fff9db] text-[#f59e0b] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="palette">palette</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#92400e]">Hobbies</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Express your passions, from painting and gaming to sports and music.</p>
+<button class="w-full bg-[#fdd433] text-[#443700] py-4 rounded-full font-headline font-bold text-sm hover:bg-[#f59e0b] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Shopping - Soft Orange -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#fff4e6] text-[#ff922b] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#d9480f]">Shopping</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Bargain at markets, find your size, and handle transactions with ease.</p>
+<button class="w-full bg-[#ff922b] text-white py-4 rounded-full font-headline font-bold text-sm hover:bg-[#d9480f] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Health - Teal -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#e6fffa] text-[#00897b] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="medical_services">medical_services</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#004d40]">Health</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Talk to doctors, explain symptoms, and maintain well-being abroad.</p>
+<button class="w-full bg-[#00897b] text-white py-4 rounded-full font-headline font-bold text-sm hover:bg-[#004d40] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Family - Rose -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#fff0f6] text-[#d6336c] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="family_history">family_history</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#a61e4d]">Family</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Describe your roots, share stories, and build deeper connections.</p>
+<button class="w-full bg-[#d6336c] text-white py-4 rounded-full font-headline font-bold text-sm hover:bg-[#a61e4d] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Nature - Lime -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10 hover:scale-[1.02] transition-all duration-300">
+<div class="w-16 h-16 bg-[#f4fce3] text-[#74b816] rounded-lg flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="eco">eco</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-[#37b24d]">Nature</h3>
+<p class="text-on-surface-variant font-body mb-8 leading-relaxed">Explore ecosystems, discuss wildlife, and speak for the planet.</p>
+<button class="w-full bg-[#74b816] text-white py-4 rounded-full font-headline font-bold text-sm hover:bg-[#37b24d] transition-colors flex items-center justify-center gap-2">
+                    Start Learning <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-blue-50 dark:bg-slate-800 transition-colors duration-300">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-10 py-16 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-blue-800 dark:text-blue-200 font-headline">PoPaGo</div>
+<p class="text-slate-500 dark:text-slate-400 font-body text-sm leading-relaxed">
+                    Making language learning a tactile playground where every word is a toy and every conversation is a game.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center text-blue-700 hover:scale-110 transition-transform shadow-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="public">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center text-blue-700 hover:scale-110 transition-transform shadow-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 md:col-span-2">
+<div>
+<h4 class="font-headline font-bold text-blue-900 dark:text-blue-100 mb-6">Quick Links</h4>
+<ul class="space-y-4 font-body text-sm">
+<li class=""><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">About Us</a></li>
+<li class=""><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Contact</a></li>
+<li class=""><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<h4 class="font-headline font-bold text-blue-900 dark:text-blue-100 mb-6">Community</h4>
+<ul class="space-y-4 font-body text-sm">
+<li class=""><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Blog</a></li>
+<li class=""><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Events</a></li>
+<li class=""><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Help Center</a></li>
+</ul>
+</div>
+<p class="text-slate-400 dark:text-slate-500 text-xs mt-8">
+                        © 2024 PoPaGo Language. Let's play with words!
+                    </p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

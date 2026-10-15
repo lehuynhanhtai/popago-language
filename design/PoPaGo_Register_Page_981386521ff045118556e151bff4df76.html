@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register - PoPaGo Language</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-primary": "#558dff",
+                        "inverse-on-surface": "#939eac",
+                        "primary-fixed-dim": "#5a90ff",
+                        "tertiary-dim": "#8b3315",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f2f7ff",
+                        "on-background": "#25303b",
+                        "tertiary-fixed-dim": "#f6835f",
+                        "outline-variant": "#a3aebc",
+                        "on-tertiary-fixed-variant": "#6d1d01",
+                        "surface": "#f2f7ff",
+                        "inverse-surface": "#050f19",
+                        "surface-container-highest": "#cedef2",
+                        "error-dim": "#9f0519",
+                        "error": "#b31b25",
+                        "outline": "#6d7885",
+                        "on-tertiary-container": "#5e1700",
+                        "primary-container": "#739eff",
+                        "on-secondary-container": "#5a4900",
+                        "secondary-dim": "#604e00",
+                        "secondary-fixed": "#fdd433",
+                        "surface-container-low": "#e8f2ff",
+                        "on-primary": "#f0f2ff",
+                        "on-error": "#ffefee",
+                        "on-secondary-fixed-variant": "#655200",
+                        "secondary-container": "#fdd433",
+                        "on-tertiary-fixed": "#330900",
+                        "primary": "#0055c4",
+                        "on-secondary": "#fff2d1",
+                        "on-error-container": "#570008",
+                        "tertiary-container": "#ff9472",
+                        "surface-container-high": "#d5e4f7",
+                        "surface-dim": "#c5d6eb",
+                        "surface-variant": "#cedef2",
+                        "tertiary": "#9b3e20",
+                        "on-surface-variant": "#525d69",
+                        "on-primary-container": "#002053",
+                        "on-primary-fixed-variant": "#002966",
+                        "on-surface": "#25303b",
+                        "surface-container": "#dce9fb",
+                        "on-tertiary": "#ffefeb",
+                        "primary-fixed": "#739eff",
+                        "error-container": "#fb5151",
+                        "on-secondary-fixed": "#443700",
+                        "surface-tint": "#0055c4",
+                        "secondary-fixed-dim": "#eec622",
+                        "on-primary-fixed": "#000000",
+                        "primary-dim": "#004aad",
+                        "secondary": "#6e5a00",
+                        "background": "#f2f7ff",
+                        "tertiary-fixed": "#ff9472"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        h1, h2, h3, .brand-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- Suppressing Navigation Shell for Transactional Focus -->
+<main class="flex-grow flex items-center justify-center px-4 py-12 relative overflow-hidden">
+<!-- Abstract Playground Background Elements -->
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="w-full max-w-5xl flex flex-col md:flex-row bg-surface-container-lowest rounded-xl shadow-2xl overflow-hidden relative z-10">
+<!-- Left Side: Visual / Branding -->
+<div class="hidden md:flex md:w-5/12 bg-gradient-to-br from-primary to-primary-container p-12 flex-col justify-between text-on-primary relative overflow-hidden">
+<div class="relative z-10">
+<div class="text-3xl font-black italic tracking-tight mb-8">PoPaGo Language</div>
+<h2 class="text-4xl font-extrabold leading-tight mb-4">Start your playful journey today!</h2>
+<p class="text-lg opacity-90">Join 2 million learners playing with words and smashing language barriers.</p>
+</div>
+<div class="relative z-10 space-y-6">
+<div class="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+<div class="bg-secondary-container text-on-secondary-container h-10 w-10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<span class="font-medium">Gamified learning paths</span>
+</div>
+<div class="flex items-center gap-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+<div class="bg-tertiary-container text-on-tertiary-container h-10 w-10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<span class="font-medium">Real-world conversations</span>
+</div>
+</div>
+<!-- Abstract overlapping shape for "Playground" feel -->
+<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary rotate-12 rounded-xl opacity-20"></div>
+<div class="absolute top-1/2 -right-12 w-32 h-32 bg-tertiary rounded-full opacity-30"></div>
+</div>
+<!-- Right Side: Registration Form -->
+<div class="w-full md:w-7/12 p-8 md:p-16">
+<div class="mb-10 text-center md:text-left">
+<h1 class="text-3xl font-extrabold text-on-surface mb-2 tracking-tight">Create Account</h1>
+<p class="text-on-surface-variant">Unlock the world of words, one pop at a time.</p>
+</div>
+<!-- Social Sign-up -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<button class="flex items-center justify-center gap-2 py-3 px-4 bg-surface-container rounded-full hover:bg-surface-container-high transition-colors duration-200 border border-outline-variant/10">
+<img alt="" class="w-5 h-5" data-alt="Google colorful logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfydaQ78mVwyXrKkfRe89LPeuroqX3OLQa8tlh-s45j4Y5eZ-Q749jXKqU-JSAiVvgCd0uqZiVqGJz1OiCDhwlyjqByaXzbm1EUgG3mkJzfkwv3PRLz5PR386JZ72tqbd8kLxywODi_liC3jsw6sQdo3IeK7D2rMT9h1uBA9_vO_lbprmnA3JuStpC-dex2uxonBsXr7aYCR8_mnOwQlufImNdFMS0ZK1J-heVxw1mI9T6SgJhKFOs2kda8AolQpn3-R0h0p1ElAM"/>
+<span class="text-sm font-semibold">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 bg-surface-container rounded-full hover:bg-surface-container-high transition-colors duration-200 border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">social_leaderboard</span>
+<span class="text-sm font-semibold">Facebook</span>
+</button>
+</div>
+<div class="relative flex py-5 items-center mb-6">
+<div class="flex-grow border-t border-outline-variant/20"></div>
+<span class="flex-shrink mx-4 text-on-surface-variant text-xs font-bold uppercase tracking-widest">or email</span>
+<div class="flex-grow border-t border-outline-variant/20"></div>
+</div>
+<!-- Form Fields -->
+<form class="space-y-5">
+<div>
+<label class="block text-sm font-bold text-on-surface-variant mb-2 ml-2" for="full_name">Full Name</label>
+<input class="w-full px-6 py-4 bg-surface-container-highest border-none rounded-full focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-200 placeholder:text-on-surface-variant/50" id="full_name" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-on-surface-variant mb-2 ml-2" for="email">Email Address</label>
+<input class="w-full px-6 py-4 bg-surface-container-highest border-none rounded-full focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-200 placeholder:text-on-surface-variant/50" id="email" placeholder="john@example.com" type="email"/>
+</div>
+<div class="relative">
+<label class="block text-sm font-bold text-on-surface-variant mb-2 ml-2" for="password">Password</label>
+<input class="w-full px-6 py-4 bg-surface-container-highest border-none rounded-full focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-200 placeholder:text-on-surface-variant/50" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-6 top-[3.25rem] text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+<div class="pt-4">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-extrabold text-lg py-4 rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-200" type="submit">
+                            Create Account
+                        </button>
+</div>
+</form>
+<div class="mt-10 text-center">
+<p class="text-on-surface-variant font-medium">
+                        Already have an account? 
+                        <a class="text-primary font-bold hover:underline ml-1" href="#">Signin</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Shared Footer from JSON -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-blue-50 dark:bg-slate-800/50 rounded-t-[3rem] mt-12">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-['Plus_Jakarta_Sans'] font-extrabold text-blue-700 text-xl italic">PoPaGo Language</span>
+<p class="font-['Be_Vietnam_Pro'] text-sm text-slate-500 dark:text-slate-400">© 2024 PoPaGo Language. Let's play with words!</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-['Be_Vietnam_Pro'] text-sm hover:text-blue-600 dark:hover:text-blue-300 underline transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Be_Vietnam_Pro'] text-sm hover:text-blue-600 dark:hover:text-blue-300 underline transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Be_Vietnam_Pro'] text-sm hover:text-blue-600 dark:hover:text-blue-300 underline transition-colors" href="#">Support</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Be_Vietnam_Pro'] text-sm hover:text-blue-600 dark:hover:text-blue-300 underline transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+</body></html>
