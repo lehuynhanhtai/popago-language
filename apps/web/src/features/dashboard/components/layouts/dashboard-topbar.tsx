@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useAuthStore } from "@/stores";
 import { FiMenu, FiBell, FiStar } from "react-icons/fi";
 import { Flame } from "lucide-react";
@@ -76,12 +77,16 @@ export function DashboardTopbar({ onOpenMobileMenu }: DashboardTopbarProps) {
           <span className="w-2 h-2 rounded-full bg-error absolute top-2 right-2 ring-2 ring-surface-container-lowest" />
         </button>
 
-        {/* User Avatar */}
-        <div className="flex items-center gap-2 pl-1 sm:pl-2 border-l border-surface-container-high/60">
-          <div className="w-10 h-10 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center font-headline font-extrabold text-sm shadow-xs">
+        {/* User Avatar & Profile Link */}
+        <Link
+          href="/profile"
+          className="flex items-center gap-2 pl-1 sm:pl-2 border-l border-surface-container-high/60 group cursor-pointer"
+          title="Xem hồ sơ cá nhân"
+        >
+          <div className="w-10 h-10 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center font-headline font-extrabold text-sm shadow-xs group-hover:scale-105 group-hover:border-primary transition-all">
             {user?.fullName ? user.fullName.charAt(0).toUpperCase() : "P"}
           </div>
-        </div>
+        </Link>
       </div>
     </header>
   );

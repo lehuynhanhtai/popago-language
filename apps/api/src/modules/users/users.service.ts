@@ -1,7 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { UsersRepository } from './users.repository.js';
 import type { UserEntity } from './entities/user.entity.js';
-import type { RegisterInput, UserProfileDto } from '@repo/shared';
+import type {
+  RegisterInput,
+  UserProfileDto,
+  UpdateProfileInput,
+  UpdatePreferencesInput,
+} from '@repo/shared';
 
 @Injectable()
 export class UsersService {
@@ -80,6 +85,49 @@ export class UsersService {
     return this.usersRepository.create(newUser, uid);
   }
 
+  async updateProfile(uid: string, input: UpdateProfileInput): Promise<UserEntity> {
+    const user = await this.findById(uid);
+    if (!user) {
+      throw new NotFoundException(`User with uid ${uid} not found`);
+    }
+
+    const updateData: Partial<UserEntity> = {};
+    if (input.displayName !== undefined) {
+      updateData.displayName = input.displayName.trim();
+    }
+    if (input.avatarUrl !== undefined) {
+      updateData.avatarUrl = input.avatarUrl || null;
+    }
+
+    await this.usersRepository.update(uid, updateData);
+
+    return {
+      ...user,
+      ...updateData,
+    };
+  }
+
+  async updatePreferences(uid: string, input: UpdatePreferencesInput): Promise<UserEntity> {
+    const user = await this.findById(uid);
+    if (!user) {
+      throw new NotFoundException(`User with uid ${uid} not found`);
+    }
+
+    const updatedPreferences = {
+      ...user.preferences,
+      ...input,
+    };
+
+    await this.usersRepository.update(uid, {
+      preferences: updatedPreferences,
+    });
+
+    return {
+      ...user,
+      preferences: updatedPreferences,
+    };
+  }
+
   async updateLoginStreak(uid: string): Promise<UserEntity> {
     const user = await this.findById(uid);
     if (!user) {
@@ -138,3 +186,4 @@ export class UsersService {
     };
   }
 }
+
