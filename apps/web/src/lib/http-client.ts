@@ -46,7 +46,11 @@ async function refreshAccessToken(): Promise<string | null> {
         // Cập nhật useAuthStore nếu có user
         try {
           const { useAuthStore } = await import("@/stores");
+          const { setAuthCookies, getAuthCookie, USER_ROLE_COOKIE } = await import("./auth-cookies");
           const currentUser = useAuthStore.getState().user;
+          const role = currentUser?.role || getAuthCookie(USER_ROLE_COOKIE) || "student";
+          setAuthCookies(data.idToken, role);
+
           if (currentUser) {
             useAuthStore.getState().setAuth(currentUser, data.idToken);
           }
@@ -61,9 +65,15 @@ async function refreshAccessToken(): Promise<string | null> {
     } catch {
       // Khi refresh token thất bại (hết hạn / bị thu hồi): Xóa session và chuyển về login
       if (typeof window !== "undefined") {
-        localStorage.removeItem("access_token");
-        localStorage.removeItem("refresh_token");
-        localStorage.removeItem("user_profile");
+        try {
+          const { clearAuthCookies } = await import("./auth-cookies");
+          clearAuthCookies();
+        } catch {
+          // Ignore
+        }
+
+        localStorage.clear();
+        sessionStorage.clear();
 
         try {
           const { useAuthStore } = await import("@/stores");

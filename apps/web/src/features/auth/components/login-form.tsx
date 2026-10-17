@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginInput } from "@repo/shared";
@@ -20,6 +20,9 @@ import { AuthLoadingOverlay } from "./auth-loading-overlay";
 
 export function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectDestination = searchParams.get("redirect") || "/dashboard";
+
   const [rememberMe, setRememberMe] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isPreparingSession, setIsPreparingSession] = useState(false);
@@ -213,7 +216,7 @@ export function LoginForm() {
       <AuthLoadingOverlay
         isVisible={isPreparingSession}
         userName={authenticatedUser}
-        onFinished={() => router.push("/dashboard")}
+        onFinished={() => router.push(redirectDestination)}
       />
     </AuthCard>
   );
