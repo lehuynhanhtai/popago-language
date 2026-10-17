@@ -5,6 +5,7 @@ import type {
   ForgotPasswordInput,
   ForgotPasswordResult,
   LoginInput,
+  RefreshTokenResult,
   RegisterInput,
   ResetPasswordInput,
   UserProfileDto,
@@ -59,6 +60,31 @@ export const authService = {
         json: payload,
       })
       .json<ApiResponse<null>>();
+  },
+
+  /**
+   * Làm mới ID token khi token cũ hết hạn
+   */
+  async refreshToken(
+    refreshToken: string
+  ): Promise<ApiResponse<RefreshTokenResult>> {
+    return httpClient
+      .post("auth/refresh-token", {
+        json: { refreshToken },
+      })
+      .json<ApiResponse<RefreshTokenResult>>();
+  },
+
+  /**
+   * Cập nhật access token mới sau khi refresh
+   */
+  updateAccessToken(idToken: string, newRefreshToken?: string) {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("access_token", idToken);
+      if (newRefreshToken) {
+        localStorage.setItem("refresh_token", newRefreshToken);
+      }
+    }
   },
 
   /**

@@ -15,11 +15,15 @@ import { cn } from "@/lib/utils";
 
 import { authService } from "../services/auth-service";
 import { getHttpErrorMessage } from "@/lib/http-client";
+import { useAuthStore } from "@/stores";
+import { AuthLoadingOverlay } from "./auth-loading-overlay";
 
 export function LoginForm() {
   const router = useRouter();
   const [rememberMe, setRememberMe] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPreparingSession, setIsPreparingSession] = useState(false);
+  const [authenticatedUser, setAuthenticatedUser] = useState<string | undefined>();
 
   const {
     register,
@@ -33,26 +37,55 @@ export function LoginForm() {
     },
   });
 
+  const setAuth = useAuthStore((s) => s.setAuth);
+
   const onSubmit = async (values: LoginInput) => {
     setIsSubmitting(true);
     try {
       const response = await authService.login(values);
       if (response.data) {
         authService.saveAuthSession(response.data);
+
+        // Đồng bộ store toàn cục
+        const profile = response.data.user;
+        const displayName =
+          profile.displayName || values.email.split("@")[0] || "Học viên";
+
+        const userRole: "admin" | "student" =
+          profile.role === "admin" ? "admin" : "student";
+
+        setAuth(
+          {
+            id: profile.id,
+            email: profile.email,
+            fullName: displayName,
+            avatarUrl: profile.avatarUrl || undefined,
+            role: userRole,
+            targetLevel: profile.preferences?.targetLevel || "beginner",
+            streakDays: profile.stats?.streakDays ?? 1,
+            totalXp: profile.stats?.totalXp ?? 0,
+            wordsLearned: profile.stats?.wordsLearnedCount ?? 0,
+          },
+          response.data.idToken
+        );
+
+        setAuthenticatedUser(displayName);
       }
+
       toast.success("Đăng nhập thành công!", {
         icon: <FiCheckCircle className="text-emerald-500 w-5 h-5" />,
-        description: `Chào mừng ${values.email} quay lại sân chơi PoPaGo.`,
+        description: `Chào mừng bạn quay lại sân chơi PoPaGo.`,
       });
-      setTimeout(() => {
-        router.push("/");
-      }, 1000);
+
+      // Bật trạng thái chờ tải dữ liệu người dùng & lộ trình học tập
+      setIsPreparingSession(true);
     } catch (error) {
       const message = await getHttpErrorMessage(
         error,
         "Email hoặc mật khẩu không chính xác!"
       );
       toast.error(message);
+      setIsPreparingSession(false);
     } finally {
       setIsSubmitting(false);
     }
@@ -141,10 +174,15 @@ export function LoginForm() {
         {/* Submit button */}
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || isPreparingSession}
           className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-sm shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-60 cursor-pointer"
         >
-          {isSubmitting ? (
+          {isPreparingSession ? (
+            <span className="inline-flex items-center gap-2">
+              <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              Đang tải dữ liệu tài khoản...
+            </span>
+          ) : isSubmitting ? (
             <span className="inline-flex items-center gap-2">
               <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               Đang xác thực...
@@ -170,6 +208,13 @@ export function LoginForm() {
         {/* OAuth Buttons */}
         <OAuthButtons actionText="Đăng nhập" />
       </form>
+
+      {/* Full-screen Loading Overlay for post-login data preparation */}
+      <AuthLoadingOverlay
+        isVisible={isPreparingSession}
+        userName={authenticatedUser}
+        onFinished={() => router.push("/dashboard")}
+      />
     </AuthCard>
   );
 }

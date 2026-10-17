@@ -1,12 +1,18 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
+export type RoleType = "student" | "admin";
+
 export interface UserProfile {
   id: string;
   email: string;
   fullName: string;
   avatarUrl?: string;
-  role?: string;
+  role: RoleType;
+  targetLevel?: "beginner" | "intermediate" | "advanced";
+  streakDays?: number;
+  totalXp?: number;
+  wordsLearned?: number;
 }
 
 interface AuthState {

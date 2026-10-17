@@ -43,3 +43,10 @@ export interface ForgotPasswordResult {
   email: string;
   resetLink?: string;
 }
+
+export interface RefreshTokenResult {
+  idToken: string;
+  refreshToken: string;
+  expiresIn: string;
+}
+
