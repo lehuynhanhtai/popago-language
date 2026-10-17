@@ -37,12 +37,17 @@ export const useAuthStore = create<AuthState>()(
           isAuthenticated: true,
         }),
       setUser: (user) => set({ user }),
-      clearAuth: () =>
+      clearAuth: () => {
+        if (typeof window !== "undefined") {
+          localStorage.clear();
+          sessionStorage.clear();
+        }
         set({
           user: null,
           accessToken: null,
           isAuthenticated: false,
-        }),
+        });
+      },
     }),
     {
       name: "popago-auth-storage",

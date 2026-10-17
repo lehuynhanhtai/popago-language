@@ -20,6 +20,7 @@ describe('AuthService', () => {
     createCustomToken: ReturnType<typeof vi.fn>;
     getUserByEmail: ReturnType<typeof vi.fn>;
     generatePasswordResetLink: ReturnType<typeof vi.fn>;
+    revokeRefreshTokens: ReturnType<typeof vi.fn>;
   };
   let usersServiceMock: {
     existsByEmail: ReturnType<typeof vi.fn>;
@@ -48,6 +49,7 @@ describe('AuthService', () => {
       createCustomToken: vi.fn(),
       getUserByEmail: vi.fn(),
       generatePasswordResetLink: vi.fn(),
+      revokeRefreshTokens: vi.fn(),
     };
 
     usersServiceMock = {
@@ -341,4 +343,20 @@ describe('AuthService', () => {
       ).rejects.toThrow(BadRequestException);
     });
   });
+
+  describe('logout', () => {
+    it('thu hồi refresh token của người dùng thành công', async () => {
+      firebaseAuthMock.revokeRefreshTokens.mockResolvedValue(undefined);
+
+      await expect(authService.logout('uid-123')).resolves.toBeUndefined();
+      expect(firebaseAuthMock.revokeRefreshTokens).toHaveBeenCalledWith('uid-123');
+    });
+
+    it('ném InternalServerErrorException khi thu hồi token thất bại', async () => {
+      firebaseAuthMock.revokeRefreshTokens.mockRejectedValue(new Error('Firebase error'));
+
+      await expect(authService.logout('uid-123')).rejects.toThrow(InternalServerErrorException);
+    });
+  });
 });
+

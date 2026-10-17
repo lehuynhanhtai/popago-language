@@ -205,4 +205,29 @@ export class AuthController {
       message: 'Lấy thông tin người dùng thành công',
     };
   }
+
+  @Post('logout')
+  @HttpCode(HttpStatus.OK)
+  @ApiBearerAuth('firebase-auth')
+  @ApiOperation({
+    summary: 'Đăng xuất tài khoản người dùng',
+    description:
+      'Hủy bỏ phiên đăng nhập và thu hồi toàn bộ refresh token của người dùng trên Firebase Authentication.',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Đăng xuất thành công',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Token không hợp lệ hoặc chưa được xác thực',
+  })
+  async logout(@CurrentUser('uid') uid: string): Promise<IApiResponse<null>> {
+    await this.authService.logout(uid);
+    return {
+      success: true,
+      data: null,
+      message: 'Đăng xuất thành công',
+    };
+  }
 }

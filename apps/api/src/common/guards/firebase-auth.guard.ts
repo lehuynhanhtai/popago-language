@@ -43,11 +43,11 @@ export class FirebaseAuthGuard implements CanActivate {
     }
 
     try {
-      const decodedToken = await this.firebaseAuth.verifyIdToken(token);
+      const decodedToken = await this.firebaseAuth.verifyIdToken(token, true);
       (request as unknown as { user: DecodedIdToken }).user = decodedToken;
       return true;
     } catch {
-      throw new UnauthorizedException('Invalid or expired Firebase ID token');
+      throw new UnauthorizedException('Token không hợp lệ, đã hết hạn hoặc đã bị thu hồi');
     }
   }
 }
