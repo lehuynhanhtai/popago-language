@@ -15,9 +15,13 @@ export function mapUserDtoToStore(dto: UserProfileDto): UserProfile {
     avatarUrl: dto.avatarUrl || undefined,
     role: dto.role as "student" | "admin",
     targetLevel: dto.preferences?.targetLevel,
+    dailyGoalMinutes: dto.preferences?.dailyGoalMinutes,
+    reminderEnabled: dto.preferences?.reminderEnabled,
+    reminderTime: dto.preferences?.reminderTime,
     streakDays: dto.stats?.streakDays,
     totalXp: dto.stats?.totalXp,
     wordsLearned: dto.stats?.wordsLearnedCount,
+    lessonsCompleted: dto.stats?.lessonsCompletedCount,
   };
 }
 
@@ -26,9 +30,15 @@ export const profileService = {
    * Lấy thông tin hồ sơ của người dùng hiện tại
    */
   async getProfile(): Promise<ApiResponse<UserProfileDto>> {
-    return httpClient
+    const res = await httpClient
       .get("users/profile")
       .json<ApiResponse<UserProfileDto>>();
+
+    if (res.data) {
+      useAuthStore.getState().setUser(mapUserDtoToStore(res.data));
+    }
+
+    return res;
   },
 
   /**

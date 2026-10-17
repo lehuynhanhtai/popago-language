@@ -10,9 +10,13 @@ export interface UserProfile {
   avatarUrl?: string;
   role: RoleType;
   targetLevel?: "beginner" | "intermediate" | "advanced";
+  dailyGoalMinutes?: number;
+  reminderEnabled?: boolean;
+  reminderTime?: string;
   streakDays?: number;
   totalXp?: number;
   wordsLearned?: number;
+  lessonsCompleted?: number;
 }
 
 interface AuthState {

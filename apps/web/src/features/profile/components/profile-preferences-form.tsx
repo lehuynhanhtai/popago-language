@@ -1,23 +1,49 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuthStore } from "@/stores";
-import { profileService } from "../services/profile-service";
+import { useProfile, useUpdatePreferences } from "../hooks/use-profile";
 import { toast } from "sonner";
 import { getHttpErrorMessage } from "@/lib/http-client";
 import { Bell, Check, Clock, Loader2, Sparkles, Target } from "lucide-react";
 import type { EnglishLevel } from "@repo/shared";
 
 export function ProfilePreferencesForm() {
+  const { data: profile } = useProfile();
   const user = useAuthStore((s) => s.user);
+  const updatePreferencesMutation = useUpdatePreferences();
 
   const [targetLevel, setTargetLevel] = useState<EnglishLevel>(
-    user?.targetLevel || "beginner"
+    profile?.preferences?.targetLevel || user?.targetLevel || "beginner"
   );
-  const [dailyGoalMinutes, setDailyGoalMinutes] = useState<number>(30);
-  const [reminderEnabled, setReminderEnabled] = useState<boolean>(true);
-  const [reminderTime, setReminderTime] = useState<string>("20:00");
-  const [isSaving, setIsSaving] = useState(false);
+  const [dailyGoalMinutes, setDailyGoalMinutes] = useState<number>(
+    profile?.preferences?.dailyGoalMinutes ?? user?.dailyGoalMinutes ?? 15
+  );
+  const [reminderEnabled, setReminderEnabled] = useState<boolean>(
+    profile?.preferences?.reminderEnabled ?? user?.reminderEnabled ?? false
+  );
+  const [reminderTime, setReminderTime] = useState<string>(
+    profile?.preferences?.reminderTime ?? user?.reminderTime ?? "20:00"
+  );
+
+  useEffect(() => {
+    const prefs = profile?.preferences;
+    if (prefs) {
+      if (prefs.targetLevel) setTargetLevel(prefs.targetLevel);
+      if (prefs.dailyGoalMinutes !== undefined)
+        setDailyGoalMinutes(prefs.dailyGoalMinutes);
+      if (prefs.reminderEnabled !== undefined)
+        setReminderEnabled(prefs.reminderEnabled);
+      if (prefs.reminderTime) setReminderTime(prefs.reminderTime);
+    } else if (user) {
+      if (user.targetLevel) setTargetLevel(user.targetLevel);
+      if (user.dailyGoalMinutes !== undefined)
+        setDailyGoalMinutes(user.dailyGoalMinutes);
+      if (user.reminderEnabled !== undefined)
+        setReminderEnabled(user.reminderEnabled);
+      if (user.reminderTime) setReminderTime(user.reminderTime);
+    }
+  }, [profile?.preferences, user]);
 
   const levels: {
     id: EnglishLevel;
@@ -49,8 +75,7 @@ export function ProfilePreferencesForm() {
 
   const handleSave = async () => {
     try {
-      setIsSaving(true);
-      await profileService.updatePreferences({
+      await updatePreferencesMutation.mutateAsync({
         targetLevel,
         dailyGoalMinutes,
         reminderEnabled,
@@ -63,10 +88,10 @@ export function ProfilePreferencesForm() {
         "Không thể lưu tùy chọn học tập"
       );
       toast.error(msg);
-    } finally {
-      setIsSaving(false);
     }
   };
+
+  const isSaving = updatePreferencesMutation.isPending;
 
   return (
     <div className="bg-surface-container-lowest border border-surface-container-high rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
@@ -202,7 +227,9 @@ export function ProfilePreferencesForm() {
             type="button"
             onClick={() => setReminderEnabled(!reminderEnabled)}
             className={`w-12 h-7 rounded-full p-1 transition-colors cursor-pointer flex items-center ${
-              reminderEnabled ? "bg-primary justify-end" : "bg-surface-container-high justify-start"
+              reminderEnabled
+                ? "bg-primary justify-end"
+                : "bg-surface-container-high justify-start"
             }`}
           >
             <span className="w-5 h-5 rounded-full bg-white shadow-xs" />
