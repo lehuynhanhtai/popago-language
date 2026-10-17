@@ -10,6 +10,7 @@ import type {
   ResetPasswordInput,
   UserProfileDto,
 } from "@repo/shared";
+import { setAuthCookies, clearAuthCookies, getAuthCookie, USER_ROLE_COOKIE } from "@/lib/auth-cookies";
 
 export const authService = {
   /**
@@ -84,6 +85,8 @@ export const authService = {
       if (newRefreshToken) {
         localStorage.setItem("refresh_token", newRefreshToken);
       }
+      const currentRole = getAuthCookie(USER_ROLE_COOKIE) || "student";
+      setAuthCookies(idToken, currentRole);
     }
   },
 
@@ -95,6 +98,7 @@ export const authService = {
       localStorage.setItem("access_token", loginResult.idToken);
       localStorage.setItem("refresh_token", loginResult.refreshToken);
       localStorage.setItem("user_profile", JSON.stringify(loginResult.user));
+      setAuthCookies(loginResult.idToken, loginResult.user.role || "student");
     }
   },
 
@@ -112,10 +116,11 @@ export const authService = {
   },
 
   /**
-   * Xóa sạch toàn bộ dữ liệu trong LocalStorage và SessionStorage
+   * Xóa sạch toàn bộ dữ liệu trong LocalStorage, SessionStorage và Cookie
    */
   clearAllStorage() {
     if (typeof window !== "undefined") {
+      clearAuthCookies();
       localStorage.clear();
       sessionStorage.clear();
     }

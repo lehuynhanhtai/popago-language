@@ -39,6 +39,13 @@ export const useAuthStore = create<AuthState>()(
       setUser: (user) => set({ user }),
       clearAuth: () => {
         if (typeof window !== "undefined") {
+          try {
+            const expirePast = "Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/; SameSite=Lax";
+            document.cookie = `auth_token=; ${expirePast}`;
+            document.cookie = `user_role=; ${expirePast}`;
+          } catch {
+            // Ignore
+          }
           localStorage.clear();
           sessionStorage.clear();
         }
