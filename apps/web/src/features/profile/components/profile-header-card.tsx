@@ -1,20 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuthStore } from "@/stores";
-import { profileService } from "../services/profile-service";
+import { useProfile, useUpdateProfile } from "../hooks/use-profile";
 import { toast } from "sonner";
 import { getHttpErrorMessage } from "@/lib/http-client";
 import { Check, Edit2, Loader2, Shield, User, X } from "lucide-react";
 
 export function ProfileHeaderCard() {
+  const { data: profile } = useProfile();
   const user = useAuthStore((s) => s.user);
-  const [isEditing, setIsEditing] = useState(false);
-  const [displayName, setDisplayName] = useState(user?.fullName || "");
-  const [isSaving, setIsSaving] = useState(false);
+  const updateProfileMutation = useUpdateProfile();
 
-  const role = user?.role || "student";
-  const avatarLetter = (user?.fullName || "P").charAt(0).toUpperCase();
+  const [isEditing, setIsEditing] = useState(false);
+  const [displayName, setDisplayName] = useState(
+    profile?.displayName || user?.fullName || ""
+  );
+
+  useEffect(() => {
+    if (profile?.displayName) {
+      setDisplayName(profile.displayName);
+    } else if (user?.fullName) {
+      setDisplayName(user.fullName);
+    }
+  }, [profile?.displayName, user?.fullName]);
+
+  const role = profile?.role || user?.role || "student";
+  const fullName = profile?.displayName || user?.fullName || "Người dùng PoPaGo";
+  const email = profile?.email || user?.email || "Chưa cập nhật email";
+  const avatarLetter = fullName.charAt(0).toUpperCase();
 
   const handleSave = async () => {
     if (!displayName.trim() || displayName.trim().length < 2) {
@@ -23,24 +37,26 @@ export function ProfileHeaderCard() {
     }
 
     try {
-      setIsSaving(true);
-      await profileService.updateProfile({
+      await updateProfileMutation.mutateAsync({
         displayName: displayName.trim(),
       });
       toast.success("Cập nhật thông tin thành công!");
       setIsEditing(false);
     } catch (err) {
-      const msg = await getHttpErrorMessage(err, "Không thể cập nhật thông tin");
+      const msg = await getHttpErrorMessage(
+        err,
+        "Không thể cập nhật thông tin"
+      );
       toast.error(msg);
-    } finally {
-      setIsSaving(false);
     }
   };
 
   const handleCancel = () => {
-    setDisplayName(user?.fullName || "");
+    setDisplayName(fullName);
     setIsEditing(false);
   };
+
+  const isSaving = updateProfileMutation.isPending;
 
   return (
     <div className="bg-surface-container-lowest border border-surface-container-high rounded-3xl p-6 sm:p-8 shadow-xs relative overflow-hidden">
@@ -54,7 +70,10 @@ export function ProfileHeaderCard() {
             {avatarLetter}
           </div>
           <div className="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-xs">
-            <span className="w-4 h-4 rounded-full bg-emerald-500 animate-pulse" title="Tài khoản đang hoạt động" />
+            <span
+              className="w-4 h-4 rounded-full bg-emerald-500 animate-pulse"
+              title="Tài khoản đang hoạt động"
+            />
           </div>
         </div>
 
@@ -98,7 +117,7 @@ export function ProfileHeaderCard() {
             ) : (
               <div className="flex items-center gap-2.5 justify-center sm:justify-start">
                 <h1 className="font-headline font-black text-2xl sm:text-3xl text-on-surface tracking-tight">
-                  {user?.fullName || "Người dùng PoPaGo"}
+                  {fullName}
                 </h1>
                 <button
                   type="button"
@@ -127,13 +146,12 @@ export function ProfileHeaderCard() {
             </div>
           </div>
 
-          <p className="text-sm font-medium text-on-surface-variant">
-            {user?.email || "Chưa cập nhật email"}
-          </p>
+          <p className="text-sm font-medium text-on-surface-variant">{email}</p>
 
           <div className="flex items-center gap-2 justify-center sm:justify-start pt-1">
             <span className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant/80 font-medium bg-surface-container/60 px-3 py-1 rounded-xl">
-              Trạng thái: <span className="font-bold text-emerald-600">Đang hoạt động</span>
+              Trạng thái:{" "}
+              <span className="font-bold text-emerald-600">Đang hoạt động</span>
             </span>
           </div>
         </div>

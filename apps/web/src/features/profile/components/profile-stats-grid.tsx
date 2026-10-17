@@ -1,16 +1,27 @@
 "use client";
 
 import { useAuthStore } from "@/stores";
+import { useProfile } from "../hooks/use-profile";
 import { BookOpen, Flame, Layers, Star } from "lucide-react";
 
 export function ProfileStatsGrid() {
+  const { data: profile } = useProfile();
   const user = useAuthStore((s) => s.user);
+
+  const streakDays =
+    profile?.stats?.streakDays ?? user?.streakDays ?? 0;
+  const totalXp =
+    profile?.stats?.totalXp ?? user?.totalXp ?? 0;
+  const wordsLearned =
+    profile?.stats?.wordsLearnedCount ?? user?.wordsLearned ?? 0;
+  const lessonsCompleted =
+    profile?.stats?.lessonsCompletedCount ?? user?.lessonsCompleted ?? 0;
 
   const stats = [
     {
       id: "streak",
       label: "Chuỗi ngày học liên tục",
-      value: `${user?.streakDays ?? 0} ngày`,
+      value: `${streakDays} ngày`,
       desc: "Giữ lửa hàng ngày để nhận quà Streak!",
       icon: Flame,
       color: "text-orange-500",
@@ -20,7 +31,7 @@ export function ProfileStatsGrid() {
     {
       id: "xp",
       label: "Tổng điểm kinh nghiệm",
-      value: `${user?.totalXp ?? 0} XP`,
+      value: `${totalXp} XP`,
       desc: "Điểm kinh nghiệm tích lũy từ các bài học",
       icon: Star,
       color: "text-amber-500",
@@ -30,7 +41,7 @@ export function ProfileStatsGrid() {
     {
       id: "words",
       label: "Từ vựng đã ghi nhớ",
-      value: `${user?.wordsLearned ?? 0} từ`,
+      value: `${wordsLearned} từ`,
       desc: "Học qua Flashcard và bài tập tương tác",
       icon: Layers,
       color: "text-emerald-500",
@@ -40,7 +51,7 @@ export function ProfileStatsGrid() {
     {
       id: "lessons",
       label: "Bài học đã hoàn thành",
-      value: "12 bài",
+      value: `${lessonsCompleted} bài`,
       desc: "Lộ trình bài giảng theo khung chuẩn quốc tế",
       icon: BookOpen,
       color: "text-primary",
