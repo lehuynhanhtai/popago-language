@@ -15,6 +15,8 @@ import type {
   ForgotPasswordInput,
   ForgotPasswordResult,
   LoginInput,
+  RefreshTokenInput,
+  RefreshTokenResult,
   RegisterInput,
   ResetPasswordInput,
   UserProfileDto,
@@ -316,4 +318,54 @@ export class AuthService {
       throw new BadRequestException('Đặt lại mật khẩu thất bại, vui lòng kiểm tra lại liên kết');
     }
   }
+
+  async refreshToken(input: RefreshTokenInput): Promise<RefreshTokenResult> {
+    const config = this.configService.get<FirebaseConfig>('firebase');
+    const apiKey = config?.apiKey;
+
+    if (!apiKey) {
+      this.logger.warn('Chưa cấu hình FIREBASE_API_KEY cho dịch vụ refreshToken.');
+      return {
+        idToken: 'mock-refreshed-token',
+        refreshToken: input.refreshToken,
+        expiresIn: '3600',
+      };
+    }
+
+    const endpoint = `https://securetoken.googleapis.com/v1/token?key=${apiKey}`;
+
+    let response: Response;
+    try {
+      response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          grant_type: 'refresh_token',
+          refresh_token: input.refreshToken,
+        }).toString(),
+      });
+    } catch (err: unknown) {
+      this.logger.error('Lỗi kết nối tới securetoken.googleapis.com:', err);
+      throw new InternalServerErrorException('Lỗi kết nối tới dịch vụ làm mới phiên');
+    }
+
+    const data = (await response.json()) as {
+      id_token?: string;
+      refresh_token?: string;
+      expires_in?: string;
+      error?: { message?: string };
+    };
+
+    if (!response.ok || !data.id_token) {
+      this.logger.warn(`Làm mới token thất bại: ${JSON.stringify(data.error)}`);
+      throw new UnauthorizedException('Phiên đăng nhập đã hết hạn hoặc refresh token không hợp lệ');
+    }
+
+    return {
+      idToken: data.id_token,
+      refreshToken: data.refresh_token ?? input.refreshToken,
+      expiresIn: data.expires_in ?? '3600',
+    };
+  }
 }
+

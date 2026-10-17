@@ -16,6 +16,7 @@ import {
 import {
   forgotPasswordSchema,
   loginSchema,
+  refreshTokenSchema,
   registerSchema,
   resetPasswordSchema,
 } from '@repo/shared';
@@ -23,6 +24,7 @@ import type {
   ApiResponse as IApiResponse,
   AuthLoginResult,
   ForgotPasswordResult,
+  RefreshTokenResult,
   UserProfileDto,
 } from '@repo/shared';
 import { CurrentUser } from '../../common/decorators/current-user.decorator.js';
@@ -31,6 +33,7 @@ import { ZodValidationPipe } from '../../common/pipes/zod-validation.pipe.js';
 import { AuthService, type RegisterResult } from './auth.service.js';
 import { ForgotPasswordDto } from './dto/forgot-password.dto.js';
 import { LoginDto } from './dto/login.dto.js';
+import { RefreshTokenDto } from './dto/refresh-token.dto.js';
 import { RegisterDto } from './dto/register.dto.js';
 import { ResetPasswordDto } from './dto/reset-password.dto.js';
 
@@ -149,6 +152,34 @@ export class AuthController {
       success: true,
       data: null,
       message: 'Đặt lại mật khẩu thành công. Vui lòng đăng nhập bằng mật khẩu mới.',
+    };
+  }
+
+  @Public()
+  @Post('refresh-token')
+  @HttpCode(HttpStatus.OK)
+  @UsePipes(new ZodValidationPipe(refreshTokenSchema))
+  @ApiOperation({
+    summary: 'Làm mới phiên đăng nhập (Refresh Token)',
+    description:
+      'Sử dụng refreshToken hợp lệ để nhận cặp idToken mới khi phiên cũ hết hạn.',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Làm mới phiên đăng nhập thành công',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Refresh token không hợp lệ hoặc đã bị thu hồi',
+  })
+  async refreshToken(
+    @Body() refreshTokenDto: RefreshTokenDto,
+  ): Promise<IApiResponse<RefreshTokenResult>> {
+    const result = await this.authService.refreshToken(refreshTokenDto);
+    return {
+      success: true,
+      data: result,
+      message: 'Làm mới phiên đăng nhập thành công',
     };
   }
 

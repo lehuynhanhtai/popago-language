@@ -70,3 +70,11 @@ export const resetPasswordSchema = z.object({
 
 export type ResetPasswordInput = z.input<typeof resetPasswordSchema>;
 export type ResetPasswordOutput = z.output<typeof resetPasswordSchema>;
+
+export const refreshTokenSchema = z.object({
+  refreshToken: z.string().trim().min(1, 'Refresh token không được để trống'),
+});
+
+export type RefreshTokenInput = z.input<typeof refreshTokenSchema>;
+export type RefreshTokenOutput = z.output<typeof refreshTokenSchema>;
+
