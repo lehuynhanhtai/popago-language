@@ -367,5 +367,15 @@ export class AuthService {
       expiresIn: data.expires_in ?? '3600',
     };
   }
+
+  async logout(uid: string): Promise<void> {
+    try {
+      await this.firebaseAuth.revokeRefreshTokens(uid);
+      this.logger.log(`Đã thu hồi token đăng nhập thành công cho người dùng: ${uid}`);
+    } catch (error: unknown) {
+      this.logger.error(`Đăng xuất thất bại cho uid=${uid}:`, error);
+      throw new InternalServerErrorException('Đăng xuất thất bại, vui lòng thử lại');
+    }
+  }
 }
 

@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuthStore } from "@/stores";
+import { authService } from "@/features/auth";
 import {
   FiGrid,
   FiBookOpen,
@@ -15,6 +17,7 @@ import {
   FiLogOut,
   FiGift,
   FiFolder,
+  FiLoader,
 } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 
@@ -24,6 +27,8 @@ interface DashboardSidebarProps {
 
 export function DashboardSidebar({ onCloseMobile }: DashboardSidebarProps) {
   const pathname = usePathname();
+  const router = useRouter();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
   const user = useAuthStore((s) => s.user);
   const clearAuth = useAuthStore((s) => s.clearAuth);
 
@@ -131,14 +136,32 @@ export function DashboardSidebar({ onCloseMobile }: DashboardSidebarProps) {
 
         <button
           type="button"
-          onClick={() => {
-            clearAuth();
-            if (onCloseMobile) onCloseMobile();
+          onClick={async () => {
+            if (isLoggingOut) return;
+            try {
+              setIsLoggingOut(true);
+              await authService.logout();
+            } catch (err) {
+              console.warn("Logout error:", err);
+            } finally {
+              clearAuth();
+              if (typeof window !== "undefined") {
+                localStorage.clear();
+                sessionStorage.clear();
+              }
+              if (onCloseMobile) onCloseMobile();
+              router.replace("/login");
+            }
           }}
-          className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-2xl text-xs font-headline font-semibold text-error hover:bg-error/10 transition-colors cursor-pointer"
+          disabled={isLoggingOut}
+          className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-2xl text-xs font-headline font-semibold text-error hover:bg-error/10 disabled:opacity-50 transition-colors cursor-pointer disabled:cursor-not-allowed"
         >
-          <FiLogOut className="w-4 h-4 shrink-0" />
-          <span>Đăng xuất tài khoản</span>
+          {isLoggingOut ? (
+            <FiLoader className="w-4 h-4 shrink-0 animate-spin" />
+          ) : (
+            <FiLogOut className="w-4 h-4 shrink-0" />
+          )}
+          <span>{isLoggingOut ? "Đang đăng xuất..." : "Đăng xuất tài khoản"}</span>
         </button>
       </div>
     </aside>

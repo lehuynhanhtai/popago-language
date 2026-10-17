@@ -19,6 +19,7 @@ describe('AuthController', () => {
     getMe: ReturnType<typeof vi.fn>;
     forgotPassword: ReturnType<typeof vi.fn>;
     resetPassword: ReturnType<typeof vi.fn>;
+    logout: ReturnType<typeof vi.fn>;
   };
 
   beforeEach(() => {
@@ -28,6 +29,7 @@ describe('AuthController', () => {
       getMe: vi.fn(),
       forgotPassword: vi.fn(),
       resetPassword: vi.fn(),
+      logout: vi.fn(),
     };
     controller = new AuthController(authServiceMock as unknown as AuthService);
   });
@@ -185,4 +187,18 @@ describe('AuthController', () => {
       expect(response.data).toEqual(mockUser);
     });
   });
+
+  describe('logout', () => {
+    it('gọi authService.logout với uid và trả về ApiResponse thành công', async () => {
+      authServiceMock.logout.mockResolvedValue(undefined);
+
+      const response = await controller.logout('uid-current');
+
+      expect(authServiceMock.logout).toHaveBeenCalledWith('uid-current');
+      expect(response.success).toBe(true);
+      expect(response.data).toBeNull();
+      expect(response.message).toBe('Đăng xuất thành công');
+    });
+  });
 });
+

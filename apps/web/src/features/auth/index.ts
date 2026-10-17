@@ -6,3 +6,4 @@ export * from "./components/register-form";
 export * from "./components/forgot-password-form";
 export * from "./components/reset-password-form";
 export * from "./components/auth-loading-overlay";
+export * from "./services/auth-service";

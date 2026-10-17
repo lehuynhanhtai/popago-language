@@ -67,8 +67,20 @@ describe('FirebaseAuthGuard', () => {
     const result = await guard.canActivate(context);
 
     expect(result).toBe(true);
-    expect(authMock.verifyIdToken).toHaveBeenCalledWith('valid_id_token');
+    expect(authMock.verifyIdToken).toHaveBeenCalledWith('valid_id_token', true);
     const req = context.switchToHttp().getRequest() as { user: typeof mockUser };
     expect(req.user).toEqual(mockUser);
+  });
+
+  it('báo lỗi nếu token đã bị thu hồi hoặc không hợp lệ', async () => {
+    vi.spyOn(reflector, 'getAllAndOverride').mockReturnValue(false);
+    (authMock.verifyIdToken as ReturnType<typeof vi.fn>).mockRejectedValue(
+      new Error('auth/id-token-revoked'),
+    );
+
+    const context = createMockContext({ authorization: 'Bearer revoked_token' });
+    await expect(guard.canActivate(context)).rejects.toThrow(
+      'Token không hợp lệ, đã hết hạn hoặc đã bị thu hồi',
+    );
   });
 });

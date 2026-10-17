@@ -99,13 +99,32 @@ export const authService = {
   },
 
   /**
+   * Đăng xuất tài khoản người dùng
+   */
+  async logout(): Promise<void> {
+    try {
+      await httpClient.post("auth/logout").json<ApiResponse<null>>();
+    } catch (error) {
+      console.warn("Logout API warning:", error);
+    } finally {
+      this.clearAllStorage();
+    }
+  },
+
+  /**
+   * Xóa sạch toàn bộ dữ liệu trong LocalStorage và SessionStorage
+   */
+  clearAllStorage() {
+    if (typeof window !== "undefined") {
+      localStorage.clear();
+      sessionStorage.clear();
+    }
+  },
+
+  /**
    * Xóa phiên đăng nhập
    */
   clearAuthSession() {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("access_token");
-      localStorage.removeItem("refresh_token");
-      localStorage.removeItem("user_profile");
-    }
+    this.clearAllStorage();
   },
 };
