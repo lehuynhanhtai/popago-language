@@ -36,10 +36,8 @@ export function DashboardSidebar({ onCloseMobile }: DashboardSidebarProps) {
 
   const studentNavItems = [
     { label: "Tổng quan học tập", href: "/dashboard", icon: FiGrid },
-    { label: "Lộ trình bài giảng", href: "/courses", icon: FiBookOpen },
-    { label: "Từ vựng & Flashcard", href: "/flashcards", icon: FiLayers },
-    { label: "Luyện phát âm AI", href: "/practice", icon: FiMic },
-    { label: "Bảng vinh danh", href: "/leaderboard", icon: FiAward },
+    { label: "Nhật ký tiếng anh", href: "/journal", icon: FiBookOpen },
+    { label: "Từ vựng", href: "/vocabulary", icon: FiLayers },
   ];
 
   const adminNavItems = [
