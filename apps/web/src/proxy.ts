@@ -23,7 +23,7 @@ const PROTECTED_PREFIXES = [
  */
 const ADMIN_ONLY_PREFIXES = ["/users", "/content", "/settings"];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
   const authToken = request.cookies.get(AUTH_TOKEN_COOKIE)?.value;

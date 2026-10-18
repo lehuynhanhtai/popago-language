@@ -5,7 +5,8 @@ export class ZodValidationPipe implements PipeTransform {
   constructor(private readonly schema: ZodSchema) {}
 
   transform(value: unknown, metadata?: ArgumentMetadata) {
-    if (metadata && metadata.type !== 'body') {
+    // Chỉ bỏ qua các custom decorator (như @CurrentUser)
+    if (metadata?.type === 'custom') {
       return value;
     }
 

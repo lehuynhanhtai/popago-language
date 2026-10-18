@@ -14,6 +14,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "seed:admin": "tsx scripts/seed-admin.ts",
+    "seed:journal": "tsx scripts/seed-journal.ts",
     "lint": "oxlint --type-aware src/ test/",
     "check-types": "tsc --noEmit",
     "test": "vitest run",

@@ -7,6 +7,7 @@ import { firebaseConfig } from './config/firebase.config.js';
 import { FirebaseModule } from './providers/firebase/index.js';
 import { UsersModule } from './modules/users/users.module.js';
 import { AuthModule } from './modules/auth/auth.module.js';
+import { JournalsModule } from './modules/journals/journals.module.js';
 import { FirebaseAuthGuard } from './common/guards/firebase-auth.guard.js';
 
 @Module({
@@ -19,6 +20,7 @@ import { FirebaseAuthGuard } from './common/guards/firebase-auth.guard.js';
     FirebaseModule,
     UsersModule,
     AuthModule,
+    JournalsModule,
   ],
   controllers: [AppController],
   providers: [
