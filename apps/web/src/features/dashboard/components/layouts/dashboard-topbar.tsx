@@ -8,24 +8,43 @@ import { RoleSwitcherBadge } from "../shared/role-switcher-badge";
 
 interface DashboardTopbarProps {
   onOpenMobileMenu: () => void;
+  isDesktopSidebarOpen?: boolean;
+  onToggleDesktopSidebar?: () => void;
 }
 
-export function DashboardTopbar({ onOpenMobileMenu }: DashboardTopbarProps) {
+export function DashboardTopbar({
+  onOpenMobileMenu,
+  isDesktopSidebarOpen,
+  onToggleDesktopSidebar,
+}: DashboardTopbarProps) {
   const user = useAuthStore((s) => s.user);
   const role = user?.role || "student";
 
   return (
     <header className="h-20 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-surface-container-high/80 px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30 transition-all">
-      {/* Mobile Toggle & Left Greeting */}
+      {/* Mobile Toggle, Desktop Toggle & Left Greeting */}
       <div className="flex items-center gap-3">
         <button
           type="button"
           onClick={onOpenMobileMenu}
-          className="lg:hidden p-2 rounded-2xl text-on-surface hover:bg-surface-container transition-colors"
+          className="lg:hidden p-2 rounded-2xl text-on-surface hover:bg-surface-container transition-colors cursor-pointer"
           aria-label="Mở menu"
         >
           <FiMenu className="w-5 h-5" />
         </button>
+
+        {/* Nút mở lại Sidebar trên Desktop khi đang bị ẩn */}
+        {!isDesktopSidebarOpen && onToggleDesktopSidebar && (
+          <button
+            type="button"
+            onClick={onToggleDesktopSidebar}
+            className="hidden lg:flex items-center justify-center p-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all cursor-pointer border border-surface-container-high shadow-xs"
+            title="Hiện thanh điều hướng"
+            aria-label="Hiện thanh điều hướng"
+          >
+            <FiMenu className="w-5 h-5" />
+          </button>
+        )}
 
         <div className="hidden sm:block">
           <p className="text-xs font-headline font-semibold text-on-surface-variant">

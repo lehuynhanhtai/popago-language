@@ -18,14 +18,16 @@ import {
   FiGift,
   FiFolder,
   FiLoader,
+  FiChevronsLeft,
 } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 
 interface DashboardSidebarProps {
   onCloseMobile?: () => void;
+  onToggleDesktop?: () => void;
 }
 
-export function DashboardSidebar({ onCloseMobile }: DashboardSidebarProps) {
+export function DashboardSidebar({ onCloseMobile, onToggleDesktop }: DashboardSidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
@@ -53,23 +55,38 @@ export function DashboardSidebar({ onCloseMobile }: DashboardSidebarProps) {
     <aside className="w-64 h-full flex flex-col justify-between bg-surface-container-lowest border-r border-surface-container-high/80 p-5 select-none">
       {/* Top Header / Logo */}
       <div>
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 pb-6 border-b border-surface-container-high/60 group"
-          onClick={onCloseMobile}
-        >
-          <div className="w-10 h-10 rounded-2xl bg-primary flex items-center justify-center text-on-primary font-headline font-black text-xl shadow-md group-hover:scale-105 group-hover:rotate-3 transition-transform">
-            P
-          </div>
-          <div className="flex flex-col">
-            <span className="font-headline font-extrabold text-xl tracking-tight text-primary">
-              PoPaGo
-            </span>
-            <span className="text-[10px] font-headline font-bold text-secondary uppercase tracking-widest -mt-1">
-              {role === "admin" ? "Admin Portal" : "Playground"}
-            </span>
-          </div>
-        </Link>
+        <div className="flex items-center justify-between pb-6 border-b border-surface-container-high/60">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group"
+            onClick={onCloseMobile}
+          >
+            <div className="w-10 h-10 rounded-2xl bg-primary flex items-center justify-center text-on-primary font-headline font-black text-xl shadow-md group-hover:scale-105 group-hover:rotate-3 transition-transform">
+              P
+            </div>
+            <div className="flex flex-col">
+              <span className="font-headline font-extrabold text-xl tracking-tight text-primary">
+                PoPaGo
+              </span>
+              <span className="text-[10px] font-headline font-bold text-secondary uppercase tracking-widest -mt-1">
+                {role === "admin" ? "Admin Portal" : "Playground"}
+              </span>
+            </div>
+          </Link>
+
+          {/* Nút thu gọn Sidebar trên Desktop */}
+          {onToggleDesktop && (
+            <button
+              type="button"
+              onClick={onToggleDesktop}
+              className="hidden lg:flex p-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors cursor-pointer"
+              title="Ẩn thanh điều hướng"
+              aria-label="Ẩn thanh điều hướng"
+            >
+              <FiChevronsLeft className="w-5 h-5" />
+            </button>
+          )}
+        </div>
 
         {/* Role identifier badge in sidebar */}
         <div className="mt-4 px-3 py-2 rounded-2xl bg-surface-container flex items-center justify-between">

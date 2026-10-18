@@ -13,4 +13,11 @@ export interface UserProfile {
   targetLevel?: 'beginner' | 'intermediate' | 'advanced';
 }
 
+export interface PaginatedResult<T> {
+  items: T[];
+  lastId?: string;
+  hasMore: boolean;
+}
+
 export * from './user.js';
+export * from './journal.js';
