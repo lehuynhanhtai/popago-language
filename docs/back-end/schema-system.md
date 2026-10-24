@@ -154,4 +154,65 @@ model Journal {
   @@index([userId, isFavorite, mood, writtenDate(sort: Desc), createdAt(sort: Desc)])
   @@index([userId, tags, writtenDate(sort: Desc), createdAt(sort: Desc)])
 }
+
+<!-- ============================================ -->
+<!-- BẮT ĐẦU: SCHEMA CHO TÍNH NĂNG TỪ VỰNG & BỘ TỪ -->
+<!-- ============================================ -->
+
+enum PartOfSpeech {
+  noun
+  verb
+  adjective
+  adverb
+  preposition
+  conjunction
+  phrase
+  idiom
+  other
+}
+
+type VocabularyExample {
+  sentence      String
+  translationVi String
+}
+
+<!-- Bảng bộ từ vựng cá nhân theo chủ đề -->
+model Deck {
+  id           String     @id
+  userId       String     // Khớp với User.id (Firebase Auth UID)
+  name         String
+  description  String?
+  themeColor   String     @default("#10b981")
+  icon         String     @default("📚")
+  tags         String[]   @default([])
+  totalWords   Int        @default(0)
+  learnedWords Int        @default(0)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@map("decks")
+  @@index([userId, createdAt(sort: Desc)])
+  @@index([userId, name])
+}
+
+<!-- Bảng thẻ từ vựng trong bộ từ -->
+model Vocabulary {
+  id           String              @id
+  deckId       String              // Khớp với Deck.id
+  userId       String              // Khớp với User.id
+  word         String
+  phonetic     String?
+  partOfSpeech PartOfSpeech        @default(noun)
+  meaningVi    String
+  definitionEn String?
+  examples     VocabularyExample[] @default([])
+  isLearned    Boolean             @default(false)
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  @@map("vocabularies")
+  @@index([deckId, createdAt(sort: Desc)])
+  @@index([userId, deckId, isLearned, createdAt(sort: Desc)])
+  @@index([deckId, word])
+}
 ```
