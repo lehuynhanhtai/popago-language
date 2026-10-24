@@ -317,7 +317,11 @@ export function JournalNotebook() {
           {/* Nếp gấp gáy sổ mép trái trang phải */}
           <div className="hidden lg:block absolute top-0 left-0 w-6 h-full bg-gradient-to-r from-black/5 to-transparent pointer-events-none" />
 
-          <div className="space-y-4 flex flex-col flex-1 min-h-0">
+          <div
+            className={`space-y-4 flex flex-col flex-1 min-h-0 ${
+              !isCreatingNew ? "overflow-y-auto custom-scrollbar pr-1.5 pb-2" : ""
+            }`}
+          >
             {/* 1. Header Trang Viết: Con dấu ngày tháng + Mood & Weather */}
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#e8dfcf]">
               <div className="flex items-center gap-2">
@@ -469,7 +473,13 @@ export function JournalNotebook() {
             </div>
 
             {/* 3. NỘI DUNG TRANG GIẤY KẺ DÒNG (LINED NOTEBOOK WRITING CANVAS) */}
-            <div className="relative flex-1 min-h-0 flex flex-col">
+            <div
+              className={`relative ${
+                isCreatingNew
+                  ? "flex-1 min-h-0 flex flex-col"
+                  : "shrink-0 min-h-[90px]"
+              }`}
+            >
               {isCreatingNew ? (
                 <textarea
                   placeholder="Bắt đầu viết nhật ký bằng tiếng Anh của bạn ở đây... (ví dụ: What made you happy today? How did you practice English?)"
@@ -486,7 +496,7 @@ export function JournalNotebook() {
                 />
               ) : (
                 <div
-                  className="text-[15px] sm:text-base text-[#2c2215] font-medium flex-1 overflow-y-auto pr-1.5 custom-scrollbar min-h-0 whitespace-pre-wrap p-0"
+                  className="text-[15px] sm:text-base text-[#2c2215] font-medium pr-1.5 whitespace-pre-wrap p-0"
                   style={{
                     backgroundImage:
                       "linear-gradient(to bottom, transparent 35px, #eae2d3 35px 36px)",
@@ -503,7 +513,7 @@ export function JournalNotebook() {
             {/* 4. HỘP ĐÁNH GIÁ VÀ GÓP Ý CỦA AI (AI INK CORRECTION OVERLAY) */}
             {!isCreatingNew && activeEntry.aiAnalysis && (
               showAiFeedback ? (
-                <div className="rounded-[16px] p-3.5 sm:p-5 bg-gradient-to-br from-emerald-500/10 via-primary/5 to-purple-500/10 border border-emerald-500/20 shadow-xs space-y-3 animate-in fade-in duration-200">
+                <div className="rounded-[16px] p-3.5 sm:p-5 bg-gradient-to-br from-emerald-500/10 via-primary/5 to-purple-500/10 border border-emerald-500/20 shadow-xs space-y-3 animate-in fade-in duration-200 shrink-0">
                   <div className="flex items-start sm:items-center justify-between gap-2">
                     <div className="flex items-center gap-2.5 min-w-0">
                       <div className="w-8 h-8 rounded-[10px] bg-emerald-500 text-white flex items-center justify-center shadow-xs shrink-0">
@@ -520,13 +530,21 @@ export function JournalNotebook() {
                     </div>
 
                     <div className="flex items-center gap-1.5">
-                      {/* Nút yêu cầu AI chấm lại */}
+                      {/* Nút yêu cầu AI chấm lại (Vô hiệu hóa khi bài đã được chấm điểm) */}
                       <button
                         type="button"
-                        disabled={isAnalyzing}
+                        disabled={Boolean(activeEntry.aiAnalysis) || isAnalyzing}
                         onClick={() => activeEntry.id && handleAnalyzeAgain(activeEntry.id)}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-emerald-800 hover:text-emerald-950 px-2.5 py-1 rounded-[8px] bg-emerald-100/70 hover:bg-emerald-100 transition-colors cursor-pointer shrink-0 disabled:opacity-50"
-                        title="Yêu cầu AI chấm lại bài viết"
+                        className={`inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-[8px] transition-colors shrink-0 ${
+                          activeEntry.aiAnalysis
+                            ? "bg-emerald-100/40 text-emerald-800/40 cursor-not-allowed border border-emerald-200/50"
+                            : "bg-emerald-100/70 hover:bg-emerald-100 text-emerald-800 hover:text-emerald-950 cursor-pointer"
+                        }`}
+                        title={
+                          activeEntry.aiAnalysis
+                            ? "Bài viết này đã được AI chấm điểm"
+                            : "Yêu cầu AI chấm lại bài viết"
+                        }
                       >
                         <FiRefreshCw className={`w-3.5 h-3.5 ${isAnalyzing ? "animate-spin" : ""}`} />
                         <span className="hidden sm:inline">Chấm lại</span>
@@ -577,7 +595,7 @@ export function JournalNotebook() {
                 </div>
               ) : (
                 /* Trạng thái thu gọn (Collapsed Banner) với nút mở lại */
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-[14px] bg-emerald-500/10 border border-emerald-500/25 shadow-xs transition-all animate-in fade-in duration-200">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-[14px] bg-emerald-500/10 border border-emerald-500/25 shadow-xs transition-all animate-in fade-in duration-200 shrink-0">
                   <div className="flex items-center gap-2.5 min-w-0">
                     <div className="w-7 h-7 rounded-[8px] bg-emerald-600 text-white flex items-center justify-center shadow-xs shrink-0">
                       <Sparkles className="w-3.5 h-3.5" />
@@ -604,6 +622,30 @@ export function JournalNotebook() {
                   </button>
                 </div>
               )
+            )}
+
+            {/* Banner yêu cầu chấm điểm nếu bài viết chưa từng được chấm */}
+            {!isCreatingNew && !activeEntry.aiAnalysis && activeEntry.id && activeEntry.id !== "empty" && (
+              <div className="flex items-center justify-between gap-3 p-3.5 rounded-[14px] bg-emerald-500/10 border border-emerald-500/20 shrink-0">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-7 h-7 rounded-[8px] bg-emerald-600 text-white flex items-center justify-center shadow-xs shrink-0">
+                    <Sparkles className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="text-xs font-bold text-[#183a2c] truncate">
+                    Bài viết này chưa được AI chấm điểm
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  disabled={isAnalyzing}
+                  onClick={() => activeEntry.id && handleAnalyzeAgain(activeEntry.id)}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-white px-3 py-1.5 rounded-[10px] bg-emerald-600 hover:bg-emerald-700 transition-colors cursor-pointer shrink-0 disabled:opacity-50"
+                  title="Gửi bài để AI chấm điểm và nhận xét"
+                >
+                  <FiRefreshCw className={`w-3.5 h-3.5 ${isAnalyzing ? "animate-spin" : ""}`} />
+                  <span>Chấm điểm ngay</span>
+                </button>
+              </div>
             )}
           </div>
 

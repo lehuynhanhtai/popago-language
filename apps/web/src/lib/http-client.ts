@@ -164,7 +164,6 @@ export async function getHttpErrorMessage(
  */
 export const httpClient = ky.create({
   prefix: API_BASE_URL,
-  timeout: 15000,
   retry: {
     limit: 1,
     methods: ["get"],

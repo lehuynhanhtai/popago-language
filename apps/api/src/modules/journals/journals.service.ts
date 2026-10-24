@@ -5,6 +5,7 @@ import {
 } from '@nestjs/common';
 import { UsersService } from '../users/users.service.js';
 import { JournalsRepository } from './journals.repository.js';
+import { GeminiService } from '../../providers/gemini/index.js';
 import type { JournalEntity } from './entities/journal.entity.js';
 import type {
   CreateJournalDto,
@@ -24,6 +25,7 @@ export class JournalsService {
   constructor(
     private readonly journalsRepository: JournalsRepository,
     private readonly usersService: UsersService,
+    private readonly geminiService: GeminiService,
   ) {}
 
   // -------------------------------------------------------
@@ -93,9 +95,12 @@ export class JournalsService {
       await this.tryAwardXpAndStreak(userId, writtenDate);
     }
 
-    // Mock AI phân tích (placeholder — sẽ tích hợp Gemini API sau)
+    // Phân tích AI qua Gemini
     if (dto.analyzeImmediately !== false) {
-      const aiAnalysis = this.buildMockAiAnalysis(dto.content, wordCount);
+      const aiAnalysis = await this.geminiService.analyzeJournal(
+        dto.content,
+        wordCount,
+      );
       await this.journalsRepository.update(created.id!, { aiAnalysis });
       return this.toDto({ ...created, aiAnalysis });
     }
@@ -170,7 +175,10 @@ export class JournalsService {
     }
     this.assertOwnership(userId, entry);
 
-    const aiAnalysis = this.buildMockAiAnalysis(entry.content, entry.wordCount);
+    const aiAnalysis = await this.geminiService.analyzeJournal(
+      entry.content,
+      entry.wordCount,
+    );
     await this.journalsRepository.update(id, { aiAnalysis });
     return this.toDto({ ...entry, aiAnalysis });
   }
@@ -222,31 +230,6 @@ export class JournalsService {
     }
   }
 
-  /** Mock AI Analysis — sẽ thay bằng Gemini API call thực tế */
-  private buildMockAiAnalysis(content: string, wordCount: number): JournalAiAnalysis {
-    const score = Math.min(100, 60 + wordCount);
-    const cefrMap: Array<[number, JournalAiAnalysis['cefrEstimate']]> = [
-      [80, 'C1'],
-      [65, 'B2'],
-      [50, 'B1'],
-      [35, 'A2'],
-      [0, 'A1'],
-    ];
-    const cefrEstimate =
-      cefrMap.find(([threshold]) => score >= threshold)?.[1] ?? 'A1';
-
-    return {
-      overallScore: score,
-      cefrEstimate,
-      encouragement:
-        wordCount >= MIN_WORDS_FOR_XP
-          ? 'Tuyệt vời! Bạn đã đạt mục tiêu viết nhật ký hôm nay. Tiếp tục phát huy!'
-          : `Bạn đã viết ${wordCount} từ. Hãy cố gắng viết thêm ${MIN_WORDS_FOR_XP - wordCount} từ nữa để đạt mục tiêu!`,
-      strengths: ['Nỗ lực viết bằng tiếng Anh mỗi ngày là thói quen tuyệt vời!'],
-      feedbackList: [],
-      analyzedAt: new Date(),
-    };
-  }
 
   toDto(entity: JournalEntity): JournalDto {
     return {
