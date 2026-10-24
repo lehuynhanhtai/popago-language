@@ -3,6 +3,7 @@ import { ForbiddenException, NotFoundException } from '@nestjs/common';
 import { JournalsService } from './journals.service.js';
 import { JournalsRepository } from './journals.repository.js';
 import { UsersService } from '../users/users.service.js';
+import type { GeminiService } from '../../providers/gemini/index.js';
 import type { JournalEntity } from './entities/journal.entity.js';
 
 const makeEntry = (overrides: Partial<JournalEntity> = {}): JournalEntity => ({
@@ -23,6 +24,7 @@ describe('JournalsService', () => {
   let service: JournalsService;
   let repoMock: Partial<Record<keyof JournalsRepository, any>>;
   let usersMock: Partial<Record<keyof UsersService, any>>;
+  let geminiMock: Partial<Record<keyof GeminiService, any>>;
 
   beforeEach(() => {
     repoMock = {
@@ -42,9 +44,21 @@ describe('JournalsService', () => {
       updatePreferences: vi.fn(),
     };
 
+    geminiMock = {
+      analyzeJournal: vi.fn().mockResolvedValue({
+        overallScore: 85,
+        cefrEstimate: 'B2',
+        encouragement: 'Bài viết tốt lắm!',
+        strengths: ['Từ vựng phong phú'],
+        feedbackList: [],
+        analyzedAt: new Date(),
+      }),
+    };
+
     service = new JournalsService(
       repoMock as unknown as JournalsRepository,
       usersMock as unknown as UsersService,
+      geminiMock as unknown as GeminiService,
     );
   });
 
