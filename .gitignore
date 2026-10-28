@@ -49,5 +49,7 @@ Thumbs.db
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
-.agents/*
+
+# ECC agent surface — local-only, per-developer (skills/agents/workflows/rules)
+.agents/
 .code-review-graph/
