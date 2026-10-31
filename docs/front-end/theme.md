@@ -62,18 +62,21 @@ Nếu sau này cần phân biệt bằng sắc độ, đổi `secondary-emphasis
 
 ## Thang shape (radius)
 
-Không override thang mặc định của Tailwind (trước đây `--radius-lg/xl` bị đổi khiến `rounded-xl` to hơn
-`rounded-3xl`). Chỉ có 4 bậc ngữ nghĩa:
+Dùng thẳng thang mặc định của Tailwind, **không** thêm hay override token `--radius-*`. Trước đây
+`--radius-lg/xl` bị đổi (32/48px) khiến `rounded-xl` to hơn `rounded-3xl`, menu dropdown bị biến
+thành viên thuốc.
 
-| Token | Giá trị | Dùng cho |
-|---|---|---|
-| `rounded-field` | 16px | Input, checkbox, badge, control nhỏ |
-| `rounded-panel` | 32px | Panel, chip lớn |
-| `rounded-hero` | 48px | Control bo lớn / dạng pill |
-| `rounded-pill` | 9999px | Avatar, badge tròn, nút tròn |
+| Lớp | Class | Giá trị | Dùng cho |
+|---|---|---|---|
+| Nhỏ | `rounded-md` | 6px | Checkbox, badge vuông nhỏ |
+| Control | `rounded-xl` | 12px | Button, input, select, tab, icon button |
+| Nổi | `rounded-2xl` | 16px | Menu, dropdown, popover, tooltip |
+| Khối | `rounded-3xl` | 24px | Card, dialog, panel lớn |
+| Tròn | `rounded-full` | pill | Avatar, badge tròn, nút tròn |
 
-`rounded-2xl` (16px) và `rounded-3xl` (24px) vẫn dùng được cho card; card chuẩn nằm trong
-`components/ui/card.tsx` (`rounded-3xl`).
+Quy tắc: **bán kính ≤ 1/3 chiều cao** phần tử. Hộp cao 40px thì tối đa `rounded-xl` (12px); chỉ dùng
+`rounded-full` khi thực sự muốn hình viên thuốc (CTA marketing, chip, avatar).
+`<Button shape="pill">` dành cho CTA ở landing, không dùng trong app.
 
 ## Component primitive
 

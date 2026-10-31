@@ -27,8 +27,8 @@ export const buttonVariants = cva(
         lg: "h-12 px-6 text-sm",
       },
       shape: {
-        field: "rounded-field",
-        pill: "rounded-pill",
+        field: "rounded-xl",
+        pill: "rounded-full",
       },
     },
     defaultVariants: {
@@ -67,7 +67,7 @@ export function Button({
       {isLoading ? (
         <span
           aria-hidden="true"
-          className="h-4 w-4 animate-spin rounded-pill border-2 border-current border-t-transparent"
+          className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"
         />
       ) : (
         leftIcon

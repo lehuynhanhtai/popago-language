@@ -188,7 +188,7 @@ export function RegisterForm() {
           {/* Password strength indicator */}
           {passwordValue && (
             <div className="mt-2 space-y-1">
-              <div className="w-full h-1.5 bg-surface-container-high rounded-pill overflow-hidden">
+              <div className="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
                 <div
                   className={cn("h-full transition-all duration-300", passwordStrength.color)}
                   style={{ width: `${passwordStrength.score}%` }}
@@ -221,7 +221,7 @@ export function RegisterForm() {
                   type="button"
                   onClick={() => setValue("targetLevel", lvl.id as any)}
                   className={cn(
-                    "py-2 px-1 text-xs rounded-hero font-headline font-medium border text-center transition-all cursor-pointer",
+                    "py-2 px-1 text-xs rounded-xl font-headline font-medium border text-center transition-all cursor-pointer",
                     selectedLevel === lvl.id
                       ? "bg-primary text-on-primary border-primary shadow-xs"
                       : "bg-surface-container-lowest border-surface-container-high text-on-surface hover:bg-surface-container"
@@ -250,7 +250,7 @@ export function RegisterForm() {
                   type="button"
                   onClick={() => setValue("dailyGoalMinutes", goal.minutes)}
                   className={cn(
-                    "py-2 px-1 text-xs rounded-hero font-headline font-medium border text-center transition-all cursor-pointer",
+                    "py-2 px-1 text-xs rounded-xl font-headline font-medium border text-center transition-all cursor-pointer",
                     selectedGoal === goal.minutes
                       ? "bg-secondary-container text-on-secondary-container border-secondary-container shadow-xs font-bold"
                       : "bg-surface-container-lowest border-surface-container-high text-on-surface hover:bg-surface-container"
@@ -270,7 +270,7 @@ export function RegisterForm() {
               type="checkbox"
               checked={agreedTerms}
               onChange={(e) => setAgreedTerms(e.target.checked)}
-              className="w-4 h-4 mt-0.5 rounded-field text-primary border-outline-variant focus-visible:ring-primary/20 accent-primary shrink-0"
+              className="w-4 h-4 mt-0.5 rounded-md text-primary border-outline-variant focus-visible:ring-primary/20 accent-primary shrink-0"
             />
             <span className="text-xs text-on-surface-variant leading-relaxed">
               Tôi đồng ý với{" "}

@@ -167,7 +167,7 @@ export function LoginForm() {
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
-              className="w-4 h-4 rounded-field text-primary border-outline-variant focus-visible:ring-primary/20 accent-primary"
+              className="w-4 h-4 rounded-md text-primary border-outline-variant focus-visible:ring-primary/20 accent-primary"
             />
             <span className="text-xs font-medium text-on-surface-variant">
               Ghi nhớ đăng nhập trên thiết bị này

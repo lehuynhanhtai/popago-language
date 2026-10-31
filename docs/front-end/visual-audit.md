@@ -291,7 +291,8 @@ G7 kiểm bằng Playwright (`e2e-testing` / `browser-qa`): đếm `h1` trên t�
 
 | Hạng mục P1 | Trước | Sau |
 |---|---|---|
-| Thang radius bị đảo | `rounded-lg`=32px > `rounded-3xl`=24px, `rounded-xl`=48px | 4 bậc ngữ nghĩa `field/panel/hero/pill`, **không** override thang Tailwind |
+| Thang radius bị đảo | `rounded-lg`=32px > `rounded-3xl`=24px, `rounded-xl`=48px | Dùng thẳng thang Tailwind: `md` 6 · `xl` 12 · `2xl` 16 · `3xl` 24 · `full`; **không** còn token `--radius-*` tự định nghĩa |
+| Menu dropdown của card | `rounded-xl` cũ = 48px → biến menu 160px thành viên thuốc | `rounded-2xl` (16px); quy tắc mới: bán kính ≤ 1/3 chiều cao |
 | `rounded-lg` / `rounded-xl` / `rounded` thô | 30 / 83 / 5 | **0** (đã migrate sang token, hình dạng giữ nguyên) |
 | Palette thô trong vocabulary | 360 utility (slate 238, indigo 72, rose 30, emerald 20…) | **0** |
 | Button dùng chung | không có | `<Button>` 4 variant × 3 size × 2 shape, 12 chỗ dùng; gradient ở 4 form auth đã bỏ |

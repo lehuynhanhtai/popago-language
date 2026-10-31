@@ -79,7 +79,7 @@ export function DashboardSidebar({ onCloseMobile, onToggleDesktop }: DashboardSi
             <button
               type="button"
               onClick={onToggleDesktop}
-              className="hidden lg:flex p-1.5 rounded-hero text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors cursor-pointer"
+              className="hidden lg:flex p-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors cursor-pointer"
               title="Ẩn thanh điều hướng"
               aria-label="Ẩn thanh điều hướng"
             >
@@ -93,7 +93,7 @@ export function DashboardSidebar({ onCloseMobile, onToggleDesktop }: DashboardSi
           <div className="flex items-center gap-2">
             <div
               className={cn(
-                "w-2.5 h-2.5 rounded-pill animate-pulse",
+                "w-2.5 h-2.5 rounded-full animate-pulse",
                 role === "admin" ? "bg-secondary" : "bg-primary"
               )}
             />
@@ -101,7 +101,7 @@ export function DashboardSidebar({ onCloseMobile, onToggleDesktop }: DashboardSi
               {role === "admin" ? "Quản Trị Viên" : "Học Viên"}
             </span>
           </div>
-          <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider bg-surface-container-lowest px-2 py-0.5 rounded-pill">
+          <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider bg-surface-container-lowest px-2 py-0.5 rounded-full">
             {role === "admin" ? "Admin" : "Free"}
           </span>
         </div>

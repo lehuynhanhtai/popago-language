@@ -113,7 +113,7 @@ export function JournalNotebook() {
         <button
           type="button"
           onClick={() => setMobileTab("list")}
-          className={`flex-1 py-2 px-3 rounded-hero text-xs font-headline font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+          className={`flex-1 py-2 px-3 rounded-xl text-xs font-headline font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
             mobileTab === "list"
               ? "bg-[#fbf9f4] text-[#2c050a] shadow-sm scale-100"
               : "text-white/80 hover:text-white"
@@ -125,7 +125,7 @@ export function JournalNotebook() {
         <button
           type="button"
           onClick={() => setMobileTab("editor")}
-          className={`flex-1 py-2 px-3 rounded-hero text-xs font-headline font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+          className={`flex-1 py-2 px-3 rounded-xl text-xs font-headline font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
             mobileTab === "editor"
               ? "bg-[#fbf9f4] text-[#2c050a] shadow-sm scale-100"
               : "text-white/80 hover:text-white"
@@ -169,7 +169,7 @@ export function JournalNotebook() {
                 placeholder="Tìm kiếm theo tiêu đề, nội dung..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-1.5 text-xs rounded-hero bg-[#ede8dc] border border-[#dcd3c1] text-amber-950 placeholder:text-amber-900/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium"
+                className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl bg-[#ede8dc] border border-[#dcd3c1] text-amber-950 placeholder:text-amber-900/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium"
               />
             </div>
 
@@ -198,7 +198,7 @@ export function JournalNotebook() {
                     value={fromDate}
                     max={toDate || todayStr}
                     onChange={(e) => setFromDate(e.target.value)}
-                    className="w-full px-2 py-1 text-[11px] rounded-panel bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
+                    className="w-full px-2 py-1 text-[11px] rounded-2xl bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
                   />
                 </div>
                 <div>
@@ -209,7 +209,7 @@ export function JournalNotebook() {
                     min={fromDate}
                     max={todayStr}
                     onChange={(e) => setToDate(e.target.value)}
-                    className="w-full px-2 py-1 text-[11px] rounded-panel bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
+                    className="w-full px-2 py-1 text-[11px] rounded-2xl bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
                   />
                 </div>
               </div>
@@ -264,10 +264,10 @@ export function JournalNotebook() {
 
                     <div className="flex items-center justify-between text-[11px] text-amber-900/60 font-semibold mb-1 pr-4">
                       <span className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-pill bg-amber-500" />
+                        <span className="w-2 h-2 rounded-full bg-amber-500" />
                         {item.writtenDate}
                       </span>
-                      <span className="px-1.5 py-0.5 rounded-field bg-amber-100/80 text-amber-900 font-bold">
+                      <span className="px-1.5 py-0.5 rounded-xl bg-amber-100/80 text-amber-900 font-bold">
                         {item.wordCount} từ
                       </span>
                     </div>
@@ -329,14 +329,14 @@ export function JournalNotebook() {
                 <button
                   type="button"
                   onClick={() => setMobileTab("list")}
-                  className="lg:hidden inline-flex items-center gap-1 px-2.5 py-1.5 rounded-panel bg-[#efe9dc] border border-[#dcd2be] text-amber-950 text-xs font-bold hover:bg-[#e4dac6] transition-colors"
+                  className="lg:hidden inline-flex items-center gap-1 px-2.5 py-1.5 rounded-2xl bg-[#efe9dc] border border-[#dcd2be] text-amber-950 text-xs font-bold hover:bg-[#e4dac6] transition-colors"
                 >
                   <FiArrowLeft className="w-3.5 h-3.5 text-amber-800" />
                   <span>Mục lục</span>
                 </button>
 
                 {/* Con tem ngày tháng cổ điển */}
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-panel bg-[#efe9dc] border border-[#dcd2be] text-amber-950 text-xs font-headline font-extrabold shadow-xs">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-[#efe9dc] border border-[#dcd2be] text-amber-950 text-xs font-headline font-extrabold shadow-xs">
                   <FiCalendar className="w-3.5 h-3.5 text-amber-800" />
                   <span>
                     {isCreatingNew
@@ -351,11 +351,11 @@ export function JournalNotebook() {
                 {isCreatingNew ? (
                   <>
                     {/* Chọn Mood khi tạo mới */}
-                    <div className="flex items-center gap-1 bg-[#efe9dc] p-1 rounded-hero border border-[#ded5c2]">
+                    <div className="flex items-center gap-1 bg-[#efe9dc] p-1 rounded-xl border border-[#ded5c2]">
                       <button
                         type="button"
                         onClick={() => setNewMood("happy")}
-                        className={`p-1.5 rounded-panel transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newMood === "happy" ? "bg-amber-400 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Vui vẻ"
@@ -365,7 +365,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewMood("peaceful")}
-                        className={`p-1.5 rounded-panel transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newMood === "peaceful" ? "bg-amber-400 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Bình yên"
@@ -375,7 +375,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewMood("energetic")}
-                        className={`p-1.5 rounded-panel transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newMood === "energetic" ? "bg-amber-400 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Tràn đầy năng lượng"
@@ -385,7 +385,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewMood("grateful")}
-                        className={`p-1.5 rounded-panel transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newMood === "grateful" ? "bg-amber-400 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Biết ơn"
@@ -395,11 +395,11 @@ export function JournalNotebook() {
                     </div>
 
                     {/* Chọn Thời tiết */}
-                    <div className="flex items-center gap-1 bg-[#efe9dc] p-1 rounded-hero border border-[#ded5c2]">
+                    <div className="flex items-center gap-1 bg-[#efe9dc] p-1 rounded-xl border border-[#ded5c2]">
                       <button
                         type="button"
                         onClick={() => setNewWeather("sunny")}
-                        className={`p-1.5 rounded-panel transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newWeather === "sunny" ? "bg-amber-200 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Nắng"
@@ -409,7 +409,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewWeather("rainy")}
-                        className={`p-1.5 rounded-panel transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newWeather === "rainy" ? "bg-blue-200 text-blue-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Mưa"
@@ -421,11 +421,11 @@ export function JournalNotebook() {
                 ) : (
                   /* Hiển thị Mood & Weather của bài đang xem */
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-pill bg-amber-100/90 text-amber-900 font-bold border border-amber-200/80">
+                    <span className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-amber-100/90 text-amber-900 font-bold border border-amber-200/80">
                       <FiSmile className="w-3.5 h-3.5 text-amber-700" />
                       <span>{activeEntry.mood}</span>
                     </span>
-                    <span className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-pill bg-blue-50 text-blue-900 font-bold border border-blue-200/80">
+                    <span className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-blue-50 text-blue-900 font-bold border border-blue-200/80">
                       {activeEntry.weather === "sunny" ? (
                         <FiSun className="w-3.5 h-3.5 text-amber-500" />
                       ) : (
@@ -444,7 +444,7 @@ export function JournalNotebook() {
                             handleDeleteEntry(activeEntry.id);
                           }
                         }}
-                        className="p-1.5 rounded-panel text-amber-900/40 hover:text-red-600 hover:bg-red-50 transition-colors"
+                        className="p-1.5 rounded-2xl text-amber-900/40 hover:text-red-600 hover:bg-red-50 transition-colors"
                         title="Xóa bài nhật ký này"
                       >
                         <FiTrash2 className="w-3.5 h-3.5" />
@@ -671,7 +671,7 @@ export function JournalNotebook() {
                   type="button"
                   disabled={isSaving}
                   onClick={handleCancelNew}
-                  className="flex-1 sm:flex-none px-4 py-2 rounded-hero border border-[#d6cbba] text-amber-950 font-bold text-xs hover:bg-[#ede5d6] transition-colors text-center disabled:opacity-50"
+                  className="flex-1 sm:flex-none px-4 py-2 rounded-xl border border-[#d6cbba] text-amber-950 font-bold text-xs hover:bg-[#ede5d6] transition-colors text-center disabled:opacity-50"
                 >
                   Hủy bỏ
                 </button>
@@ -679,7 +679,7 @@ export function JournalNotebook() {
                   type="button"
                   disabled={isSaving}
                   onClick={handleSaveEntry}
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2 rounded-hero bg-emerald-600 text-white font-headline font-bold text-xs shadow-md hover:bg-emerald-700 active:scale-95 transition-all whitespace-nowrap disabled:opacity-60 cursor-pointer"
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2 rounded-xl bg-emerald-600 text-white font-headline font-bold text-xs shadow-md hover:bg-emerald-700 active:scale-95 transition-all whitespace-nowrap disabled:opacity-60 cursor-pointer"
                 >
                   {isSaving ? (
                     <>
@@ -699,7 +699,7 @@ export function JournalNotebook() {
                 <button
                   type="button"
                   onClick={handleStartNew}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-hero bg-[#efe7d8] border border-[#dcd0bc] text-amber-950 font-headline font-bold text-xs hover:bg-[#e6dcc9] transition-all whitespace-nowrap shadow-xs cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-[#efe7d8] border border-[#dcd0bc] text-amber-950 font-headline font-bold text-xs hover:bg-[#e6dcc9] transition-all whitespace-nowrap shadow-xs cursor-pointer"
                 >
                   <FiEdit3 className="w-3.5 h-3.5" />
                   <span>Viết bài khác</span>
@@ -770,7 +770,7 @@ export function JournalNotebook() {
           {/* Thanh công cụ nổi trên đầu modal */}
           <div className="w-full max-w-6xl flex items-center justify-between mb-4 px-2 py-1">
             <div className="flex items-center gap-2.5 text-white">
-              <span className="w-2.5 h-2.5 rounded-pill bg-emerald-400 animate-ping" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
               <span className="font-headline font-black text-sm text-emerald-300 uppercase tracking-wider">
                 Chế độ tập trung
               </span>
@@ -782,7 +782,7 @@ export function JournalNotebook() {
             <button
               type="button"
               onClick={() => setIsFocusMode(false)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-hero bg-white/10 hover:bg-white/20 text-white text-xs font-headline font-bold border border-white/20 shadow-md transition-all cursor-pointer hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-headline font-bold border border-white/20 shadow-md transition-all cursor-pointer hover:scale-105 active:scale-95"
             >
               <FiMinimize2 className="w-3.5 h-3.5 text-amber-300" />
               <span>Thu nhỏ (Esc)</span>

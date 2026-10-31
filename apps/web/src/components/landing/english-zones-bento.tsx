@@ -32,13 +32,13 @@ export function EnglishZonesBento() {
       <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[620px]">
         {/* Zone 1: Đấu trường phát âm (Voice Arena) */}
         <div className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-primary to-primary-container rounded-3xl p-8 text-on-primary relative overflow-hidden flex flex-col justify-between group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-pill blur-2xl pointer-events-none group-hover:scale-110 transition-transform" />
+          <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-2xl pointer-events-none group-hover:scale-110 transition-transform" />
           
           <div className="flex items-center justify-between z-10">
             <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl text-on-primary">
               <FiMic />
             </div>
-            <span className="px-3 py-1 rounded-pill text-xs font-bold bg-white/20 backdrop-blur-md">
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/20 backdrop-blur-md">
               Công nghệ sóng âm AI
             </span>
           </div>
@@ -58,13 +58,13 @@ export function EnglishZonesBento() {
 
         {/* Zone 2: Vũ trụ Từ vựng 3D (Tactile Vocabulary) */}
         <div className="md:col-span-1 md:row-span-2 bg-secondary-container rounded-3xl p-8 text-on-secondary-container relative overflow-hidden flex flex-col justify-between group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
-          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-secondary/15 rounded-pill blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-secondary/15 rounded-full blur-2xl pointer-events-none" />
 
           <div className="flex items-center justify-between z-10">
             <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center text-2xl text-secondary">
               <FiLayers />
             </div>
-            <span className="px-2.5 py-1 rounded-pill text-xs font-bold bg-secondary/10">
+            <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-secondary/10">
               3000+ Thẻ bài
             </span>
           </div>
@@ -96,7 +96,7 @@ export function EnglishZonesBento() {
             <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-2xl text-primary">
               <FiHeadphones />
             </div>
-            <span className="px-2.5 py-1 rounded-pill text-xs font-bold bg-primary/10 text-primary">
+            <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary">
               Phản xạ tức thì
             </span>
           </div>
@@ -116,13 +116,13 @@ export function EnglishZonesBento() {
 
         {/* Zone 4: Ngữ pháp cốt truyện (Story Quest Grammar) */}
         <div className="md:col-span-2 md:row-span-1 bg-gradient-to-r from-tertiary to-tertiary-hover rounded-3xl p-8 text-on-tertiary relative overflow-hidden flex flex-col justify-between group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-pill blur-2xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
           <div className="flex items-center justify-between z-10">
             <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl text-on-tertiary">
               <FiBookOpen />
             </div>
-            <span className="px-3 py-1 rounded-pill text-xs font-bold bg-white/20 backdrop-blur-md">
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/20 backdrop-blur-md">
               Học qua cốt truyện
             </span>
           </div>

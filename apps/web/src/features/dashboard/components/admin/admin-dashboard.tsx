@@ -11,7 +11,7 @@ export function AdminDashboard() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface-container-lowest/80 border border-surface-container-high/80 rounded-3xl p-6">
         <div>
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-pill bg-secondary" />
+            <span className="w-2.5 h-2.5 rounded-full bg-secondary" />
             <span className="text-xs font-headline font-bold text-secondary uppercase tracking-widest">
               Admin Analytics
             </span>

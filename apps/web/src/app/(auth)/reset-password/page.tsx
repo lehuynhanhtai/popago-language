@@ -11,7 +11,7 @@ export default function ResetPasswordPage() {
     <Suspense
       fallback={
         <div className="w-full max-w-md mx-auto p-8 rounded-3xl bg-surface-container-lowest text-center">
-          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-pill animate-spin mx-auto" />
+          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="mt-3 text-xs text-on-surface-variant font-medium">
             Đang tải dữ liệu xác thực...
           </p>

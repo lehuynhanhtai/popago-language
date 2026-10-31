@@ -50,13 +50,11 @@
   --font-label: var(--font-plus-jakarta-sans), sans-serif;
 
   /*
-   * Thang shape: 4 bậc, KHÔNG override thang mặc định của Tailwind.
-   * field = control nhỏ, panel = card/dialog, hero = control bo lớn, pill = tròn.
+   * Shape: dùng thẳng thang mặc định của Tailwind, KHÔNG override.
+   * rounded-md (6px) — checkbox; rounded-xl (12px) — button/input;
+   * rounded-2xl (16px) — menu/popover; rounded-3xl (24px) — card/dialog;
+   * rounded-full — badge/pill.
    */
-  --radius-field: 1rem;
-  --radius-panel: 2rem;
-  --radius-hero: 3rem;
-  --radius-pill: 9999px;
 }
 
 /* Khoá light-only: chặn trình duyệt tự tô tối scrollbar/form control/autofill khi OS ở dark mode. */

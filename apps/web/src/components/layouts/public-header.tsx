@@ -24,7 +24,7 @@ export function PublicHeader() {
                 English Playground
               </span>
             </div>
-            <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-pill text-xs font-bold bg-secondary-container text-on-secondary-container ml-2 animate-pulse">
+            <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-secondary-container text-on-secondary-container ml-2 animate-pulse">
               <FiGift className="text-xs" />
               100% Free
             </span>
@@ -62,13 +62,13 @@ export function PublicHeader() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/login"
-              className="font-headline font-bold text-sm tracking-tight text-on-surface hover:text-primary px-4 py-2.5 rounded-pill hover:bg-surface-container transition-colors"
+              className="font-headline font-bold text-sm tracking-tight text-on-surface hover:text-primary px-4 py-2.5 rounded-full hover:bg-surface-container transition-colors"
             >
               Đăng nhập
             </Link>
             <Link
               href="/register"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-sm tracking-tight px-5 py-2.5 rounded-pill shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-sm tracking-tight px-5 py-2.5 rounded-full shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
             >
               <FiAward className="text-base" />
               Bắt đầu miễn phí
@@ -80,7 +80,7 @@ export function PublicHeader() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-hero text-on-surface hover:bg-surface-container transition-colors"
+              className="p-2 rounded-xl text-on-surface hover:bg-surface-container transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -124,14 +124,14 @@ export function PublicHeader() {
             <Link
               href="/login"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 font-headline font-bold text-sm rounded-pill bg-surface-container text-on-surface"
+              className="w-full text-center py-2.5 font-headline font-bold text-sm rounded-full bg-surface-container text-on-surface"
             >
               Đăng nhập
             </Link>
             <Link
               href="/register"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 font-headline font-bold text-sm rounded-pill bg-primary text-on-primary shadow-md"
+              className="w-full text-center py-2.5 font-headline font-bold text-sm rounded-full bg-primary text-on-primary shadow-md"
             >
               Bắt đầu miễn phí
             </Link>

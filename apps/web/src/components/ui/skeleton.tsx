@@ -11,7 +11,7 @@ export function Skeleton({ className }: SkeletonProps) {
   return (
     <div
       aria-hidden="true"
-      className={cn("animate-pulse rounded-field bg-surface-container-high", className)}
+      className={cn("animate-pulse rounded-xl bg-surface-container-high", className)}
     />
   );
 }

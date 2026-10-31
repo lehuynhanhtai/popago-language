@@ -17,11 +17,11 @@ export function ResumeLearningCard({
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-hover to-primary-container text-on-primary rounded-3xl p-6 sm:p-8 shadow-lg shadow-primary/15 transition-all">
       {/* Decorative background circle */}
-      <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-pill blur-2xl pointer-events-none" />
+      <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
       <div className="relative z-10 space-y-4">
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-pill text-xs font-headline font-bold bg-white/20 text-white backdrop-blur-md">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-headline font-bold bg-white/20 text-white backdrop-blur-md">
             <FiBookOpen className="w-3.5 h-3.5" />
             Đang học dở
           </span>
@@ -42,9 +42,9 @@ export function ResumeLearningCard({
             <span>Tiến độ bài học</span>
             <span>{progressPercent}%</span>
           </div>
-          <div className="w-full h-2.5 bg-white/20 rounded-pill overflow-hidden p-0.5">
+          <div className="w-full h-2.5 bg-white/20 rounded-full overflow-hidden p-0.5">
             <div
-              className="h-full bg-secondary-emphasis rounded-pill transition-all duration-500 shadow-xs"
+              className="h-full bg-secondary-emphasis rounded-full transition-all duration-500 shadow-xs"
               style={{ width: `${progressPercent}%` }}
             />
           </div>

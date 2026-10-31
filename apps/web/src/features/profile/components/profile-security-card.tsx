@@ -75,7 +75,7 @@ export function ProfileSecurityCard() {
         {/* Reset Password Row */}
         <div className="p-4 rounded-2xl bg-surface-container/30 border border-surface-container-high/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-hero bg-surface-container text-on-surface-variant">
+            <div className="p-2.5 rounded-xl bg-surface-container text-on-surface-variant">
               <KeyRound className="w-4 h-4" />
             </div>
             <div>
@@ -92,7 +92,7 @@ export function ProfileSecurityCard() {
             type="button"
             onClick={handleSendPasswordReset}
             disabled={isSendingReset}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-hero bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline font-bold text-xs transition-colors cursor-pointer disabled:opacity-50 self-end sm:self-auto"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline font-bold text-xs transition-colors cursor-pointer disabled:opacity-50 self-end sm:self-auto"
           >
             {isSendingReset ? (
               <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -106,7 +106,7 @@ export function ProfileSecurityCard() {
         {/* Logout Row */}
         <div className="p-4 rounded-2xl bg-error/5 border border-error/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-hero bg-error/10 text-error">
+            <div className="p-2.5 rounded-xl bg-error/10 text-error">
               <LogOut className="w-4 h-4" />
             </div>
             <div>
@@ -123,7 +123,7 @@ export function ProfileSecurityCard() {
             type="button"
             onClick={handleLogout}
             disabled={isLoggingOut}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-hero bg-error text-white font-headline font-bold text-xs hover:bg-error/90 transition-colors cursor-pointer disabled:opacity-50 self-end sm:self-auto shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-error text-white font-headline font-bold text-xs hover:bg-error/90 transition-colors cursor-pointer disabled:opacity-50 self-end sm:self-auto shadow-xs"
           >
             {isLoggingOut ? (
               <Loader2 className="w-3.5 h-3.5 animate-spin" />

@@ -85,18 +85,18 @@ export function AuthLoadingOverlay({
             </span>
           </div>
 
-          <div className="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-pill bg-secondary-container text-secondary flex items-center justify-center shadow-sm">
+          <div className="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-secondary-container text-secondary flex items-center justify-center shadow-sm">
             <Sparkles className="w-4 h-4 animate-spin [animation-duration:3s]" />
           </div>
 
-          <div className="absolute -bottom-1 -left-1 w-6 h-6 rounded-pill bg-orange-500/15 text-orange-500 flex items-center justify-center shadow-xs">
+          <div className="absolute -bottom-1 -left-1 w-6 h-6 rounded-full bg-orange-500/15 text-orange-500 flex items-center justify-center shadow-xs">
             <Flame className="w-3.5 h-3.5 fill-orange-500" />
           </div>
         </div>
 
         {/* Welcome & Status Message */}
         <div className="space-y-1.5 mb-6">
-          <span className="inline-flex items-center gap-1.5 text-xs font-headline font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-pill">
+          <span className="inline-flex items-center gap-1.5 text-xs font-headline font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
             <FiLoader className="w-3.5 h-3.5 animate-spin" />
             Đang tải dữ liệu tài khoản
           </span>
@@ -114,9 +114,9 @@ export function AuthLoadingOverlay({
             <span>Tiến trình khởi tạo</span>
             <span className="text-primary">{progress}%</span>
           </div>
-          <div className="w-full h-2 rounded-pill bg-surface-container-high overflow-hidden">
+          <div className="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-primary via-primary-container to-secondary rounded-pill transition-all duration-300 ease-out"
+              className="h-full bg-gradient-to-r from-primary via-primary-container to-secondary rounded-full transition-all duration-300 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -134,7 +134,7 @@ export function AuthLoadingOverlay({
                 className="flex items-center gap-3 py-1 text-xs transition-opacity duration-200"
               >
                 <div
-                  className={`w-6 h-6 rounded-pill flex items-center justify-center shrink-0 transition-colors ${
+                  className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 transition-colors ${
                     isDone
                       ? "bg-emerald-500 text-white"
                       : isCurrent
@@ -145,9 +145,9 @@ export function AuthLoadingOverlay({
                   {isDone ? (
                     <FiCheck className="w-3.5 h-3.5 stroke-[3]" />
                   ) : isCurrent ? (
-                    <span className="w-2 h-2 rounded-pill bg-primary" />
+                    <span className="w-2 h-2 rounded-full bg-primary" />
                   ) : (
-                    <span className="w-1.5 h-1.5 rounded-pill bg-outline-variant" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-outline-variant" />
                   )}
                 </div>
                 <div className="min-w-0 flex-1">

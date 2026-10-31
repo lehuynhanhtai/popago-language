@@ -60,7 +60,7 @@ export function StatMetricCard({
           {badge && (
             <span
               className={cn(
-                "inline-flex items-center px-2 py-0.5 rounded-pill font-bold text-[11px]",
+                "inline-flex items-center px-2 py-0.5 rounded-full font-bold text-[11px]",
                 badge.isPositive
                   ? "bg-emerald-500/10 text-emerald-600"
                   : "bg-surface-container text-on-surface-variant"

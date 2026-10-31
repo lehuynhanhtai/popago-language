@@ -6,11 +6,11 @@ export function CtaSection() {
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="bg-gradient-to-br from-primary via-primary to-primary-hover text-on-primary p-10 sm:p-16 lg:p-20 rounded-3xl text-center relative overflow-hidden shadow-2xl">
         {/* Glows */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-pill -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary-container/20 rounded-pill translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary-container/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-          <span className="inline-block px-4 py-1.5 rounded-pill text-xs font-headline font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-headline font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">
             🎁 100% Miễn Phí Vì Cộng Đồng
           </span>
 
@@ -25,7 +25,7 @@ export function CtaSection() {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/register"
-              className="inline-flex items-center justify-center gap-3 bg-white text-primary font-headline font-black px-10 py-5 rounded-pill text-lg shadow-xl hover:scale-105 active:scale-95 transition-all group"
+              className="inline-flex items-center justify-center gap-3 bg-white text-primary font-headline font-black px-10 py-5 rounded-full text-lg shadow-xl hover:scale-105 active:scale-95 transition-all group"
             >
               <span>Tham Gia Miễn Phí Ngay</span>
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
