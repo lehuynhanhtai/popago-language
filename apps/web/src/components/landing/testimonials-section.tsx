@@ -47,7 +47,7 @@ export function TestimonialsSection() {
           <div key={idx} className="flex flex-col justify-between gap-6">
             {/* Speech Bubble */}
             <div className="bg-surface-container-lowest p-8 rounded-3xl border border-surface-container-high/60 shadow-sm relative hover:shadow-lg transition-shadow">
-              <div className="flex gap-1 text-secondary-dim mb-4">
+              <div className="flex gap-1 text-secondary-hover mb-4">
                 {[...Array(5)].map((_, i) => (
                   <FiStar key={i} className="text-secondary fill-secondary text-sm" />
                 ))}

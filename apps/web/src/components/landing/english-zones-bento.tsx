@@ -21,7 +21,7 @@ export function EnglishZonesBento() {
 
         <Link
           href="/register"
-          className="inline-flex items-center gap-2 font-headline font-bold text-sm text-primary hover:text-primary-dim group"
+          className="inline-flex items-center gap-2 font-headline font-bold text-sm text-primary hover:text-primary-hover group"
         >
           <span>Khám phá toàn bộ bài học</span>
           <FiArrowUpRight className="text-base group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -44,7 +44,7 @@ export function EnglishZonesBento() {
           </div>
 
           <div className="z-10 mt-6">
-            <div className="flex items-center gap-2 text-secondary-fixed text-xs font-bold uppercase tracking-wider mb-1">
+            <div className="flex items-center gap-2 text-secondary-emphasis text-xs font-bold uppercase tracking-wider mb-1">
               <span>Zone 01 • Luyện Nói & Ngữ Điệu</span>
             </div>
             <h3 className="font-headline font-black text-2xl sm:text-3xl text-on-primary mb-2">
@@ -115,7 +115,7 @@ export function EnglishZonesBento() {
         </div>
 
         {/* Zone 4: Ngữ pháp cốt truyện (Story Quest Grammar) */}
-        <div className="md:col-span-2 md:row-span-1 bg-gradient-to-r from-tertiary to-tertiary-dim rounded-3xl p-8 text-on-tertiary relative overflow-hidden flex flex-col justify-between group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
+        <div className="md:col-span-2 md:row-span-1 bg-gradient-to-r from-tertiary to-tertiary-hover rounded-3xl p-8 text-on-tertiary relative overflow-hidden flex flex-col justify-between group cursor-pointer shadow-lg hover:shadow-2xl transition-all">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
           <div className="flex items-center justify-between z-10">
@@ -128,7 +128,7 @@ export function EnglishZonesBento() {
           </div>
 
           <div className="z-10 mt-6">
-            <div className="text-tertiary-fixed text-xs font-bold uppercase tracking-wider mb-1">
+            <div className="text-tertiary text-xs font-bold uppercase tracking-wider mb-1">
               Zone 04 • Nhập Vai Thực Tế
             </div>
             <h3 className="font-headline font-black text-2xl sm:text-3xl text-on-tertiary mb-2">

@@ -86,7 +86,7 @@ export function ProfileHeaderCard() {
                   type="text"
                   value={displayName}
                   onChange={(e) => setDisplayName(e.target.value)}
-                  className="px-3.5 py-1.5 bg-surface-container border border-primary rounded-xl text-base font-headline font-bold text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 w-full"
+                  className="px-3.5 py-1.5 bg-surface-container border border-primary rounded-xl text-base font-headline font-bold text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 w-full"
                   placeholder="Nhập họ và tên..."
                   disabled={isSaving}
                   autoFocus
@@ -110,6 +110,7 @@ export function ProfileHeaderCard() {
                   disabled={isSaving}
                   className="p-2 bg-surface-container hover:bg-surface-container-high text-on-surface-variant rounded-xl transition-all cursor-pointer"
                   title="Hủy"
+                  aria-label="Hủy chỉnh sửa"
                 >
                   <X className="w-4 h-4" />
                 </button>

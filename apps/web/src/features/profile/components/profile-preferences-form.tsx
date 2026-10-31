@@ -219,7 +219,7 @@ export function ProfilePreferencesForm() {
               type="time"
               value={reminderTime}
               onChange={(e) => setReminderTime(e.target.value)}
-              className="px-3 py-1.5 bg-surface-container border border-surface-container-high rounded-xl text-xs font-bold font-headline text-on-surface focus:outline-none focus:border-primary"
+              className="px-3 py-1.5 bg-surface-container border border-surface-container-high rounded-xl text-xs font-bold font-headline text-on-surface focus-visible:outline-none focus-visible:border-primary"
             />
           )}
 

@@ -121,7 +121,7 @@ export function RecentActivities() {
               <span className="text-secondary font-bold">32%</span>
             </div>
             <div className="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-              <div className="h-full bg-secondary-fixed-dim rounded-full" style={{ width: "32%" }} />
+              <div className="h-full bg-secondary-strong rounded-full" style={{ width: "32%" }} />
             </div>
           </div>
 

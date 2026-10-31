@@ -4,7 +4,7 @@ import { FiArrowRight, FiCheck } from "react-icons/fi";
 export function CtaSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="bg-gradient-to-br from-primary via-primary to-primary-dim text-on-primary p-10 sm:p-16 lg:p-20 rounded-3xl text-center relative overflow-hidden shadow-2xl">
+      <div className="bg-gradient-to-br from-primary via-primary to-primary-hover text-on-primary p-10 sm:p-16 lg:p-20 rounded-3xl text-center relative overflow-hidden shadow-2xl">
         {/* Glows */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary-container/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
@@ -34,13 +34,13 @@ export function CtaSection() {
 
           <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-on-primary/80">
             <span className="flex items-center gap-1.5">
-              <FiCheck className="text-secondary-fixed text-sm" /> Miễn phí trọn đời
+              <FiCheck className="text-secondary-emphasis text-sm" /> Miễn phí trọn đời
             </span>
             <span className="flex items-center gap-1.5">
-              <FiCheck className="text-secondary-fixed text-sm" /> Không quảng cáo phiền toái
+              <FiCheck className="text-secondary-emphasis text-sm" /> Không quảng cáo phiền toái
             </span>
             <span className="flex items-center gap-1.5">
-              <FiCheck className="text-secondary-fixed text-sm" /> Bắt đầu chỉ sau 30 giây
+              <FiCheck className="text-secondary-emphasis text-sm" /> Bắt đầu chỉ sau 30 giây
             </span>
           </div>
         </div>

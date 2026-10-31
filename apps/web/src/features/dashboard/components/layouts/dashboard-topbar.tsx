@@ -80,7 +80,7 @@ export function DashboardTopbar({
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-2xl bg-secondary-container/40 border border-secondary-container text-secondary font-headline font-extrabold text-xs shadow-xs"
               title="Tổng điểm kinh nghiệm XP"
             >
-              <FiStar className="w-4 h-4 fill-secondary-fixed text-secondary-fixed-dim" />
+              <FiStar className="w-4 h-4 fill-secondary-emphasis text-secondary-strong" />
               <span>{user?.totalXp || 1250} XP</span>
             </div>
           </div>

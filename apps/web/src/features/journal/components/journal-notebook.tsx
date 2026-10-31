@@ -169,7 +169,7 @@ export function JournalNotebook() {
                 placeholder="Tìm kiếm theo tiêu đề, nội dung..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl bg-[#ede8dc] border border-[#dcd3c1] text-amber-950 placeholder:text-amber-900/40 focus:outline-none focus:ring-1 focus:ring-primary font-medium"
+                className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl bg-[#ede8dc] border border-[#dcd3c1] text-amber-950 placeholder:text-amber-900/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium"
               />
             </div>
 
@@ -198,7 +198,7 @@ export function JournalNotebook() {
                     value={fromDate}
                     max={toDate || todayStr}
                     onChange={(e) => setFromDate(e.target.value)}
-                    className="w-full px-2 py-1 text-[11px] rounded-lg bg-white/80 border border-[#dcd3c1] text-amber-950 focus:outline-none focus:ring-1 focus:ring-primary font-medium cursor-pointer"
+                    className="w-full px-2 py-1 text-[11px] rounded-lg bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
                   />
                 </div>
                 <div>
@@ -209,7 +209,7 @@ export function JournalNotebook() {
                     min={fromDate}
                     max={todayStr}
                     onChange={(e) => setToDate(e.target.value)}
-                    className="w-full px-2 py-1 text-[11px] rounded-lg bg-white/80 border border-[#dcd3c1] text-amber-950 focus:outline-none focus:ring-1 focus:ring-primary font-medium cursor-pointer"
+                    className="w-full px-2 py-1 text-[11px] rounded-lg bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
                   />
                 </div>
               </div>
@@ -463,7 +463,7 @@ export function JournalNotebook() {
                   placeholder="Tiêu đề trang nhật ký hôm nay..."
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
-                  className="w-full text-xl sm:text-2xl font-headline font-black text-[#2c2215] placeholder:text-amber-900/30 bg-transparent border-b-2 border-[#e4dcce] pb-2 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full text-xl sm:text-2xl font-headline font-black text-[#2c2215] placeholder:text-amber-900/30 bg-transparent border-b-2 border-[#e4dcce] pb-2 focus-visible:outline-none focus-visible:border-primary transition-colors"
                 />
               ) : (
                 <h2 className="text-xl sm:text-2xl font-headline font-black text-[#2c2215] tracking-tight pb-2 border-b-2 border-[#e4dcce]">
@@ -485,7 +485,7 @@ export function JournalNotebook() {
                   placeholder="Bắt đầu viết nhật ký bằng tiếng Anh của bạn ở đây... (ví dụ: What made you happy today? How did you practice English?)"
                   value={newContent}
                   onChange={(e) => setNewContent(e.target.value)}
-                  className="w-full flex-1 h-full text-[15px] sm:text-base text-[#2c2215] bg-transparent focus:outline-none resize-none font-medium placeholder:text-amber-900/35 custom-scrollbar p-0"
+                  className="w-full flex-1 h-full text-[15px] sm:text-base text-[#2c2215] bg-transparent focus-visible:outline-none resize-none font-medium placeholder:text-amber-900/35 custom-scrollbar p-0"
                   style={{
                     backgroundImage:
                       "linear-gradient(to bottom, transparent 35px, #e9e0d1 35px 36px)",
@@ -513,7 +513,7 @@ export function JournalNotebook() {
             {/* 4. HỘP ĐÁNH GIÁ VÀ GÓP Ý CỦA AI (AI INK CORRECTION OVERLAY) */}
             {!isCreatingNew && activeEntry.aiAnalysis && (
               showAiFeedback ? (
-                <div className="rounded-[16px] p-3.5 sm:p-5 bg-gradient-to-br from-emerald-500/10 via-primary/5 to-purple-500/10 border border-emerald-500/20 shadow-xs space-y-3 animate-in fade-in duration-200 shrink-0">
+                <div className="rounded-[16px] p-3.5 sm:p-5 bg-gradient-to-br from-emerald-500/10 via-primary/5 to-purple-500/10 border border-emerald-500/20 shadow-xs space-y-3 shrink-0">
                   <div className="flex items-start sm:items-center justify-between gap-2">
                     <div className="flex items-center gap-2.5 min-w-0">
                       <div className="w-8 h-8 rounded-[10px] bg-emerald-500 text-white flex items-center justify-center shadow-xs shrink-0">
@@ -595,7 +595,7 @@ export function JournalNotebook() {
                 </div>
               ) : (
                 /* Trạng thái thu gọn (Collapsed Banner) với nút mở lại */
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-[14px] bg-emerald-500/10 border border-emerald-500/25 shadow-xs transition-all animate-in fade-in duration-200 shrink-0">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-[14px] bg-emerald-500/10 border border-emerald-500/25 shadow-xs transition-all duration-200 shrink-0">
                   <div className="flex items-center gap-2.5 min-w-0">
                     <div className="w-7 h-7 rounded-[8px] bg-emerald-600 text-white flex items-center justify-center shadow-xs shrink-0">
                       <Sparkles className="w-3.5 h-3.5" />
@@ -714,7 +714,7 @@ export function JournalNotebook() {
 
   return (
     <>
-      <div className="space-y-6 animate-in fade-in duration-300">
+      <div className="space-y-6">
         {/* Top Header & Subtitle */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
@@ -748,7 +748,7 @@ export function JournalNotebook() {
 
             <button
               onClick={handleStartNew}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-primary text-on-primary font-headline font-bold text-sm shadow-md hover:bg-primary-dim hover:scale-102 active:scale-98 transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-primary text-on-primary font-headline font-bold text-sm shadow-md hover:bg-primary-hover hover:scale-102 active:scale-98 transition-all cursor-pointer"
             >
               <FiPlus className="w-4 h-4" />
               <span>Mở trang viết mới</span>
@@ -765,7 +765,7 @@ export function JournalNotebook() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex flex-col items-center justify-start p-3 sm:p-6 lg:p-8 overflow-y-auto custom-scrollbar animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex flex-col items-center justify-start p-3 sm:p-6 lg:p-8 overflow-y-auto custom-scrollbar"
         >
           {/* Thanh công cụ nổi trên đầu modal */}
           <div className="w-full max-w-6xl flex items-center justify-between mb-4 px-2 py-1">
@@ -790,7 +790,7 @@ export function JournalNotebook() {
           </div>
 
           {/* Cuốn sổ nằm ở chính giữa khung modal */}
-          <div className="w-full max-w-6xl my-auto animate-in zoom-in-95 duration-200">
+          <div className="w-full max-w-6xl my-auto">
             {notebookElement}
           </div>
         </div>

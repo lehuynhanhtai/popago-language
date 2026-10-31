@@ -1,6 +1,6 @@
 export default function DashboardLoading() {
   return (
-    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-300 select-none">
+    <div className="space-y-6 sm:space-y-8 select-none">
       {/* Top 4 Stat Metric Cards Skeleton */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[1, 2, 3, 4].map((i) => (

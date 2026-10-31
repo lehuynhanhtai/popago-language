@@ -20,7 +20,7 @@ export function StudentDashboard() {
   const user = useAuthStore((s) => s.user);
 
   return (
-    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-300">
+    <div className="space-y-6 sm:space-y-8">
       {/* Top 4 Stat Metric Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatMetricCard

@@ -31,7 +31,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             className="fixed inset-0 bg-black/40 backdrop-blur-xs transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="relative w-64 max-w-[80vw] h-full z-10 animate-in slide-in-from-left duration-200">
+          <div className="relative w-64 max-w-[80vw] h-full z-10">
             <DashboardSidebar onCloseMobile={() => setMobileMenuOpen(false)} />
           </div>
         </div>

@@ -62,7 +62,7 @@ export function RegisterForm() {
       case 1:
         return { score: 25, text: "Yếu", color: "bg-error" };
       case 2:
-        return { score: 50, text: "Trung bình", color: "bg-secondary-fixed" };
+        return { score: 50, text: "Trung bình", color: "bg-secondary-emphasis" };
       case 3:
         return { score: 75, text: "Khá", color: "bg-primary-container" };
       case 4:
@@ -122,9 +122,9 @@ export function RegisterForm() {
               {...register("displayName")}
               className={cn(
                 "w-full px-4 py-3 pl-11 rounded-2xl bg-surface-container-lowest/80 border text-on-surface text-sm transition-all outline-none placeholder:text-outline-variant",
-                "focus:border-primary focus:ring-4 focus:ring-primary/10",
+                "focus-visible:border-primary focus-visible:ring-4 focus-visible:ring-primary/10",
                 errors.displayName
-                  ? "border-error focus:border-error focus:ring-error/10"
+                  ? "border-error focus-visible:border-error focus-visible:ring-error/10"
                   : "border-surface-container-high hover:border-outline-variant"
               )}
             />
@@ -149,9 +149,9 @@ export function RegisterForm() {
               {...register("email")}
               className={cn(
                 "w-full px-4 py-3 pl-11 rounded-2xl bg-surface-container-lowest/80 border text-on-surface text-sm transition-all outline-none placeholder:text-outline-variant",
-                "focus:border-primary focus:ring-4 focus:ring-primary/10",
+                "focus-visible:border-primary focus-visible:ring-4 focus-visible:ring-primary/10",
                 errors.email
-                  ? "border-error focus:border-error focus:ring-error/10"
+                  ? "border-error focus-visible:border-error focus-visible:ring-error/10"
                   : "border-surface-container-high hover:border-outline-variant"
               )}
             />
@@ -269,7 +269,7 @@ export function RegisterForm() {
               type="checkbox"
               checked={agreedTerms}
               onChange={(e) => setAgreedTerms(e.target.checked)}
-              className="w-4 h-4 mt-0.5 rounded text-primary border-outline-variant focus:ring-primary/20 accent-primary shrink-0"
+              className="w-4 h-4 mt-0.5 rounded text-primary border-outline-variant focus-visible:ring-primary/20 accent-primary shrink-0"
             />
             <span className="text-xs text-on-surface-variant leading-relaxed">
               Tôi đồng ý với{" "}
