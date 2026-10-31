@@ -96,7 +96,7 @@ export function ResetPasswordForm({ initialCode = "" }: ResetPasswordFormProps) 
 
           <Link
             href="/login"
-            className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-2xl bg-primary text-on-primary font-headline font-bold text-sm shadow-md hover:bg-primary-dim transition-all"
+            className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-2xl bg-primary text-on-primary font-headline font-bold text-sm shadow-md hover:bg-primary-hover transition-all"
           >
             <span>Đăng nhập với mật khẩu mới</span>
             <FiArrowRight className="w-4 h-4" />
@@ -126,7 +126,7 @@ export function ResetPasswordForm({ initialCode = "" }: ResetPasswordFormProps) 
                 type="text"
                 placeholder="Dán mã bảo mật từ email tại đây"
                 {...register("oobCode", { required: "Vui lòng nhập mã xác thực" })}
-                className="w-full px-4 py-3 pl-11 rounded-2xl bg-surface-container-lowest/80 border border-surface-container-high text-on-surface text-sm transition-all outline-none focus:border-primary focus:ring-4 focus:ring-primary/10"
+                className="w-full px-4 py-3 pl-11 rounded-2xl bg-surface-container-lowest/80 border border-surface-container-high text-on-surface text-sm transition-all outline-none focus-visible:border-primary focus-visible:ring-4 focus-visible:ring-primary/10"
               />
               <FiKey className="absolute left-3.5 top-1/2 -translate-y-1/2 text-outline w-4 h-4 pointer-events-none" />
             </div>

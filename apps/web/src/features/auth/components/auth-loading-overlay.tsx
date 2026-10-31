@@ -74,9 +74,9 @@ export function AuthLoadingOverlay({
     <div
       role="status"
       aria-live="polite"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface/85 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface/85 backdrop-blur-md"
     >
-      <div className="w-full max-w-md bg-surface-container-lowest/95 border border-surface-container-high/90 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-primary/10 flex flex-col items-center text-center animate-in zoom-in-95 duration-300">
+      <div className="w-full max-w-md bg-surface-container-lowest/95 border border-surface-container-high/90 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-primary/10 flex flex-col items-center text-center">
         {/* Glow mascot / brand icon */}
         <div className="relative mb-5">
           <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-primary/20 via-primary/10 to-secondary/20 flex items-center justify-center shadow-inner relative">

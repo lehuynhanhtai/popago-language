@@ -205,6 +205,7 @@ export function HeroSection() {
                   onClick={handlePronounce}
                   className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-on-primary flex items-center justify-center transition-colors"
                   title="Bấm để nghe phát âm"
+                  aria-label="Nghe phát âm mẫu"
                 >
                   <FiVolume2 className="text-lg" />
                 </button>
@@ -227,7 +228,7 @@ export function HeroSection() {
                     <p className="text-xs text-on-surface-variant pt-3 italic">
                       " {card.example} "
                     </p>
-                    <div className="pt-4 text-xs font-bold text-secondary-dim flex items-center justify-center gap-1">
+                    <div className="pt-4 text-xs font-bold text-secondary-hover flex items-center justify-center gap-1">
                       <FiRepeat /> Nhấn vào thẻ để xem nghĩa & ví dụ
                     </div>
                   </motion.div>

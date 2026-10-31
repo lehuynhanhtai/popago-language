@@ -102,7 +102,7 @@ export function ForgotPasswordForm() {
 
           <Link
             href="/login"
-            className="inline-flex items-center justify-center gap-1.5 text-xs font-headline font-semibold text-primary hover:text-primary-dim transition-colors pt-2"
+            className="inline-flex items-center justify-center gap-1.5 text-xs font-headline font-semibold text-primary hover:text-primary-hover transition-colors pt-2"
           >
             <FiArrowLeft className="w-4 h-4" />
             Quay lại trang Đăng nhập
@@ -133,9 +133,9 @@ export function ForgotPasswordForm() {
               {...register("email")}
               className={cn(
                 "w-full px-4 py-3 pl-11 rounded-2xl bg-surface-container-lowest/80 border text-on-surface text-sm transition-all outline-none placeholder:text-outline-variant",
-                "focus:border-primary focus:ring-4 focus:ring-primary/10",
+                "focus-visible:border-primary focus-visible:ring-4 focus-visible:ring-primary/10",
                 errors.email
-                  ? "border-error focus:border-error focus:ring-error/10"
+                  ? "border-error focus-visible:border-error focus-visible:ring-error/10"
                   : "border-surface-container-high hover:border-outline-variant"
               )}
             />

@@ -48,7 +48,7 @@ export function AuthCard({
             {footerPrompt}{" "}
             <Link
               href={footerLinkHref}
-              className="font-headline font-bold text-primary hover:text-primary-dim hover:underline underline-offset-4 transition-colors"
+              className="font-headline font-bold text-primary hover:text-primary-hover hover:underline underline-offset-4 transition-colors"
             >
               {footerLinkText}
             </Link>

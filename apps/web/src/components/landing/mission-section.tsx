@@ -50,7 +50,7 @@ export function MissionSection() {
           </div>
 
           {/* Card 2: PoPaGo - Sân chơi miễn phí */}
-          <div className="bg-gradient-to-br from-primary to-primary-dim text-on-primary p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-primary to-primary-hover text-on-primary p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden flex flex-col justify-between">
             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none" />
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -63,19 +63,19 @@ export function MissionSection() {
               </div>
               <ul className="space-y-4 text-sm text-on-primary/95">
                 <li className="flex items-start gap-3">
-                  <FiCheck className="text-secondary-fixed text-xl flex-shrink-0 mt-0.5" />
+                  <FiCheck className="text-secondary-emphasis text-xl flex-shrink-0 mt-0.5" />
                   <span><strong>Không thu phí, không thẻ ngân hàng:</strong> Mọi bài học mở tự do cho mọi người.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <FiCheck className="text-secondary-fixed text-xl flex-shrink-0 mt-0.5" />
+                  <FiCheck className="text-secondary-emphasis text-xl flex-shrink-0 mt-0.5" />
                   <span><strong>Học như chơi game (Gamification):</strong> Tích điểm XP, giữ ngọn lửa streak, đấu boss từ vựng.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <FiCheck className="text-secondary-fixed text-xl flex-shrink-0 mt-0.5" />
+                  <FiCheck className="text-secondary-emphasis text-xl flex-shrink-0 mt-0.5" />
                   <span><strong>Công nghệ tương tác cao:</strong> Nhận diện phát âm, audio chuẩn bản ngữ, flashcard tương tác 3D.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <FiCheck className="text-secondary-fixed text-xl flex-shrink-0 mt-0.5" />
+                  <FiCheck className="text-secondary-emphasis text-xl flex-shrink-0 mt-0.5" />
                   <span><strong>Cộng đồng gắn kết:</strong> Cùng học, cùng thi đua vượt qua các cấp bậc vui vẻ mỗi ngày.</span>
                 </li>
               </ul>

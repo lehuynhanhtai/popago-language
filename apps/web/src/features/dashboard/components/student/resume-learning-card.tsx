@@ -15,7 +15,7 @@ export function ResumeLearningCard({
   lessonHref = "/courses/unit-3",
 }: ResumeLearningCardProps) {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dim to-primary-container text-on-primary rounded-3xl p-6 sm:p-8 shadow-lg shadow-primary/15 transition-all">
+    <div className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-hover to-primary-container text-on-primary rounded-3xl p-6 sm:p-8 shadow-lg shadow-primary/15 transition-all">
       {/* Decorative background circle */}
       <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
@@ -44,7 +44,7 @@ export function ResumeLearningCard({
           </div>
           <div className="w-full h-2.5 bg-white/20 rounded-full overflow-hidden p-0.5">
             <div
-              className="h-full bg-secondary-fixed rounded-full transition-all duration-500 shadow-xs"
+              className="h-full bg-secondary-emphasis rounded-full transition-all duration-500 shadow-xs"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
@@ -54,7 +54,7 @@ export function ResumeLearningCard({
         <div className="pt-2">
           <Link
             href={lessonHref}
-            className="inline-flex items-center justify-center gap-2 py-3 px-6 rounded-2xl bg-white text-primary font-headline font-extrabold text-sm shadow-md hover:bg-surface-bright hover:scale-105 active:scale-95 transition-all"
+            className="inline-flex items-center justify-center gap-2 py-3 px-6 rounded-2xl bg-white text-primary font-headline font-extrabold text-sm shadow-md hover:bg-surface-raised hover:scale-105 active:scale-95 transition-all"
           >
             <FiPlay className="w-4 h-4 fill-primary" />
             <span>Tiếp tục bài học ngay</span>

@@ -115,9 +115,9 @@ export function LoginForm() {
               {...register("email")}
               className={cn(
                 "w-full px-4 py-3 pl-11 rounded-2xl bg-surface-container-lowest/80 border text-on-surface text-sm transition-all outline-none placeholder:text-outline-variant",
-                "focus:border-primary focus:ring-4 focus:ring-primary/10",
+                "focus-visible:border-primary focus-visible:ring-4 focus-visible:ring-primary/10",
                 errors.email
-                  ? "border-error focus:border-error focus:ring-error/10"
+                  ? "border-error focus-visible:border-error focus-visible:ring-error/10"
                   : "border-surface-container-high hover:border-outline-variant"
               )}
             />
@@ -138,7 +138,7 @@ export function LoginForm() {
             </label>
             <Link
               href="/forgot-password"
-              className="text-xs font-headline font-semibold text-primary hover:text-primary-dim hover:underline underline-offset-2 transition-colors"
+              className="text-xs font-headline font-semibold text-primary hover:text-primary-hover hover:underline underline-offset-2 transition-colors"
             >
               Quên mật khẩu?
             </Link>
@@ -166,7 +166,7 @@ export function LoginForm() {
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
-              className="w-4 h-4 rounded text-primary border-outline-variant focus:ring-primary/20 accent-primary"
+              className="w-4 h-4 rounded text-primary border-outline-variant focus-visible:ring-primary/20 accent-primary"
             />
             <span className="text-xs font-medium text-on-surface-variant">
               Ghi nhớ đăng nhập trên thiết bị này

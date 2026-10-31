@@ -31,7 +31,7 @@ export function ProfileView() {
   }
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-300 relative">
+    <div className="space-y-8 relative">
       {/* Background Revalidating Indicator */}
       {isFetching && !isLoading && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-highest/90 text-on-surface text-xs font-medium shadow-lg backdrop-blur-md border border-surface-container-high transition-all">

@@ -6,7 +6,7 @@ import { FiTrendingUp, FiDownload } from "react-icons/fi";
 
 export function AdminDashboard() {
   return (
-    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-300">
+    <div className="space-y-6 sm:space-y-8">
       {/* Admin Header action */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface-container-lowest/80 border border-surface-container-high/80 rounded-3xl p-6">
         <div>
