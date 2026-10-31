@@ -68,6 +68,23 @@ body {
   font-family: var(--font-be-vietnam-pro), sans-serif;
 }
 
+/*
+ * Tailwind v4 preflight không đặt cursor cho <button> nên trình duyệt dùng
+ * `default`. Đặt trong layer base để utility `cursor-*` vẫn ghi đè được.
+ */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}
+
 h1, h2, h3, h4, h5, h6, .brand-font {
   font-family: var(--font-plus-jakarta-sans), sans-serif;
 }

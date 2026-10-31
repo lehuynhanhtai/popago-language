@@ -9,16 +9,17 @@ import { cn } from "@/lib/utils";
  * Dùng `buttonVariants()` cho <Link> cần trông như button.
  */
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
-        primary: "bg-primary text-on-primary shadow-xs hover:bg-primary-hover",
+        primary:
+          "bg-primary text-on-primary shadow-xs enabled:hover:bg-primary-hover",
         secondary:
-          "border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container-low",
+          "border border-outline-variant bg-surface-container-lowest text-on-surface enabled:hover:bg-surface-container-low",
         ghost:
-          "text-on-surface-variant hover:bg-surface-container hover:text-on-surface",
-        danger: "bg-error text-white shadow-xs hover:bg-error-hover",
+          "text-on-surface-variant enabled:hover:bg-surface-container enabled:hover:text-on-surface",
+        danger: "bg-error text-white shadow-xs enabled:hover:bg-error-hover",
       },
       size: {
         sm: "h-9 px-3 text-xs",
