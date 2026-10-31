@@ -87,6 +87,20 @@ Quy tắc: **bán kính ≤ 1/3 chiều cao** phần tử. Hộp cao 40px thì t
 | `components/ui/dialog.tsx` | Mọi modal (native `<dialog>`, Escape, focus trap, scroll lock). |
 | `components/ui/skeleton.tsx` | Khối loading. |
 
+### Kích thước control (chuẩn chung)
+
+| Loại | Chiều cao | Radius | Ghi chú |
+|---|---|---|---|
+| Nút hành động chính | `h-10` | `rounded-xl` | Cùng `px-4`, `text-sm font-semibold`, `gap-2`, icon `h-4 w-4` |
+| Nút nhỏ / trong bảng | `h-9` | `rounded-xl` | `px-3 text-xs` |
+| Segmented control | `h-10` (khung) | `rounded-xl` khung · `rounded-lg` item | Khung `p-1`, item `h-8 px-3` — item luôn nhỏ hơn khung 4px |
+| Input / search | `h-10` | `rounded-xl` | Icon search đặt `left-3.5`, text `pl-9` |
+| Icon button | `h-8 w-8` | `rounded-lg` | Bắt buộc `aria-label` |
+| Chip / tag / badge | `py-0.5` | `rounded-full` | `px-2.5 text-xs font-medium` |
+| Progress | `h-2` | `rounded-full` | Track `surface-container`, fill màu theme |
+
+Quy tắc chung: **radius của item con = radius khung − padding khung**. Không để item con bo tròn hơn khung.
+
 ## Quy tắc
 
 1. **Không hex trong `.tsx`.** Màu chỉ đến từ token. Ngoại lệ có kiểm soát: màu do người dùng chọn
