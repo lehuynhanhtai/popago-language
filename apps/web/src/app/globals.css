@@ -34,14 +34,29 @@
   --color-secondary: #6e5a00;
   --color-tertiary-hover: #8b3315;
 
+  /* Trạng thái — bổ sung cho primary/error khi cần success/warning */
+  --color-success: #047857;
+  --color-success-hover: #065f46;
+  --color-success-container: #ecfdf5;
+  --color-on-success-container: #065f46;
+  --color-error-hover: #9f0519;
+  --color-error-container: #fff1f2;
+  --color-on-error-container: #9f1239;
+  --color-warning: #b45309;
+  --color-warning-container: #fffbeb;
+
   --font-headline: var(--font-plus-jakarta-sans), sans-serif;
   --font-body: var(--font-be-vietnam-pro), sans-serif;
   --font-label: var(--font-plus-jakarta-sans), sans-serif;
 
-  --radius-DEFAULT: 1rem;
-  --radius-lg: 2rem;
-  --radius-xl: 3rem;
-  --radius-full: 9999px;
+  /*
+   * Thang shape: 4 bậc, KHÔNG override thang mặc định của Tailwind.
+   * field = control nhỏ, panel = card/dialog, hero = control bo lớn, pill = tròn.
+   */
+  --radius-field: 1rem;
+  --radius-panel: 2rem;
+  --radius-hero: 3rem;
+  --radius-pill: 9999px;
 }
 
 /* Khoá light-only: chặn trình duyệt tự tô tối scrollbar/form control/autofill khi OS ở dark mode. */

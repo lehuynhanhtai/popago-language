@@ -87,14 +87,14 @@ export function HeroSection() {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-16 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl -z-10 pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-secondary-container/25 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute top-16 left-1/4 w-96 h-96 bg-primary-container/20 rounded-pill blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-secondary-container/25 rounded-pill blur-3xl -z-10 pointer-events-none" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Headlines & Story Intro */}
         <div className="lg:col-span-7 text-left space-y-6">
           {/* Mission Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container/30 border border-secondary/30 text-secondary font-headline font-bold text-xs sm:text-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-pill bg-secondary-container/30 border border-secondary/30 text-secondary font-headline font-bold text-xs sm:text-sm">
             <FiShield className="text-secondary text-base" />
             <span>Dự án giáo dục 100% Miễn Phí Vì Cộng Đồng</span>
           </div>
@@ -117,7 +117,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
             <Link
               href="/register"
-              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all group"
+              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-base px-8 py-4 rounded-pill shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all group"
             >
               <span>Vào Chơi & Học Ngay</span>
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -125,7 +125,7 @@ export function HeroSection() {
 
             <a
               href="#zones"
-              className="inline-flex items-center justify-center gap-2 font-headline font-bold text-base text-on-surface px-6 py-4 rounded-full border-2 border-surface-container-highest hover:bg-surface-container-low transition-colors"
+              className="inline-flex items-center justify-center gap-2 font-headline font-bold text-base text-on-surface px-6 py-4 rounded-pill border-2 border-surface-container-highest hover:bg-surface-container-low transition-colors"
             >
               <FiPlay className="text-primary" />
               <span>Khám phá 4 khu vui chơi</span>
@@ -197,13 +197,13 @@ export function HeroSection() {
               className="cursor-pointer bg-surface-container-lowest rounded-3xl p-6 shadow-2xl border-2 border-primary/15 hover:border-primary/40 transition-all min-h-[340px] flex flex-col justify-between relative group"
             >
               <div className="flex justify-between items-start">
-                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-primary-container/20 text-primary uppercase tracking-wide">
+                <span className="px-3 py-1 rounded-pill text-[11px] font-bold bg-primary-container/20 text-primary uppercase tracking-wide">
                   {card.type}
                 </span>
                 <button
                   type="button"
                   onClick={handlePronounce}
-                  className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-on-primary flex items-center justify-center transition-colors"
+                  className="w-10 h-10 rounded-pill bg-primary/10 hover:bg-primary text-primary hover:text-on-primary flex items-center justify-center transition-colors"
                   title="Bấm để nghe phát âm"
                   aria-label="Nghe phát âm mẫu"
                 >
@@ -259,7 +259,7 @@ export function HeroSection() {
                 type="button"
                 onClick={handleScoreXP}
                 disabled={hasScored}
-                className={`w-full py-3 rounded-full font-headline font-bold text-sm flex items-center justify-center gap-2 transition-all ${
+                className={`w-full py-3 rounded-pill font-headline font-bold text-sm flex items-center justify-center gap-2 transition-all ${
                   hasScored
                     ? "bg-secondary-container text-on-secondary-container font-black"
                     : "bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface"

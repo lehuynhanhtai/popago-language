@@ -61,7 +61,7 @@ export function ProfileHeaderCard() {
   return (
     <div className="bg-surface-container-lowest border border-surface-container-high rounded-3xl p-6 sm:p-8 shadow-xs relative overflow-hidden">
       {/* Decorative background glow */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-pill blur-3xl pointer-events-none -mr-20 -mt-20" />
 
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
         {/* Avatar badge */}
@@ -69,9 +69,9 @@ export function ProfileHeaderCard() {
           <div className="w-24 h-24 rounded-3xl bg-linear-to-tr from-primary to-primary-container text-on-primary flex items-center justify-center font-headline font-black text-3xl shadow-md border-4 border-surface-container-lowest">
             {avatarLetter}
           </div>
-          <div className="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-xs">
+          <div className="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-pill bg-surface-container-lowest flex items-center justify-center shadow-xs">
             <span
-              className="w-4 h-4 rounded-full bg-emerald-500 animate-pulse"
+              className="w-4 h-4 rounded-pill bg-emerald-500 animate-pulse"
               title="Tài khoản đang hoạt động"
             />
           </div>
@@ -86,7 +86,7 @@ export function ProfileHeaderCard() {
                   type="text"
                   value={displayName}
                   onChange={(e) => setDisplayName(e.target.value)}
-                  className="px-3.5 py-1.5 bg-surface-container border border-primary rounded-xl text-base font-headline font-bold text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 w-full"
+                  className="px-3.5 py-1.5 bg-surface-container border border-primary rounded-hero text-base font-headline font-bold text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 w-full"
                   placeholder="Nhập họ và tên..."
                   disabled={isSaving}
                   autoFocus
@@ -95,7 +95,7 @@ export function ProfileHeaderCard() {
                   type="button"
                   onClick={handleSave}
                   disabled={isSaving}
-                  className="p-2 bg-primary text-on-primary rounded-xl hover:opacity-90 disabled:opacity-50 transition-all cursor-pointer"
+                  className="p-2 bg-primary text-on-primary rounded-hero hover:opacity-90 disabled:opacity-50 transition-all cursor-pointer"
                   title="Lưu thay đổi"
                 >
                   {isSaving ? (
@@ -108,7 +108,7 @@ export function ProfileHeaderCard() {
                   type="button"
                   onClick={handleCancel}
                   disabled={isSaving}
-                  className="p-2 bg-surface-container hover:bg-surface-container-high text-on-surface-variant rounded-xl transition-all cursor-pointer"
+                  className="p-2 bg-surface-container hover:bg-surface-container-high text-on-surface-variant rounded-hero transition-all cursor-pointer"
                   title="Hủy"
                   aria-label="Hủy chỉnh sửa"
                 >
@@ -123,7 +123,7 @@ export function ProfileHeaderCard() {
                 <button
                   type="button"
                   onClick={() => setIsEditing(true)}
-                  className="p-1.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors cursor-pointer"
+                  className="p-1.5 rounded-hero text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors cursor-pointer"
                   title="Chỉnh sửa tên hiển thị"
                 >
                   <Edit2 className="w-4 h-4" />
@@ -134,12 +134,12 @@ export function ProfileHeaderCard() {
             {/* Role Badge */}
             <div>
               {role === "admin" ? (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-headline font-extrabold bg-amber-500/10 text-amber-600 border border-amber-500/30 shadow-xs">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-pill text-xs font-headline font-extrabold bg-amber-500/10 text-amber-600 border border-amber-500/30 shadow-xs">
                   <Shield className="w-3.5 h-3.5" />
                   Quản trị viên
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-headline font-bold bg-primary/10 text-primary border border-primary/20 shadow-xs">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-pill text-xs font-headline font-bold bg-primary/10 text-primary border border-primary/20 shadow-xs">
                   <User className="w-3.5 h-3.5" />
                   Học viên PoPaGo
                 </span>
@@ -150,7 +150,7 @@ export function ProfileHeaderCard() {
           <p className="text-sm font-medium text-on-surface-variant">{email}</p>
 
           <div className="flex items-center gap-2 justify-center sm:justify-start pt-1">
-            <span className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant/80 font-medium bg-surface-container/60 px-3 py-1 rounded-xl">
+            <span className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant/80 font-medium bg-surface-container/60 px-3 py-1 rounded-hero">
               Trạng thái:{" "}
               <span className="font-bold text-emerald-600">Đang hoạt động</span>
             </span>

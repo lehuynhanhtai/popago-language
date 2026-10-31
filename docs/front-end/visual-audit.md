@@ -287,6 +287,22 @@ G7 kiểm bằng Playwright (`e2e-testing` / `browser-qa`): đếm `h1` trên t�
 | Palette theme deck với chữ trắng | 8/8 fail (2.15–4.47:1) | **8/8 đạt** (4.70–6.29:1), gate `check:contrast` |
 | Nút hiện mật khẩu bị `tabIndex={-1}` | không tới được bằng bàn phím | focusable + có ring |
 
+### Cập nhật `refactor/ui-p1` (2026-10-31)
+
+| Hạng mục P1 | Trước | Sau |
+|---|---|---|
+| Thang radius bị đảo | `rounded-lg`=32px > `rounded-3xl`=24px, `rounded-xl`=48px | 4 bậc ngữ nghĩa `field/panel/hero/pill`, **không** override thang Tailwind |
+| `rounded-lg` / `rounded-xl` / `rounded` thô | 30 / 83 / 5 | **0** (đã migrate sang token, hình dạng giữ nguyên) |
+| Palette thô trong vocabulary | 360 utility (slate 238, indigo 72, rose 30, emerald 20…) | **0** |
+| Button dùng chung | không có | `<Button>` 4 variant × 3 size × 2 shape, 12 chỗ dùng; gradient ở 4 form auth đã bỏ |
+| Card dùng chung | 4 recipe khác nhau | `<Card>` primitive; `auth-card` + `stat-metric-card` đã migrate (bỏ `backdrop-blur-xl` vô cớ) |
+| `@repo/ui` | khai báo nhưng 0 import (vẫn là scaffold `alert()`) | đã gỡ khỏi `apps/web` |
+| Token trạng thái | chỉ có `error` | thêm `success*`, `warning*`, `error-hover`, `error-container`, `on-error-container` |
+
+**Còn lại của P1:** `journal-notebook.tsx` vẫn có 65 hex (40 dòng) cho theme "giấy bút". Việc này cần quyết định
+thiết kế trước khi làm: gộp 40 mã gần trùng thành ~10 token `paper-*`, hay giữ bespoke. Nên làm cùng lúc
+với review giao diện thật.
+
 Còn lại (không thuộc P0): focus trap của modal "Chế độ tập trung" trong journal dựa vào layout fullscreen chứ chưa phải `<dialog>`; sẽ gộp khi làm P1.
 
 Quy ước palette sau khi dọn: [theme.md](theme.md).

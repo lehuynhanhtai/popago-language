@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Link from "next/link";
+import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 interface AuthCardProps {
@@ -22,12 +23,7 @@ export function AuthCard({
   className,
 }: AuthCardProps) {
   return (
-    <div
-      className={cn(
-        "w-full max-w-md mx-auto bg-surface-container-lowest/90 backdrop-blur-xl border border-surface-container-high/80 rounded-3xl p-6 sm:p-8 shadow-xl shadow-primary/5 transition-all",
-        className
-      )}
-    >
+    <Card className={cn("mx-auto w-full max-w-md p-6 sm:p-8", className)}>
       {/* Header */}
       <div className="text-center mb-6">
         <h1 className="font-headline font-extrabold text-2xl sm:text-3xl tracking-tight text-on-surface">
@@ -55,6 +51,6 @@ export function AuthCard({
           </p>
         </div>
       )}
-    </div>
+    </Card>
   );
 }

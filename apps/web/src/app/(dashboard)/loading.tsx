@@ -10,12 +10,12 @@ export default function DashboardLoading() {
           >
             <div className="flex items-start justify-between">
               <div className="space-y-2 flex-1">
-                <div className="w-24 h-3.5 bg-surface-container-high rounded-full animate-pulse" />
-                <div className="w-32 h-7 bg-surface-container-highest rounded-xl animate-pulse" />
+                <div className="w-24 h-3.5 bg-surface-container-high rounded-pill animate-pulse" />
+                <div className="w-32 h-7 bg-surface-container-highest rounded-hero animate-pulse" />
               </div>
               <div className="w-12 h-12 rounded-2xl bg-surface-container-high animate-pulse shrink-0" />
             </div>
-            <div className="w-40 h-3 bg-surface-container-high/70 rounded-full animate-pulse mt-3" />
+            <div className="w-40 h-3 bg-surface-container-high/70 rounded-pill animate-pulse mt-3" />
           </div>
         ))}
       </div>
@@ -27,22 +27,22 @@ export default function DashboardLoading() {
           {/* Resume Learning Card Skeleton */}
           <div className="p-6 sm:p-7 rounded-3xl bg-surface-container-lowest/80 border border-surface-container-high/80 shadow-xs space-y-5">
             <div className="flex items-center justify-between">
-              <div className="w-36 h-4 bg-surface-container-high rounded-full animate-pulse" />
-              <div className="w-20 h-6 bg-surface-container-high rounded-xl animate-pulse" />
+              <div className="w-36 h-4 bg-surface-container-high rounded-pill animate-pulse" />
+              <div className="w-20 h-6 bg-surface-container-high rounded-hero animate-pulse" />
             </div>
 
             <div className="space-y-3">
-              <div className="w-3/4 h-6 bg-surface-container-highest rounded-xl animate-pulse" />
-              <div className="w-1/2 h-4 bg-surface-container-high rounded-full animate-pulse" />
+              <div className="w-3/4 h-6 bg-surface-container-highest rounded-hero animate-pulse" />
+              <div className="w-1/2 h-4 bg-surface-container-high rounded-pill animate-pulse" />
             </div>
 
             {/* Progress Bar Skeleton */}
             <div className="space-y-2">
               <div className="flex justify-between">
-                <div className="w-28 h-3 bg-surface-container-high rounded-full animate-pulse" />
-                <div className="w-12 h-3 bg-surface-container-high rounded-full animate-pulse" />
+                <div className="w-28 h-3 bg-surface-container-high rounded-pill animate-pulse" />
+                <div className="w-12 h-3 bg-surface-container-high rounded-pill animate-pulse" />
               </div>
-              <div className="w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+              <div className="w-full h-3 bg-surface-container-high rounded-pill overflow-hidden">
                 <div className="w-1/3 h-full bg-surface-container-highest animate-pulse" />
               </div>
             </div>
@@ -56,8 +56,8 @@ export default function DashboardLoading() {
           {/* Quick Learning Zones Skeleton */}
           <div className="p-6 rounded-3xl bg-surface-container-lowest/80 border border-surface-container-high/80 shadow-xs space-y-4">
             <div className="space-y-1.5">
-              <div className="w-48 h-5 bg-surface-container-highest rounded-xl animate-pulse" />
-              <div className="w-64 h-3.5 bg-surface-container-high rounded-full animate-pulse" />
+              <div className="w-48 h-5 bg-surface-container-highest rounded-hero animate-pulse" />
+              <div className="w-64 h-3.5 bg-surface-container-high rounded-pill animate-pulse" />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -66,12 +66,12 @@ export default function DashboardLoading() {
                   key={item}
                   className="p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container-high/60 flex flex-col justify-between h-36"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-surface-container-high animate-pulse mb-3" />
+                  <div className="w-10 h-10 rounded-hero bg-surface-container-high animate-pulse mb-3" />
                   <div className="space-y-2">
-                    <div className="w-24 h-4 bg-surface-container-highest rounded-lg animate-pulse" />
-                    <div className="w-32 h-3 bg-surface-container-high rounded-full animate-pulse" />
+                    <div className="w-24 h-4 bg-surface-container-highest rounded-panel animate-pulse" />
+                    <div className="w-32 h-3 bg-surface-container-high rounded-pill animate-pulse" />
                   </div>
-                  <div className="w-20 h-3 bg-surface-container-high rounded-full animate-pulse mt-3" />
+                  <div className="w-20 h-3 bg-surface-container-high rounded-pill animate-pulse mt-3" />
                 </div>
               ))}
             </div>
@@ -85,15 +85,15 @@ export default function DashboardLoading() {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-orange-500/15 animate-pulse" />
               <div className="space-y-2">
-                <div className="w-28 h-4 bg-surface-container-highest rounded-lg animate-pulse" />
-                <div className="w-36 h-3 bg-surface-container-high rounded-full animate-pulse" />
+                <div className="w-28 h-4 bg-surface-container-highest rounded-panel animate-pulse" />
+                <div className="w-36 h-3 bg-surface-container-high rounded-pill animate-pulse" />
               </div>
             </div>
             <div className="grid grid-cols-7 gap-1.5 pt-2">
               {[1, 2, 3, 4, 5, 6, 7].map((day) => (
                 <div
                   key={day}
-                  className="h-10 rounded-xl bg-surface-container-high animate-pulse"
+                  className="h-10 rounded-hero bg-surface-container-high animate-pulse"
                 />
               ))}
             </div>
@@ -102,8 +102,8 @@ export default function DashboardLoading() {
           {/* Daily Quests Skeleton */}
           <div className="p-6 rounded-3xl bg-surface-container-lowest/80 border border-surface-container-high/80 shadow-xs space-y-4">
             <div className="flex items-center justify-between">
-              <div className="w-32 h-5 bg-surface-container-highest rounded-xl animate-pulse" />
-              <div className="w-16 h-4 bg-surface-container-high rounded-full animate-pulse" />
+              <div className="w-32 h-5 bg-surface-container-highest rounded-hero animate-pulse" />
+              <div className="w-16 h-4 bg-surface-container-high rounded-pill animate-pulse" />
             </div>
 
             <div className="space-y-3">
@@ -114,9 +114,9 @@ export default function DashboardLoading() {
                 >
                   <div className="space-y-1.5 flex-1">
                     <div className="w-36 h-3.5 bg-surface-container-highest rounded-md animate-pulse" />
-                    <div className="w-24 h-2.5 bg-surface-container-high rounded-full animate-pulse" />
+                    <div className="w-24 h-2.5 bg-surface-container-high rounded-pill animate-pulse" />
                   </div>
-                  <div className="w-12 h-5 bg-surface-container-high rounded-full animate-pulse shrink-0 ml-2" />
+                  <div className="w-12 h-5 bg-surface-container-high rounded-pill animate-pulse shrink-0 ml-2" />
                 </div>
               ))}
             </div>

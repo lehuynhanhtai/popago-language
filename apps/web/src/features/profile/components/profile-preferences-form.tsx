@@ -200,7 +200,7 @@ export function ProfilePreferencesForm() {
       {/* Reminder Notification */}
       <div className="p-4 rounded-2xl bg-surface-container/30 border border-surface-container-high/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-surface-container text-on-surface-variant">
+          <div className="p-2.5 rounded-hero bg-surface-container text-on-surface-variant">
             <Bell className="w-4 h-4" />
           </div>
           <div>
@@ -219,20 +219,20 @@ export function ProfilePreferencesForm() {
               type="time"
               value={reminderTime}
               onChange={(e) => setReminderTime(e.target.value)}
-              className="px-3 py-1.5 bg-surface-container border border-surface-container-high rounded-xl text-xs font-bold font-headline text-on-surface focus-visible:outline-none focus-visible:border-primary"
+              className="px-3 py-1.5 bg-surface-container border border-surface-container-high rounded-hero text-xs font-bold font-headline text-on-surface focus-visible:outline-none focus-visible:border-primary"
             />
           )}
 
           <button
             type="button"
             onClick={() => setReminderEnabled(!reminderEnabled)}
-            className={`w-12 h-7 rounded-full p-1 transition-colors cursor-pointer flex items-center ${
+            className={`w-12 h-7 rounded-pill p-1 transition-colors cursor-pointer flex items-center ${
               reminderEnabled
                 ? "bg-primary justify-end"
                 : "bg-surface-container-high justify-start"
             }`}
           >
-            <span className="w-5 h-5 rounded-full bg-white shadow-xs" />
+            <span className="w-5 h-5 rounded-pill bg-white shadow-xs" />
           </button>
         </div>
       </div>

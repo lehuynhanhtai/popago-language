@@ -47,9 +47,42 @@ vào khối `@theme` hiện tại.
 | `tertiary-container` | `#ff9472` | Nền nhấn cam |
 | `on-tertiary` | `#ffefeb` | Chữ trên nền tertiary |
 | `error` | `#b31b25` | Lỗi, hành động xoá |
+| `error-hover` | `#9f0519` | Hover của error |
+| `error-container` | `#fff1f2` | Nền lỗi nhẹ (banner, badge) |
+| `on-error-container` | `#9f1239` | Chữ trên nền error-container |
+| `success` | `#047857` | Trạng thái thành công |
+| `success-hover` | `#065f46` | Hover của success |
+| `success-container` | `#ecfdf5` | Nền thành công nhẹ |
+| `on-success-container` | `#065f46` | Chữ trên nền success-container |
+| `warning` | `#b45309` | Trạng thái cảnh báo |
+| `warning-container` | `#fffbeb` | Nền cảnh báo nhẹ |
 
 `secondary-container` và `secondary-emphasis` cùng giá trị `#fdd433` nhưng khác vai trò (nền vs icon).
 Nếu sau này cần phân biệt bằng sắc độ, đổi `secondary-emphasis` — đừng gộp hai token.
+
+## Thang shape (radius)
+
+Không override thang mặc định của Tailwind (trước đây `--radius-lg/xl` bị đổi khiến `rounded-xl` to hơn
+`rounded-3xl`). Chỉ có 4 bậc ngữ nghĩa:
+
+| Token | Giá trị | Dùng cho |
+|---|---|---|
+| `rounded-field` | 16px | Input, checkbox, badge, control nhỏ |
+| `rounded-panel` | 32px | Panel, chip lớn |
+| `rounded-hero` | 48px | Control bo lớn / dạng pill |
+| `rounded-pill` | 9999px | Avatar, badge tròn, nút tròn |
+
+`rounded-2xl` (16px) và `rounded-3xl` (24px) vẫn dùng được cho card; card chuẩn nằm trong
+`components/ui/card.tsx` (`rounded-3xl`).
+
+## Component primitive
+
+| File | Dùng khi |
+|---|---|
+| `components/ui/button.tsx` | Mọi nút có hành động. `variant`: primary/secondary/ghost/danger; `size`: sm/md/lg; `shape`: field/pill; có `isLoading`. Với `<Link>` cần trông như nút: `buttonVariants({...})`. |
+| `components/ui/card.tsx` | Mọi khối card. `padding`: none/sm/md/lg; `interactive` thêm hover shadow. |
+| `components/ui/dialog.tsx` | Mọi modal (native `<dialog>`, Escape, focus trap, scroll lock). |
+| `components/ui/skeleton.tsx` | Khối loading. |
 
 ## Quy tắc
 

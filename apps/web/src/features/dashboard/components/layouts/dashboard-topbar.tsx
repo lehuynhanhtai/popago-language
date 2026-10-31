@@ -38,7 +38,7 @@ export function DashboardTopbar({
           <button
             type="button"
             onClick={onToggleDesktopSidebar}
-            className="hidden lg:flex items-center justify-center p-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all cursor-pointer border border-surface-container-high shadow-xs"
+            className="hidden lg:flex items-center justify-center p-2 rounded-hero text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all cursor-pointer border border-surface-container-high shadow-xs"
             title="Hiện thanh điều hướng"
             aria-label="Hiện thanh điều hướng"
           >
@@ -93,7 +93,7 @@ export function DashboardTopbar({
           aria-label="Thông báo"
         >
           <FiBell className="w-4 h-4" />
-          <span className="w-2 h-2 rounded-full bg-error absolute top-2 right-2 ring-2 ring-surface-container-lowest" />
+          <span className="w-2 h-2 rounded-pill bg-error absolute top-2 right-2 ring-2 ring-surface-container-lowest" />
         </button>
 
         {/* User Avatar & Profile Link */}

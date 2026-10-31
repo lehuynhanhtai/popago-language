@@ -58,14 +58,14 @@ export function RecentActivities() {
               Các sự kiện học tập và đạt mốc điểm của cộng đồng
             </p>
           </div>
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+          <span className="w-2.5 h-2.5 rounded-pill bg-emerald-500 animate-ping" />
         </div>
 
         <div className="divide-y divide-surface-container-high/60">
           {activities.map((act) => (
             <div key={act.id} className="py-3 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+                <div className="w-9 h-9 rounded-hero bg-surface-container flex items-center justify-center shrink-0">
                   {act.type === "complete" ? (
                     <FiBook className="w-4 h-4 text-primary" />
                   ) : act.type === "streak" ? (
@@ -109,8 +109,8 @@ export function RecentActivities() {
               <span className="text-on-surface">Người mới bắt đầu (Beginner)</span>
               <span className="text-primary font-bold">58%</span>
             </div>
-            <div className="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-              <div className="h-full bg-primary rounded-full" style={{ width: "58%" }} />
+            <div className="w-full h-2 rounded-pill bg-surface-container overflow-hidden">
+              <div className="h-full bg-primary rounded-pill" style={{ width: "58%" }} />
             </div>
           </div>
 
@@ -120,8 +120,8 @@ export function RecentActivities() {
               <span className="text-on-surface">Trung cấp (Intermediate)</span>
               <span className="text-secondary font-bold">32%</span>
             </div>
-            <div className="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-              <div className="h-full bg-secondary-strong rounded-full" style={{ width: "32%" }} />
+            <div className="w-full h-2 rounded-pill bg-surface-container overflow-hidden">
+              <div className="h-full bg-secondary-strong rounded-pill" style={{ width: "32%" }} />
             </div>
           </div>
 
@@ -131,8 +131,8 @@ export function RecentActivities() {
               <span className="text-on-surface">Nâng cao (Advanced)</span>
               <span className="text-emerald-600 font-bold">10%</span>
             </div>
-            <div className="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-              <div className="h-full bg-emerald-500 rounded-full" style={{ width: "10%" }} />
+            <div className="w-full h-2 rounded-pill bg-surface-container overflow-hidden">
+              <div className="h-full bg-emerald-500 rounded-pill" style={{ width: "10%" }} />
             </div>
           </div>
         </div>

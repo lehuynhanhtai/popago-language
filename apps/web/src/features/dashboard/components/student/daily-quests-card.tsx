@@ -48,7 +48,7 @@ export function DailyQuestsCard() {
             </p>
           </div>
         </div>
-        <span className="text-xs font-headline font-black px-2.5 py-1 rounded-full bg-surface-container text-primary">
+        <span className="text-xs font-headline font-black px-2.5 py-1 rounded-pill bg-surface-container text-primary">
           {completedCount}/{quests.length}
         </span>
       </div>
@@ -82,7 +82,7 @@ export function DailyQuestsCard() {
               </span>
             </div>
 
-            <span className="shrink-0 text-xs font-headline font-black text-secondary px-2 py-0.5 rounded-full bg-secondary-container/30 border border-secondary-container/50">
+            <span className="shrink-0 text-xs font-headline font-black text-secondary px-2 py-0.5 rounded-pill bg-secondary-container/30 border border-secondary-container/50">
               +{q.rewardXp} XP
             </span>
           </div>

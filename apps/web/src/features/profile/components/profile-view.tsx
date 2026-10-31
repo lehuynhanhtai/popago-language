@@ -34,7 +34,7 @@ export function ProfileView() {
     <div className="space-y-8 relative">
       {/* Background Revalidating Indicator */}
       {isFetching && !isLoading && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-highest/90 text-on-surface text-xs font-medium shadow-lg backdrop-blur-md border border-surface-container-high transition-all">
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-3.5 py-1.5 rounded-pill bg-surface-container-highest/90 text-on-surface text-xs font-medium shadow-lg backdrop-blur-md border border-surface-container-high transition-all">
           <RefreshCw className="w-3.5 h-3.5 animate-spin text-primary" />
           <span>Đang đồng bộ dữ liệu mới nhất...</span>
         </div>

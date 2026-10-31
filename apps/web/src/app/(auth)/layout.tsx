@@ -11,8 +11,8 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <div className="relative min-h-screen flex flex-col justify-between bg-surface selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       {/* Decorative ambient background glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-primary/10 via-primary-container/10 to-transparent blur-3xl pointer-events-none -z-10 rounded-full" />
-      <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-secondary-container/20 blur-3xl pointer-events-none -z-10 rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-primary/10 via-primary-container/10 to-transparent blur-3xl pointer-events-none -z-10 rounded-pill" />
+      <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-secondary-container/20 blur-3xl pointer-events-none -z-10 rounded-pill" />
 
       {/* Auth Navbar */}
       <header className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between">
@@ -32,7 +32,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
               English Playground
             </span>
           </div>
-          <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary-container ml-2">
+          <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-pill text-[11px] font-bold bg-secondary-container text-on-secondary-container ml-2">
             <FiGift className="text-xs" />
             100% Miễn phí
           </span>
@@ -40,7 +40,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
 
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-xs font-headline font-semibold text-on-surface-variant hover:text-primary transition-colors py-2 px-3 rounded-full hover:bg-surface-container"
+          className="inline-flex items-center gap-1.5 text-xs font-headline font-semibold text-on-surface-variant hover:text-primary transition-colors py-2 px-3 rounded-pill hover:bg-surface-container"
         >
           <FiArrowLeft className="w-4 h-4" />
           <span>Về trang chủ</span>

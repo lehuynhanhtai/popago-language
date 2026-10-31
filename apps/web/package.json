@@ -16,7 +16,6 @@
     "@hookform/resolvers": "^5.9.1",
     "@lottiefiles/dotlottie-react": "^0.20.0",
     "@repo/shared": "workspace:*",
-    "@repo/ui": "workspace:*",
     "@tanstack/react-query": "^5.104.1",
     "@tanstack/react-query-devtools": "^5.104.3",
     "@tanstack/react-table": "^9.3.1",

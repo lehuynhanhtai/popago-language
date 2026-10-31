@@ -86,7 +86,7 @@ export function StudentDashboard() {
                 href="/flashcards"
                 className="group p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container-high/60 hover:border-primary/50 hover:bg-surface-container-lowest hover:shadow-md transition-all flex flex-col justify-between"
               >
-                <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-hero bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <FiLayers className="w-5 h-5" />
                 </div>
                 <div>
@@ -108,7 +108,7 @@ export function StudentDashboard() {
                 href="/practice"
                 className="group p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container-high/60 hover:border-secondary/50 hover:bg-surface-container-lowest hover:shadow-md transition-all flex flex-col justify-between"
               >
-                <div className="w-10 h-10 rounded-xl bg-secondary-container/40 text-secondary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-hero bg-secondary-container/40 text-secondary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <FiMic className="w-5 h-5" />
                 </div>
                 <div>
@@ -130,7 +130,7 @@ export function StudentDashboard() {
                 href="/games"
                 className="group p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container-high/60 hover:border-emerald-500/50 hover:bg-surface-container-lowest hover:shadow-md transition-all flex flex-col justify-between"
               >
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-hero bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <FiZap className="w-5 h-5" />
                 </div>
                 <div>

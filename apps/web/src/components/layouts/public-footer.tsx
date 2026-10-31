@@ -8,7 +8,7 @@ export function PublicFooter() {
         {/* Brand & Sứ mệnh */}
         <div className="md:col-span-2 flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary font-headline font-black text-lg">
+            <div className="w-9 h-9 rounded-hero bg-primary flex items-center justify-center text-on-primary font-headline font-black text-lg">
               P
             </div>
             <span className="text-2xl font-black text-primary font-headline tracking-tight">

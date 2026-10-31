@@ -5,7 +5,7 @@ export function MissionSection() {
     <section id="mission" className="py-24 bg-surface-container-low rounded-3xl my-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-secondary-container text-on-secondary-container mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-pill text-xs font-bold uppercase tracking-widest bg-secondary-container text-on-secondary-container mb-4">
             <FiHeart className="text-error" /> Sứ Mệnh Vì Cộng Đồng
           </span>
           <h2 className="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface tracking-tight">
@@ -25,7 +25,7 @@ export function MissionSection() {
               <h3 className="font-headline font-bold text-xl text-on-surface">
                 Nền tảng thu phí thường gặp
               </h3>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-error/10 text-error">
+              <span className="px-3 py-1 rounded-pill text-xs font-semibold bg-error/10 text-error">
                 Có phí định kỳ
               </span>
             </div>
@@ -51,13 +51,13 @@ export function MissionSection() {
 
           {/* Card 2: PoPaGo - Sân chơi miễn phí */}
           <div className="bg-gradient-to-br from-primary to-primary-hover text-on-primary p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden flex flex-col justify-between">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/20 rounded-pill blur-2xl pointer-events-none" />
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h3 className="font-headline font-black text-2xl text-on-primary">
                   Sân chơi PoPaGo
                 </h3>
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-secondary-container text-on-secondary-container">
+                <span className="px-3 py-1 rounded-pill text-xs font-bold bg-secondary-container text-on-secondary-container">
                   100% Free Trọn Đời
                 </span>
               </div>
@@ -91,7 +91,7 @@ export function MissionSection() {
         {/* 3 cam kết nhỏ */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
           <div className="bg-surface-container-lowest p-6 rounded-2xl flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary-container/20 text-primary flex items-center justify-center text-2xl">
+            <div className="w-12 h-12 rounded-hero bg-primary-container/20 text-primary flex items-center justify-center text-2xl">
               🎯
             </div>
             <div>
@@ -101,7 +101,7 @@ export function MissionSection() {
           </div>
 
           <div className="bg-surface-container-lowest p-6 rounded-2xl flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-secondary-container/20 text-secondary flex items-center justify-center text-2xl">
+            <div className="w-12 h-12 rounded-hero bg-secondary-container/20 text-secondary flex items-center justify-center text-2xl">
               🎮
             </div>
             <div>
@@ -111,7 +111,7 @@ export function MissionSection() {
           </div>
 
           <div className="bg-surface-container-lowest p-6 rounded-2xl flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-tertiary-container/20 text-tertiary flex items-center justify-center text-2xl">
+            <div className="w-12 h-12 rounded-hero bg-tertiary-container/20 text-tertiary flex items-center justify-center text-2xl">
               🤝
             </div>
             <div>
