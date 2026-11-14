@@ -68,7 +68,7 @@ export default function DashboardLoading() {
                 >
                   <div className="w-10 h-10 rounded-xl bg-surface-container-high animate-pulse mb-3" />
                   <div className="space-y-2">
-                    <div className="w-24 h-4 bg-surface-container-highest rounded-lg animate-pulse" />
+                    <div className="w-24 h-4 bg-surface-container-highest rounded-2xl animate-pulse" />
                     <div className="w-32 h-3 bg-surface-container-high rounded-full animate-pulse" />
                   </div>
                   <div className="w-20 h-3 bg-surface-container-high rounded-full animate-pulse mt-3" />
@@ -85,7 +85,7 @@ export default function DashboardLoading() {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-orange-500/15 animate-pulse" />
               <div className="space-y-2">
-                <div className="w-28 h-4 bg-surface-container-highest rounded-lg animate-pulse" />
+                <div className="w-28 h-4 bg-surface-container-highest rounded-2xl animate-pulse" />
                 <div className="w-36 h-3 bg-surface-container-high rounded-full animate-pulse" />
               </div>
             </div>

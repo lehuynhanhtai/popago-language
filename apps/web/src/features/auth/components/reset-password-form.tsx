@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { FiLock, FiCheckCircle, FiKey, FiArrowRight } from "react-icons/fi";
+import { Button } from "@/components/ui/button";
 import { AuthCard } from "./auth-card";
 import { PasswordInput } from "./password-input";
 
@@ -193,23 +194,15 @@ export function ResetPasswordForm({ initialCode = "" }: ResetPasswordFormProps) 
         </div>
 
         {/* Submit button */}
-        <button
+                <Button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-sm shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-60 cursor-pointer"
+          size="lg"
+          isLoading={isSubmitting}
+          className="w-full font-headline font-bold"
         >
-          {isSubmitting ? (
-            <span className="inline-flex items-center gap-2">
-              <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              Đang cập nhật...
-            </span>
-          ) : (
-            <>
-              <span>Cập nhật mật khẩu mới</span>
-              <FiArrowRight className="w-4 h-4" />
-            </>
-          )}
-        </button>
+          {isSubmitting ? "Đang cập nhật..." : "Cập nhật mật khẩu mới"}
+          {!isSubmitting && <FiArrowRight className="w-4 h-4" />}
+        </Button>
       </form>
     </AuthCard>
   );

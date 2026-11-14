@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { Card } from "@/components/ui/card";
 
 interface StatMetricCardProps {
   title: string;
@@ -24,11 +25,10 @@ export function StatMetricCard({
   className,
 }: StatMetricCardProps) {
   return (
-    <div
-      className={cn(
-        "relative overflow-hidden bg-surface-container-lowest/90 border border-surface-container-high/80 rounded-3xl p-5 shadow-xs hover:shadow-md transition-all group",
-        className
-      )}
+    <Card
+      padding="md"
+      interactive
+      className={cn("group relative overflow-hidden", className)}
     >
       <div className="flex items-start justify-between">
         <div className="space-y-1">
@@ -71,6 +71,6 @@ export function StatMetricCard({
           )}
         </div>
       )}
-    </div>
+    </Card>
   );
 }

@@ -16,6 +16,7 @@ import {
   FiClock,
   FiCompass,
 } from "react-icons/fi";
+import { Button } from "@/components/ui/button";
 import { AuthCard } from "./auth-card";
 import { PasswordInput } from "./password-input";
 import { OAuthButtons } from "./oauth-buttons";
@@ -269,7 +270,7 @@ export function RegisterForm() {
               type="checkbox"
               checked={agreedTerms}
               onChange={(e) => setAgreedTerms(e.target.checked)}
-              className="w-4 h-4 mt-0.5 rounded text-primary border-outline-variant focus-visible:ring-primary/20 accent-primary shrink-0"
+              className="w-4 h-4 mt-0.5 rounded-md text-primary border-outline-variant focus-visible:ring-primary/20 accent-primary shrink-0"
             />
             <span className="text-xs text-on-surface-variant leading-relaxed">
               Tôi đồng ý với{" "}
@@ -286,23 +287,15 @@ export function RegisterForm() {
         </div>
 
         {/* Submit Button */}
-        <button
+                <Button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-sm shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-60 cursor-pointer"
+          size="lg"
+          isLoading={isSubmitting}
+          className="w-full font-headline font-bold"
         >
-          {isSubmitting ? (
-            <span className="inline-flex items-center gap-2">
-              <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              Đang tạo tài khoản...
-            </span>
-          ) : (
-            <>
-              <span>Tạo tài khoản miễn phí</span>
-              <FiArrowRight className="w-4 h-4" />
-            </>
-          )}
-        </button>
+          {isSubmitting ? "Đang tạo tài khoản..." : "Tạo tài khoản miễn phí"}
+          {!isSubmitting && <FiArrowRight className="w-4 h-4" />}
+        </Button>
 
         {/* Social Register Divider */}
         <div className="relative my-6 text-center">

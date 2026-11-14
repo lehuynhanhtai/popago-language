@@ -198,7 +198,7 @@ export function JournalNotebook() {
                     value={fromDate}
                     max={toDate || todayStr}
                     onChange={(e) => setFromDate(e.target.value)}
-                    className="w-full px-2 py-1 text-[11px] rounded-lg bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
+                    className="w-full px-2 py-1 text-[11px] rounded-2xl bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
                   />
                 </div>
                 <div>
@@ -209,7 +209,7 @@ export function JournalNotebook() {
                     min={fromDate}
                     max={todayStr}
                     onChange={(e) => setToDate(e.target.value)}
-                    className="w-full px-2 py-1 text-[11px] rounded-lg bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
+                    className="w-full px-2 py-1 text-[11px] rounded-2xl bg-white/80 border border-[#dcd3c1] text-amber-950 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary font-medium cursor-pointer"
                   />
                 </div>
               </div>
@@ -267,7 +267,7 @@ export function JournalNotebook() {
                         <span className="w-2 h-2 rounded-full bg-amber-500" />
                         {item.writtenDate}
                       </span>
-                      <span className="px-1.5 py-0.5 rounded bg-amber-100/80 text-amber-900 font-bold">
+                      <span className="px-1.5 py-0.5 rounded-xl bg-amber-100/80 text-amber-900 font-bold">
                         {item.wordCount} từ
                       </span>
                     </div>
@@ -329,14 +329,14 @@ export function JournalNotebook() {
                 <button
                   type="button"
                   onClick={() => setMobileTab("list")}
-                  className="lg:hidden inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#efe9dc] border border-[#dcd2be] text-amber-950 text-xs font-bold hover:bg-[#e4dac6] transition-colors"
+                  className="lg:hidden inline-flex items-center gap-1 px-2.5 py-1.5 rounded-2xl bg-[#efe9dc] border border-[#dcd2be] text-amber-950 text-xs font-bold hover:bg-[#e4dac6] transition-colors"
                 >
                   <FiArrowLeft className="w-3.5 h-3.5 text-amber-800" />
                   <span>Mục lục</span>
                 </button>
 
                 {/* Con tem ngày tháng cổ điển */}
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#efe9dc] border border-[#dcd2be] text-amber-950 text-xs font-headline font-extrabold shadow-xs">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-[#efe9dc] border border-[#dcd2be] text-amber-950 text-xs font-headline font-extrabold shadow-xs">
                   <FiCalendar className="w-3.5 h-3.5 text-amber-800" />
                   <span>
                     {isCreatingNew
@@ -355,7 +355,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewMood("happy")}
-                        className={`p-1.5 rounded-lg transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newMood === "happy" ? "bg-amber-400 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Vui vẻ"
@@ -365,7 +365,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewMood("peaceful")}
-                        className={`p-1.5 rounded-lg transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newMood === "peaceful" ? "bg-amber-400 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Bình yên"
@@ -375,7 +375,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewMood("energetic")}
-                        className={`p-1.5 rounded-lg transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newMood === "energetic" ? "bg-amber-400 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Tràn đầy năng lượng"
@@ -385,7 +385,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewMood("grateful")}
-                        className={`p-1.5 rounded-lg transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newMood === "grateful" ? "bg-amber-400 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Biết ơn"
@@ -399,7 +399,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewWeather("sunny")}
-                        className={`p-1.5 rounded-lg transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newWeather === "sunny" ? "bg-amber-200 text-amber-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Nắng"
@@ -409,7 +409,7 @@ export function JournalNotebook() {
                       <button
                         type="button"
                         onClick={() => setNewWeather("rainy")}
-                        className={`p-1.5 rounded-lg transition-all ${
+                        className={`p-1.5 rounded-2xl transition-all ${
                           newWeather === "rainy" ? "bg-blue-200 text-blue-950 shadow-xs" : "text-amber-900/60"
                         }`}
                         title="Mưa"
@@ -444,7 +444,7 @@ export function JournalNotebook() {
                             handleDeleteEntry(activeEntry.id);
                           }
                         }}
-                        className="p-1.5 rounded-lg text-amber-900/40 hover:text-red-600 hover:bg-red-50 transition-colors"
+                        className="p-1.5 rounded-2xl text-amber-900/40 hover:text-red-600 hover:bg-red-50 transition-colors"
                         title="Xóa bài nhật ký này"
                       >
                         <FiTrash2 className="w-3.5 h-3.5" />

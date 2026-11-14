@@ -47,9 +47,59 @@ vào khối `@theme` hiện tại.
 | `tertiary-container` | `#ff9472` | Nền nhấn cam |
 | `on-tertiary` | `#ffefeb` | Chữ trên nền tertiary |
 | `error` | `#b31b25` | Lỗi, hành động xoá |
+| `error-hover` | `#9f0519` | Hover của error |
+| `error-container` | `#fff1f2` | Nền lỗi nhẹ (banner, badge) |
+| `on-error-container` | `#9f1239` | Chữ trên nền error-container |
+| `success` | `#047857` | Trạng thái thành công |
+| `success-hover` | `#065f46` | Hover của success |
+| `success-container` | `#ecfdf5` | Nền thành công nhẹ |
+| `on-success-container` | `#065f46` | Chữ trên nền success-container |
+| `warning` | `#b45309` | Trạng thái cảnh báo |
+| `warning-container` | `#fffbeb` | Nền cảnh báo nhẹ |
 
 `secondary-container` và `secondary-emphasis` cùng giá trị `#fdd433` nhưng khác vai trò (nền vs icon).
 Nếu sau này cần phân biệt bằng sắc độ, đổi `secondary-emphasis` — đừng gộp hai token.
+
+## Thang shape (radius)
+
+Dùng thẳng thang mặc định của Tailwind, **không** thêm hay override token `--radius-*`. Trước đây
+`--radius-lg/xl` bị đổi (32/48px) khiến `rounded-xl` to hơn `rounded-3xl`, menu dropdown bị biến
+thành viên thuốc.
+
+| Lớp | Class | Giá trị | Dùng cho |
+|---|---|---|---|
+| Nhỏ | `rounded-md` | 6px | Checkbox, badge vuông nhỏ |
+| Control | `rounded-xl` | 12px | Button, input, select, tab, icon button |
+| Nổi | `rounded-2xl` | 16px | Menu, dropdown, popover, tooltip |
+| Khối | `rounded-3xl` | 24px | Card, dialog, panel lớn |
+| Tròn | `rounded-full` | pill | Avatar, badge tròn, nút tròn |
+
+Quy tắc: **bán kính ≤ 1/3 chiều cao** phần tử. Hộp cao 40px thì tối đa `rounded-xl` (12px); chỉ dùng
+`rounded-full` khi thực sự muốn hình viên thuốc (CTA marketing, chip, avatar).
+`<Button shape="pill">` dành cho CTA ở landing, không dùng trong app.
+
+## Component primitive
+
+| File | Dùng khi |
+|---|---|
+| `components/ui/button.tsx` | Mọi nút có hành động. `variant`: primary/secondary/ghost/danger; `size`: sm/md/lg; `shape`: field/pill; có `isLoading`. Với `<Link>` cần trông như nút: `buttonVariants({...})`. |
+| `components/ui/card.tsx` | Mọi khối card. `padding`: none/sm/md/lg; `interactive` thêm hover shadow. |
+| `components/ui/dialog.tsx` | Mọi modal (native `<dialog>`, Escape, focus trap, scroll lock). |
+| `components/ui/skeleton.tsx` | Khối loading. |
+
+### Kích thước control (chuẩn chung)
+
+| Loại | Chiều cao | Radius | Ghi chú |
+|---|---|---|---|
+| Nút hành động chính | `h-10` | `rounded-xl` | Cùng `px-4`, `text-sm font-semibold`, `gap-2`, icon `h-4 w-4` |
+| Nút nhỏ / trong bảng | `h-9` | `rounded-xl` | `px-3 text-xs` |
+| Segmented control | `h-10` (khung) | `rounded-xl` khung · `rounded-lg` item | Khung `p-1`, item `h-8 px-3` — item luôn nhỏ hơn khung 4px |
+| Input / search | `h-10` | `rounded-xl` | Icon search đặt `left-3.5`, text `pl-9` |
+| Icon button | `h-8 w-8` | `rounded-lg` | Bắt buộc `aria-label` |
+| Chip / tag / badge | `py-0.5` | `rounded-full` | `px-2.5 text-xs font-medium` |
+| Progress | `h-2` | `rounded-full` | Track `surface-container`, fill màu theme |
+
+Quy tắc chung: **radius của item con = radius khung − padding khung**. Không để item con bo tròn hơn khung.
 
 ## Quy tắc
 

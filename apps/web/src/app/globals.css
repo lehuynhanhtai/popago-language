@@ -34,14 +34,27 @@
   --color-secondary: #6e5a00;
   --color-tertiary-hover: #8b3315;
 
+  /* Trạng thái — bổ sung cho primary/error khi cần success/warning */
+  --color-success: #047857;
+  --color-success-hover: #065f46;
+  --color-success-container: #ecfdf5;
+  --color-on-success-container: #065f46;
+  --color-error-hover: #9f0519;
+  --color-error-container: #fff1f2;
+  --color-on-error-container: #9f1239;
+  --color-warning: #b45309;
+  --color-warning-container: #fffbeb;
+
   --font-headline: var(--font-plus-jakarta-sans), sans-serif;
   --font-body: var(--font-be-vietnam-pro), sans-serif;
   --font-label: var(--font-plus-jakarta-sans), sans-serif;
 
-  --radius-DEFAULT: 1rem;
-  --radius-lg: 2rem;
-  --radius-xl: 3rem;
-  --radius-full: 9999px;
+  /*
+   * Shape: dùng thẳng thang mặc định của Tailwind, KHÔNG override.
+   * rounded-md (6px) — checkbox; rounded-xl (12px) — button/input;
+   * rounded-2xl (16px) — menu/popover; rounded-3xl (24px) — card/dialog;
+   * rounded-full — badge/pill.
+   */
 }
 
 /* Khoá light-only: chặn trình duyệt tự tô tối scrollbar/form control/autofill khi OS ở dark mode. */
@@ -51,6 +64,23 @@
 
 body {
   font-family: var(--font-be-vietnam-pro), sans-serif;
+}
+
+/*
+ * Tailwind v4 preflight không đặt cursor cho <button> nên trình duyệt dùng
+ * `default`. Đặt trong layer base để utility `cursor-*` vẫn ghi đè được.
+ */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, .brand-font {
